@@ -1,19 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style>
+	#container{
+	height: 1000px
+	}
+</style>
 <body>
-<div align="center">
+<div id ="container" align="center">
+<br>
+<br>
+<br>
 	<div>
 		<h1>공지사항 목록</h1>
 	</div>
 	<div>
-		<a href="noticeInsertForm.do">공지사항 작성</a>
+		<c:if test="${name eq 'admin'}">
+			<a href="noticeInsertForm.do">공지사항 작성</a>
+		</c:if>
 	</div>
 	<div>
 		<table>

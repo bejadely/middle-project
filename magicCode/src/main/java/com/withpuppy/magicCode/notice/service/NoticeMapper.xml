@@ -4,7 +4,7 @@
 	namespace="com.withpuppy.magicCode.notice.service.NoticeMapper">
 	<select id="noticeSelectList"
 		resultType="com.withpuppy.magicCode.notice.service.NoticeVO">
-		SELECT * FROM NOTICE
+		SELECT notice_id, notice_title, notice_subject, notice_writer, TO_CHAR(notice_time, 'YYYY/MM/DD') as "NOTICE_TIME" FROM NOTICE
 		ORDER BY notice_id
 	</select>
 	<select id="noticeSelect"
@@ -21,10 +21,8 @@
 	</insert>
 	<update id="noticeUpdate">
 		UPDATE notice SET    
-		notice_id = #{noticeId},
 	    notice_title = #{noticeTitle},
 	    notice_subject = #{noticeSubject},
-	    notice_writer = #{noticeWriter},
 	    notice_time = #{noticeTime}
 	 	WHERE notice_id = #{noticeId}
 	</update>

@@ -6,8 +6,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style>
+	#container{
+	height: 1000px
+	}
+</style>
 <body>
-<div align="center">
+<div align="center" id="container">
 	<a href="noticeList.do">공지 전체 조회</a><br>
 </div>
 </body>

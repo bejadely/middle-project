@@ -17,9 +17,14 @@ public class NoticeDelete implements Command {
 		NoticeVO vo = new NoticeVO();
 		vo.setNoticeId(Integer.valueOf(request.getParameter("noticeId"))); // 페이지에서 수정할 noticeId 받아옴
 		
-		ns.noticeDelete(vo);
+		int n = ns.noticeDelete(vo);
 		
-		return "notice/noticeList";
+		if(n != 0) {
+			request.setAttribute("message", "게시글이 정상적으로 삭제되었습니다.");
+		}else {
+			request.setAttribute("message", "게시글 삭제에 실패하였습니다. 다시 시도해주십시오.");
+		}
+		return "notice/noticeMessage";
 	}
 
 }

@@ -20,9 +20,13 @@ public class NoticeUpdate implements Command {
 		vo.setNoticeSubject(request.getParameter("noticeSubject"));
 		vo.setNoticeTime(request.getParameter("noticeTime"));
 		
-		ns.noticeUpdate(vo);
-		
-		return "notice/noticeList";
+		int n = ns.noticeUpdate(vo);
+		if(n != 0) {
+			request.setAttribute("message", "게시글이 정상적으로 수정되었습니다.");
+		}else {
+			request.setAttribute("message", "게시글 수정에 실패하였습니다. 다시 시도해주십시오.");
+		}
+		return "notice/noticeMessage";
 	}
 
 }

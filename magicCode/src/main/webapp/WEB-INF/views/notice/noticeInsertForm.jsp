@@ -37,13 +37,10 @@
 				</table>
 				<br>
 				<div>
-					<!-- 조금 있다 구현할 것 -->
 					<button type="submit" onclick="callFunction('A')">등록</button>&nbsp;
 					<button type="button" onclick="callFunction('C')">취소</button>&nbsp;
-					<button type="button" onclick="location.href='noticeList.do'">목록으로</button>
 				</div>
 				<div>
-					<!-- hidden value 작성 -->
 					<input type="hidden" id="noticeId" name="noticeId" value="${notice.noticeId}">
 					<input type="hidden" id="noticeWriter" name="noticeWriter" value="${name}">
 				</div>

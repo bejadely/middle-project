@@ -40,7 +40,12 @@ public class NoticeInsert implements Command {
 		// 실제로 SQL문 실행
 		int n = ns.noticeInsert(vo);
 
-		return "noticeList.do";
+		if(n != 0) {
+			request.setAttribute("message", "게시글이 정상적으로 등록되었습니다.");
+		}else {
+			request.setAttribute("message", "게시글 등록에 실패하였습니다. 다시 시도해주십시오.");
+		}
+		return "notice/noticeMessage";
 	}
 
 }
