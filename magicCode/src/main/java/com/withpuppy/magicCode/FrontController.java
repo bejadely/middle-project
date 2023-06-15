@@ -14,6 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.withpuppy.magicCode.common.Command;
 import com.withpuppy.magicCode.main.MainCommand;
+import com.withpuppy.magicCode.notice.command.NoticeDelete;
+import com.withpuppy.magicCode.notice.command.NoticeEdit;
+import com.withpuppy.magicCode.notice.command.NoticeInsert;
+import com.withpuppy.magicCode.notice.command.NoticeInsertForm;
+import com.withpuppy.magicCode.notice.command.NoticeList;
+import com.withpuppy.magicCode.notice.command.NoticeMenu;
+import com.withpuppy.magicCode.notice.command.NoticeSelect;
+import com.withpuppy.magicCode.notice.command.NoticeUpdate;
 
 /**
  * Servlet implementation class FrontController
@@ -37,6 +45,14 @@ public class FrontController extends HttpServlet {
 		// 초기화
 		// 메인 페이지
 		map.put("/main.do", new MainCommand()); // 메인 페이지 호출
+		map.put("/noticeMenu.do", new NoticeMenu());	//공지사항 메뉴리스트
+		map.put("/noticeList.do", new NoticeList());	//공지사항 목록리스트
+		map.put("/noticeSelect.do", new NoticeSelect()); // 공지사항 상세 보기
+		map.put("/noticeEdit.do", new NoticeEdit());	//공지사항 수정하기
+		map.put("/noticeUpdate.do", new NoticeUpdate()); //공지사항 DB 수정 수행
+		map.put("/noticeDelete.do", new NoticeDelete());	//공지사항 삭제
+		map.put("/noticeInsertForm.do", new NoticeInsertForm());	//공지사항 입력폼
+		map.put("/noticeInsert.do", new NoticeInsert());
 	}
 
 	/**

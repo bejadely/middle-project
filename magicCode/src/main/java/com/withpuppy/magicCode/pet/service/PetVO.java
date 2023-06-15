@@ -25,3 +25,4 @@ public class PetVO {
 	private Double petWeight;
 	private String petSign;
 }
+
