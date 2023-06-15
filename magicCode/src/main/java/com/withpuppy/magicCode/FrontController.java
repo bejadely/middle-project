@@ -35,6 +35,7 @@ public class FrontController extends HttpServlet {
 	 */
 	public void init(ServletConfig config) throws ServletException {
 		// 초기화
+		// 메인 페이지
 		map.put("/main.do", new MainCommand()); // 메인 페이지 호출
 	}
 
