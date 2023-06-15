@@ -101,7 +101,7 @@
 			document.getElementById("memberId").focus();
 		}
 	}
-	}}
+	
 
 </script>
 </body>
