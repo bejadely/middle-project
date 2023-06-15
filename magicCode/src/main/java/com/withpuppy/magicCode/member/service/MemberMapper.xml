@@ -8,7 +8,7 @@
 	<select id="memberSelect" resultType="com.withpuppy.magicCode.member.service.MemberVO">
 		SELECT * FROM MEMBER
 		WHERE MEMBER_ID = #{memberId}
-		<if test="memberPassWord != null">
+		<if test="memberPw != null">
 			AND member_pw = #{memberPw}
 		</if>
 	</select>
@@ -31,6 +31,6 @@
 	</delete>
 	<select id="memberLogin">
 		SELECT * FROM MEMBER
-		WHERE MEMBER_ID = #{memberId} AND member_password = #{MemberPassWord}
+		WHERE MEMBER_ID = #{memberId} AND member_pw = #{memberPw}
 	</select>
 </mapper>

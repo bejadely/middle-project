@@ -14,6 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.withpuppy.magicCode.common.Command;
 import com.withpuppy.magicCode.main.MainCommand;
+import com.withpuppy.magicCode.member.command.MemberLogin;
+import com.withpuppy.magicCode.member.command.MemberLoginForm;
+import com.withpuppy.magicCode.member.command.MemberUpdate;
+import com.withpuppy.magicCode.member.command.SeeMyInfo;
+import com.withpuppy.magicCode.member.command.UpdateMyInfoForm;
 import com.withpuppy.magicCode.notice.command.NoticeDelete;
 import com.withpuppy.magicCode.notice.command.NoticeEdit;
 import com.withpuppy.magicCode.notice.command.NoticeInsert;
@@ -53,6 +58,13 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeDelete.do", new NoticeDelete());	//공지사항 삭제
 		map.put("/noticeInsertForm.do", new NoticeInsertForm());	//공지사항 입력폼
 		map.put("/noticeInsert.do", new NoticeInsert());
+		
+		// 창민
+		map.put("/memberLoginForm.do", new MemberLoginForm()); // 로그인 페이지 호출
+		map.put("/memberLogin.do", new MemberLogin()); // 로그인 기능 수행
+		map.put("/seeMyInfo.do", new SeeMyInfo()); // 마이페이지 - 내 정보 조회화면으로 이동
+		map.put("/updateMyInfoForm.do", new UpdateMyInfoForm()); // 마이페이지 - 내 정보 수정화면으로 이동
+		map.put("/memberUpdate.do", new MemberUpdate()); // 내 정보 수정 기능 수행
 	}
 
 	/**

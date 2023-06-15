@@ -22,8 +22,8 @@
         	<li class="nav-item"><a href="#" class="nav-link">Veterinarian</a></li>
         	<li class="nav-item"><a href="#" class="nav-link">Services</a></li>
         	<li class="nav-item"><a href="#" class="nav-link">Gallery</a></li>
-        	<li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-        	<li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+        	<li class="nav-item"><a href="seeMyInfo.do" class="nav-link">마이페이지</a></li>
+        	<li class="nav-item"><a href="memberLoginForm.do" class="nav-link">로그인</a></li>
         	<li class="nav-item"><a href="noticeMenu.do" class="nav-link">공지사항</a></li>
         	</ul>
 		</div>
