@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.withpuppy.magicCode.member.service.MemberMapper">
+	<select id="memberLogin" resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT * FROM MEMBER
+		WHERE MEMBER_ID = #{memberId}
+		<if test="memberPw !=null">
+			AND MEMBER_PW = #{memberPw}
+		</if>
+	</select>
+	<insert id="memberInsert">
+		INSERT INTO MEMBER
+		VALUES(#{memberId}, #{memberNick}, #{memberPw}, #{memberName}, #{memberTel}, #{memberAddr}, #{memberAuth})
+	</insert>
+	
+	<insert id="memberInsertSitter"> 
+		INSERT INTO MEMBER
+		VALUES(#{memberId}, #{memberPw}, #{memberName}, #{memberTel}, #{memberAddr}, #{memberAuth})
+	</insert>
+	
+</mapper>
