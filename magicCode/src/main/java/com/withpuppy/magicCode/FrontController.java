@@ -37,8 +37,6 @@ public class FrontController extends HttpServlet {
 		// 초기화
 		// 메인 페이지
 		map.put("/main.do", new MainCommand()); // 메인 페이지 호출
-		
-		// 
 	}
 
 	/**
