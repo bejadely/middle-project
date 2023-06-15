@@ -5,9 +5,7 @@
 <configuration>
 	<!-- java vo 와 db column명 매핑, 그 외 필요한 여러가지 제약조건들을 설정 -->
 	<settings>
-		<!-- snakecase를 camelcase로 자동변경 -->
 		<setting name="mapUnderscoreToCamelCase" value="true" />
-		<!-- Null 값이 있을때는 Null로 가져오는 세팅이였나? -->
 		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
 	<!-- database 환경설정 -->

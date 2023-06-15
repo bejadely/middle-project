@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.withpuppy.magicCode.certification.service.CertificationMapper">
+	<select id="certificationSelectList"
+	resultType="com.withpuppy.magicCode.certification.service.CertificationVO">
+	</select>
+	<select id="certificationSelect" resultType="com.withpuppy.magicCode.certification.service.CertificationVO">
+	</select>
+	<insert id="certificationInsert">
+	</insert>
+	<update id="certificationUpdate">
+	</update>
+	<delete id="certificationDelete">
+	</delete>
+</mapper>
