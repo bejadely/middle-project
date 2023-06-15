@@ -6,8 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<<<<<<< HEAD
 	<h1>header</h1>
 	<c:if test="${empty id }">
 		<li><a class="menuLink" href="memberLoginForm.do">Login</a></li>

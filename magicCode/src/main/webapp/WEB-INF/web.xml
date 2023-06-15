@@ -10,7 +10,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   	<servlet-name>Tiles</servlet-name>
 	   	<servlet-class>org.apache.tiles.web.util.TilesDispatchServlet</servlet-class>
 	</servlet>
-	<!-- 이게 Servlet mapping 하는 두번째 방법 web.xml 활용 -->
+	<!-- Servlet mapping 하는 두번째 방법 web.xml 활용 -->
 	<servlet-mapping>
 	    <servlet-name>Tiles</servlet-name>
 	    <url-pattern>*.tiles</url-pattern>
