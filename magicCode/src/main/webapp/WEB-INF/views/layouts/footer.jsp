@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div align="center">
 	<hr>
 	<h1>footer</h1>
+</div>
 </body>
 </html>
