@@ -27,6 +27,8 @@ import com.withpuppy.magicCode.notice.command.NoticeList;
 import com.withpuppy.magicCode.notice.command.NoticeMenu;
 import com.withpuppy.magicCode.notice.command.NoticeSelect;
 import com.withpuppy.magicCode.notice.command.NoticeUpdate;
+import com.withpuppy.magicCode.review.command.ReviewList;
+import com.withpuppy.magicCode.review.command.ReviewSelectList;
 import com.withpuppy.magicCode.psu.command.UserGrommingApplySelect;
 import com.withpuppy.magicCode.psu.command.UserSitterApplySelect;
 import com.withpuppy.magicCode.psu.command.UserTrainningApplySelect;
@@ -67,7 +69,9 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeUpdate.do", new NoticeUpdate()); //공지사항 DB 수정 수행
 		map.put("/noticeDelete.do", new NoticeDelete());	//공지사항 삭제
 		map.put("/noticeInsertForm.do", new NoticeInsertForm());	//공지사항 입력폼
-		map.put("/noticeInsert.do", new NoticeInsert());
+		map.put("/noticeInsert.do", new NoticeInsert());	//공지사항 입력
+		map.put("/reviewList.do", new ReviewList());		//전체리뷰조회
+		map.put("/reviewSelectList.do", new ReviewSelectList());	//해당 srId를 가진 게시물의 평균평점/리뷰리스트확인
 		
 		// 창민
 		// 마이페이지

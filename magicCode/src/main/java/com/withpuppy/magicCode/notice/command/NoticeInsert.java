@@ -20,30 +20,25 @@ public class NoticeInsert implements Command {
 		NoticeService ns = new NoticeServiceImpl();
 		NoticeVO vo = new NoticeVO();
 		
-		// DB에 입력할 내용들 vo에 담아주기
 		vo.setNoticeWriter(request.getParameter("noticeWriter"));
 		vo.setNoticeTitle(request.getParameter("noticeTitle"));
 		vo.setNoticeSubject(request.getParameter("noticeSubject"));
-		// vo.setNoticeWdate(Date.valueOf(request.getParameter("noticeWdate")));
-		// 해당 구문은 따로 입력한 Date값이 없기 때문에 사용 불가
 		
 		// 현재 날짜 가져오기
         LocalDate currentDate = LocalDate.now();
         
         
-        // 현재 날짜를 SQL Date로 변환
         Date sqlDate = Date.valueOf(currentDate);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         String today = format.format(sqlDate);
 		vo.setNoticeTime(today);
 		
-		// 실제로 SQL문 실행
 		int n = ns.noticeInsert(vo);
 
 		if(n != 0) {
-			request.setAttribute("message", "게시글이 정상적으로 등록되었습니다.");
+			request.setAttribute("message", "공지사항이 정상적으로 등록되었습니다.");
 		}else {
-			request.setAttribute("message", "게시글 등록에 실패하였습니다. 다시 시도해주십시오.");
+			request.setAttribute("message", "공지사항 등록에 실패하였습니다. 다시 시도해주십시오.");
 		}
 		return "notice/noticeMessage";
 	}
