@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.withpuppy.magicCode.review.service.ReviewMapper">
+	<select id="reviewSelectList"
+		resultType="com.withpuppy.magicCode.review.service.ReviewVO">
+		SELECT ur.ur_member_id, m.member_nick, sr.sr_id, sr.sr_title, sr.sr_server_id,sr.sr_server_name,sr.sr_category, p.pet_name, p.pet_kind, ur.ur_rate, ur.ur_review
+		FROM user_regist ur, member m, pet p, service_regist sr 
+		WHERE ur.ur_member_id = m.member_id 
+		    and ur.ur_pet_id = p.pet_id 
+		    and ur.sr_id = sr.sr_id
+	</select>
+	<select id="reviewSelectSrId"
+		parameterType="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO"
+		resultType="com.withpuppy.magicCode.review.service.ReviewVO">
+		SELECT ur.ur_member_id, m.member_nick, sr.sr_id, sr.sr_title, sr.sr_server_id,sr.sr_server_name,sr.sr_category, p.pet_name, p.pet_kind, ur.ur_rate, ur.ur_review
+		FROM user_regist ur, member m, pet p, service_regist sr 
+		WHERE ur.ur_member_id = m.member_id 
+		    AND ur.ur_pet_id = p.pet_id 
+		    AND ur.sr_id = sr.sr_id
+		    AND ur.sr_id = #{srId}
+	</select>
+	<select id="reviewRateAvg" parameterType="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO">
+		SELECT sr_id, avg(ur_rate)
+		FROM user_regist
+		WHERE sr_id=#{srId}
+		GROUP BY sr_id
+	</select>
+	<insert id="reviewInsert" parameterType="com.withpuppy.magicCode.review.service.ReviewVO">
+	
+	</insert>
+	<update id="reviewUpdate">
+		
+	</update>
+	<delete id="reviewDelete">
+	
+	</delete>
+</mapper>

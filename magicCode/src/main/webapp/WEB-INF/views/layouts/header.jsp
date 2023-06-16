@@ -17,8 +17,8 @@
       	</button>
 		<div class="collapse navbar-collapse" id="ftco-nav">
         	<ul class="navbar-nav ml-auto">
-        	<li class="nav-item active"><a href="main.do" class="nav-link">Home</a></li>
-        	<li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        	<li class="nav-item"><a href="main.do" class="nav-link">Home</a></li>
+        	<li class="nav-item"><a href="reviewList.do" class="nav-link">리뷰조회</a></li>
         	<li class="nav-item"><a href="#" class="nav-link">Veterinarian</a></li>
         	<li class="nav-item"><a href="#" class="nav-link">Services</a></li>
         	<li class="nav-item"><a href="#" class="nav-link">Gallery</a></li>
