@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.withpuppy.magicCode.member.service;
 
 import lombok.Getter;
