@@ -14,6 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.withpuppy.magicCode.common.Command;
 import com.withpuppy.magicCode.main.MainCommand;
+import com.withpuppy.magicCode.member.command.MemberLogin;
+import com.withpuppy.magicCode.member.command.MemberLoginForm;
+import com.withpuppy.magicCode.member.command.MemberUpdate;
+import com.withpuppy.magicCode.member.command.SeeMyInfo;
+import com.withpuppy.magicCode.member.command.UpdateMyInfoForm;
 import com.withpuppy.magicCode.notice.command.NoticeDelete;
 import com.withpuppy.magicCode.notice.command.NoticeEdit;
 import com.withpuppy.magicCode.notice.command.NoticeInsert;
@@ -24,6 +29,16 @@ import com.withpuppy.magicCode.notice.command.NoticeSelect;
 import com.withpuppy.magicCode.notice.command.NoticeUpdate;
 import com.withpuppy.magicCode.review.command.ReviewList;
 import com.withpuppy.magicCode.review.command.ReviewSelectList;
+import com.withpuppy.magicCode.psu.command.UserGrommingApplySelect;
+import com.withpuppy.magicCode.psu.command.UserSitterApplySelect;
+import com.withpuppy.magicCode.psu.command.UserTrainningApplySelect;
+import com.withpuppy.magicCode.su.command.SitterAllList;
+//import com.withpuppy.magicCode.su.command.SitterSelect;
+import com.withpuppy.magicCode.su.command.UserGrommingApplyAllList;
+import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
+import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
+import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
+import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
 
 /**
  * Servlet implementation class FrontController
@@ -57,6 +72,28 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeInsert.do", new NoticeInsert());	//공지사항 입력
 		map.put("/reviewList.do", new ReviewList());		//전체리뷰조회
 		map.put("/reviewSelectList.do", new ReviewSelectList());	//해당 srId를 가진 게시물의 평균평점/리뷰리스트확인
+		
+		// 창민
+		// 마이페이지
+		map.put("/memberLoginForm.do", new MemberLoginForm()); // 로그인 페이지 호출
+		map.put("/memberLogin.do", new MemberLogin()); // 로그인 기능 수행
+		map.put("/seeMyInfo.do", new SeeMyInfo()); // 마이페이지 - 내 정보 조회화면으로 이동
+		map.put("/updateMyInfoForm.do", new UpdateMyInfoForm()); // 마이페이지 - 내 정보 수정화면으로 이동
+		map.put("/memberUpdate.do", new MemberUpdate()); // 내 정보 수정 기능 수행
+		
+		//승우
+		//(서비스 사용자)
+		map.put("/userSitterApplyAllList.do", new UserSitterApplyAllList()); // 마이페이지 - 나의 돌봄 서비스 신청 전체 리스트
+	    map.put("/userSitterApplySelect.do", new UserSitterApplySelect()); // 마이페이지 - 나의 돌봄 서비스 신청 전체 리스트 - 상세 조회
+		map.put("/userTrainningApplyAllList.do", new UserTrainningApplyAllList()); // 마이페이지 - 나의 훈련 서비스 신청 전체 리스트
+		map.put("/userTrainningApplySelect.do", new UserTrainningApplySelect()); // 마이페이지 - 나의 훈련 서비스 신청 전체 리스트 - 상세 조회
+		map.put("/userGrommingApplyAllList.do", new UserGrommingApplyAllList()); // 마이페이지 - 나의 미용 서비스 신청 전체 리스트
+	    map.put("/userGrommingApplySelect.do", new UserGrommingApplySelect()); // 마이페이지 - 나의 미용 서비스 신청 전체 리스트 - 상세 조회
+	    map.put("/sitterAllList.do", new SitterAllList()); // 전체 시터 목록 조회
+	   // map.put("/sitterSelect.do", new SitterSelect()); // 시터 단건 조회
+		// 시터입장 - (돌봄/훈련/미용)서비스 등록
+		map.put("/serviceRegistForm.do", new ServiceRegistForm()); // 서비스 등록 폼으로 이동
+		map.put("/serviceRegist.do", new ServiceRegist()); // 서비스 등록 기능 수행
 	}
 
 	/**
