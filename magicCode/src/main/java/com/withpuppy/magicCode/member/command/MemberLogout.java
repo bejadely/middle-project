@@ -15,7 +15,7 @@ public class MemberLogout implements Command {
 		HttpSession session = request.getSession();
 		String name = (String) session.getAttribute("name"); //좀더 꾸미고 싶을때
 		session.invalidate(); //session 을 삭제
-		request.setAttribute("message", name+"님 SEE YOU SOON");
+		request.setAttribute("message", name+"님 좋은하루 되십시오");
 		
 		return "member/memberMessage";
 	}

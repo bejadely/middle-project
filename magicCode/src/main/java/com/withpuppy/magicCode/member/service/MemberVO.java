@@ -6,6 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class MemberVO {
+	//선호
 	private String memberId;
 	private String memberNick;
 	private String memberPw;

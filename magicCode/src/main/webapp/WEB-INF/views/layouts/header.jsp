@@ -11,7 +11,7 @@
 </head>
 <body>
 	
-	<c:if test="${member.memberAuth eq 'A'}">
+	<c:if test="${member.memberAuth eq A}">
   	<li><a href="memberList.do">회원관리</a></li>
 	</c:if>
 	

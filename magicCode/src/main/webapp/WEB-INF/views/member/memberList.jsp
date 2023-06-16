@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div align="center">
+	<div align="center"><!-- 선호 -->
 		<div><h1>회원목록</h1></div>
 		<form id="frm" action="memberList.do" method="post">
 		<div align="center">

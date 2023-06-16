@@ -9,7 +9,7 @@
 <body>
 <div align="center">
 	<div><h1>로 그 인</h1></div>
-	<div>
+	<div><!-- 선호 -->
 		<form id="frm" action="memberLogin.do" method="post">
 			<div>	
 				<label>*아이디</label><input type="email" id="memberId" name="memberId" required="required">

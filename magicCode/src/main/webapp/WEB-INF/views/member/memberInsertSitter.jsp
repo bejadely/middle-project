@@ -8,8 +8,8 @@
 </head>
 <body>
 	<div><h1>시터서비스 회원가입</h1></div>
-	<div>
-		<form id="frm" action="memberInsertSitter" onsubmit="return formCheck" method="get"> 
+	<div><!-- 선호 -->
+		<form id="frm" action="memberInsertSitter.do" onsubmit="return formCheck" method="get"> 
 			<div>
 				
 				<p>(*표시는 반드시 기입하셔야 하는 항목입니다.)</p>
@@ -26,7 +26,7 @@
     			<input type="radio" id="memberAuth" name="memberAuth" value="G">
     			<label for="G">애견미용</label>
 				<!-- 자격증 삽입 구조문  -->
-				<label>자격증이미지</label><input type="file" name="certificationName"><input type="submit" value="전송">
+				<label>자격증이미지</label><input type="file" name="certificationName" required="required"><input type="submit" value="전송">
 			</div>
 			<div>
 				<input type="submit" value="등 록">&nbsp;&nbsp;

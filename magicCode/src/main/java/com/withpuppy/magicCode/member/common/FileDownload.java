@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class FileDownload {
 	public void fileDown(HttpServletRequest request, HttpServletResponse response, String file) {
+		//선호
 		response.setContentType("text/html; charset=utf-8");
 		boolean b = true;
 		try {

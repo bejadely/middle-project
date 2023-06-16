@@ -16,7 +16,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 public class FileUpload {
 	private int maxSize = 10 * 1024 * 1024;
-	
+	//선호
 	//저장공간을 넘겨주면 파일을 저장하고, 필드값을 리턴한다.
 		public HashMap<String, String> upload(HttpServletRequest request, HttpServletResponse response, String dir){
 			HashMap<String, String> map = new HashMap<String, String>();
@@ -42,8 +42,8 @@ public class FileUpload {
 							pfile += item.getName().substring(index);  //저장할 파일명 만듬
 							File uploadFile = new File(attechDir + File.separator + pfile);
 							item.write(uploadFile);  //파일 저장
-							map.put("ofile", item.getName());  //원본파일명
-							map.put("pfile", pfile);  //변경파일명
+							map.put("memberCertificationName", item.getName());  //원본파일명
+							map.put("memberCertificationPath", pfile);  //변경파일명
 						}
 					}
 				}

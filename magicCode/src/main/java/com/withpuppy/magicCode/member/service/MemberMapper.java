@@ -4,6 +4,7 @@ import java.util.List;
 
 
 public interface MemberMapper {
+	//선호
 //	List<MemberVO> memberSelectAll();
 	List<MemberVO> memberSelectList();
 	MemberVO memberSelect(MemberVO vo);
