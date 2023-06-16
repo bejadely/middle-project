@@ -18,7 +18,7 @@
 		<div class="collapse navbar-collapse" id="ftco-nav">
         	<ul class="navbar-nav ml-auto">
         	<li class="nav-item active"><a href="main.do" class="nav-link">Home</a></li>
-        	<li class="nav-item"><a href="#" class="nav-link">돌봄 서비스</a></li>
+        	<li class="nav-item"><a href="sitterAllList.do" class="nav-link">돌봄 서비스</a></li>
         	<li class="nav-item"><a href="#" class="nav-link">훈련 서비스</a></li>
         	<li class="nav-item"><a href="#" class="nav-link">미용 서비스</a></li>
         	<li class="nav-item"><a href="seeMyInfo.do" class="nav-link">마이페이지</a></li>
