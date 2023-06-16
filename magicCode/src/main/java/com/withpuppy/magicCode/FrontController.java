@@ -27,6 +27,8 @@ import com.withpuppy.magicCode.notice.command.NoticeList;
 import com.withpuppy.magicCode.notice.command.NoticeMenu;
 import com.withpuppy.magicCode.notice.command.NoticeSelect;
 import com.withpuppy.magicCode.notice.command.NoticeUpdate;
+import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
+import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
 
 /**
  * Servlet implementation class FrontController
@@ -60,11 +62,16 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeInsert.do", new NoticeInsert());
 		
 		// 창민
+		// 마이페이지
 		map.put("/memberLoginForm.do", new MemberLoginForm()); // 로그인 페이지 호출
 		map.put("/memberLogin.do", new MemberLogin()); // 로그인 기능 수행
 		map.put("/seeMyInfo.do", new SeeMyInfo()); // 마이페이지 - 내 정보 조회화면으로 이동
 		map.put("/updateMyInfoForm.do", new UpdateMyInfoForm()); // 마이페이지 - 내 정보 수정화면으로 이동
 		map.put("/memberUpdate.do", new MemberUpdate()); // 내 정보 수정 기능 수행
+		
+		// 시터입장 - (돌봄/훈련/미용)서비스 등록
+		map.put("/serviceRegistForm.do", new ServiceRegistForm()); // 서비스 등록 폼으로 이동
+		map.put("/serviceRegist.do", new ServiceRegist()); // 서비스 등록 기능 수행
 	}
 
 	/**
