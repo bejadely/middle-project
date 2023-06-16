@@ -34,4 +34,85 @@ public class ServiceRegistVO {
 	private String srCategory;
 	private int srPrice;
 	private String srLocation;
+	
+	public int getSrId() {
+		return srId;
+	}
+	public void setSrId(int srId) {
+		this.srId = srId;
+	}
+	public String getSrPicturePath() {
+		return srPicturePath;
+	}
+	public void setSrPicturePath(String srPicturePath) {
+		this.srPicturePath = srPicturePath;
+	}
+	public String getSrTitle() {
+		return srTitle;
+	}
+	public void setSrTitle(String srTitle) {
+		this.srTitle = srTitle;
+	}
+	public String getSrServerId() {
+		return srServerId;
+	}
+	public void setSrServerId(String srServerId) {
+		this.srServerId = srServerId;
+	}
+	public String getSrServerName() {
+		return srServerName;
+	}
+	public void setSrServerName(String srServerName) {
+		this.srServerName = srServerName;
+	}
+	public String getSrStartDate() {
+		return srStartDate;
+	}
+	public void setSrStartDate(String srStartDate) {
+		this.srStartDate = srStartDate;
+	}
+	public String getSrEndDate() {
+		return srEndDate;
+	}
+	public void setSrEndDate(String srEndDate) {
+		this.srEndDate = srEndDate;
+	}
+	public String getSrStartTime() {
+		return srStartTime;
+	}
+	public void setSrStartTime(String srStartTime) {
+		this.srStartTime = srStartTime;
+	}
+	public String getSrEndTime() {
+		return srEndTime;
+	}
+	public void setSrEndTime(String srEndTime) {
+		this.srEndTime = srEndTime;
+	}
+	public String getSrIntroduce() {
+		return srIntroduce;
+	}
+	public void setSrIntroduce(String srIntroduce) {
+		this.srIntroduce = srIntroduce;
+	}
+	public String getSrCategory() {
+		return srCategory;
+	}
+	public void setSrCategory(String srCategory) {
+		this.srCategory = srCategory;
+	}
+	public int getSrPrice() {
+		return srPrice;
+	}
+	public void setSrPrice(int srPrice) {
+		this.srPrice = srPrice;
+	}
+	public String getSrLocation() {
+		return srLocation;
+	}
+	public void setSrLocation(String srLocation) {
+		this.srLocation = srLocation;
+	}
+	
+	
 }
