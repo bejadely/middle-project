@@ -13,4 +13,38 @@ public class NoticeVO {
 	String noticeSubject;
 	String noticeWriter;
 	String noticeTime;
+	
+	public int getNoticeId() {
+		return noticeId;
+	}
+	public void setNoticeId(int noticeId) {
+		this.noticeId = noticeId;
+	}
+	public String getNoticeTitle() {
+		return noticeTitle;
+	}
+	public void setNoticeTitle(String noticeTitle) {
+		this.noticeTitle = noticeTitle;
+	}
+	public String getNoticeSubject() {
+		return noticeSubject;
+	}
+	public void setNoticeSubject(String noticeSubject) {
+		this.noticeSubject = noticeSubject;
+	}
+	public String getNoticeWriter() {
+		return noticeWriter;
+	}
+	public void setNoticeWriter(String noticeWriter) {
+		this.noticeWriter = noticeWriter;
+	}
+	public String getNoticeTime() {
+		return noticeTime;
+	}
+	public void setNoticeTime(String noticeTime) {
+		this.noticeTime = noticeTime;
+	}
+	
+	
+	
 }
