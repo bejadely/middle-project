@@ -19,7 +19,7 @@
 				<input type="submit" value="로그인">&nbsp;&nbsp;
 				<input type="reset" value="취소">
 				<br>
-				<button type="button" onclick="location.href='memberInsertForm.do'">일반 회원가입</button>
+				<button type="button" onclick="location.href='memberInsertForm.do'">일반회원 가입</button>
 				<button type="button" onclick="location.href='memberInsertSitterForm.do'">서비스공급자 회원가입</button>
 			</div>
 		</form>

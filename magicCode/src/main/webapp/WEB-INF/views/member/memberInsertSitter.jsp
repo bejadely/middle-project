@@ -13,7 +13,7 @@
 			<div>
 				
 				<p>(*표시는 반드시 기입하셔야 하는 항목입니다.)</p>
-				<label>*아이디</label><input type="email" id="memberId" name="memberId" required="required"><button type="button" id="checkId" value="No" onclick="idCheck()">중복체크</button><br>
+				<label>*아이디</label><input type="email" id="memberId" name="memberId" required="required">&nbsp;&nbsp;<button type="button" id="checkId" value="No" onclick="idCheck()">중복체크</button><br>
 				<label>*비밀번호</label><input type = "password" id="memberPw" name="memberPw" required="required"><br>
 				<label>*비밀번호 확인</label><input type = "password" id="passwordCheck" name="passwordCheck" required="required"><br>
 				<label>*이름</label><input type = "text" id="memberName" name="memberName" required="required"><br>
@@ -26,6 +26,7 @@
     			<input type="radio" id="memberAuth" name="memberAuth" value="G">
     			<label for="G">애견미용</label>
 				<!-- 자격증 삽입 구조문  -->
+				<label>자격증이미지</label><input type="file" name="certificationName"><input type="submit" value="전송">
 			</div>
 			<div>
 				<input type="submit" value="등 록">&nbsp;&nbsp;

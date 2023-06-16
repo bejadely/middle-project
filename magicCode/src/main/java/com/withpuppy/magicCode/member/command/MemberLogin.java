@@ -22,12 +22,12 @@ public class MemberLogin implements Command {
 		
 		vo.setMemberId(request.getParameter("memberId"));
 		vo.setMemberPw(request.getParameter("memberPw"));
-		
+		vo.setMemberNick(request.getParameter("memberNick"));
 		vo = ms.memberLogin(vo);
 		if(vo != null) {
 			session.setAttribute("id", vo.getMemberId());
 			session.setAttribute("name", vo.getMemberName());
-			
+			session.setAttribute("nick", vo.getMemberNick());
 			request.setAttribute("message", vo.getMemberName() + "님 환영합니다.");
 		}else {
 			request.setAttribute("message", "아이디 또는 패스워드가 틀렸습니다.");

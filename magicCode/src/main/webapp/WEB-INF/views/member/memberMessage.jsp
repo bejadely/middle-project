@@ -9,7 +9,6 @@
 <body>
 <div align = "center">
 	<h1>${message}</h1>
-	<button type="button" onclick="location = 'main.do'">홈으로 이동</button>
 </div>
 </body>
 </html>

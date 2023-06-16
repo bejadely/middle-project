@@ -16,14 +16,15 @@
 					<tr>
 						<th width="200">*아이디</th>
 						<td width="400">
-							<input type="email" id="memberId" name="memberId">&nbsp;
+							<input type="email" id="memberId" name="memberId" required="required">&nbsp;&nbsp;
 							<button type="button" id="checkId" value="No" onclick="idCheck()">중복체크</button>
 						</td>
 					</tr>
 					<tr>
 						<th>*닉네임</th>
 						<td>
-							<input type="text" id="memberNick" name="memberNick" required="required">
+							<input type="text" id="memberNick" name="memberNick" required="required">&nbsp;&nbsp;
+							<button type="button" id="checkNick" value="No" onclick="nickCheck()">중복체크</button>
 						</td>
 					</tr>
 					<tr>
@@ -78,8 +79,10 @@
 		}else if(frm.checkId.value != "Yes") {
 			alert("아이디 중복체크를 수행하세요.");
 			return false;
-		}
-		
+		}else if(frm.checkNick.value != "Yes") {
+			alert("닉네임 중복체크를 수행하세요.");
+			return false;
+		}	
 		return true;
 	}
 	
@@ -89,6 +92,14 @@
 		fetch(url)  //ajax 호출
 			.then(response => response.text())
 			.then(text => htmlProcess(text));
+	}
+	
+	function nickCheck() {
+		let nick = document.getElementById("memberNick").value;
+		let url = "ajaxCheckNick.do?nick="+nick;
+		fetch(url)  //ajax 호출
+			.then(response => response.text())
+			.then(text => htmlProcess2(text));
 	}
 	
 	function htmlProcess(data){
@@ -102,6 +113,16 @@
 		}
 	}
 	
+	function htmlProcess2(data){
+		if(data == 'Yes'){
+			alert(document.getElementById("memberNick").value + "\n 사용가능한 닉네임 입니다.");
+			document.getElementById("checkNick").value = 'Yes';
+		}else {
+			alert(document.getElementById("memberNick").value + "\n 이미사용하는 닉네임 입니다.");
+			document.getElementById("memberNick").value ="";
+			document.getElementById("memberNick").focus();
+		}
+	}
 
 </script>
 </body>

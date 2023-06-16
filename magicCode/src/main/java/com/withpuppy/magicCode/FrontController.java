@@ -16,10 +16,12 @@ import com.withpuppy.magicCode.common.Command;
 import com.withpuppy.magicCode.main.MainCommand;
 
 import com.withpuppy.magicCode.member.command.AjaxCheckId;
+import com.withpuppy.magicCode.member.command.AjaxCheckNick;
 import com.withpuppy.magicCode.member.command.MemberInsert;
 import com.withpuppy.magicCode.member.command.MemberInsertForm;
 import com.withpuppy.magicCode.member.command.MemberInsertSitter;
 import com.withpuppy.magicCode.member.command.MemberInsertSitterForm;
+import com.withpuppy.magicCode.member.command.MemberList;
 import com.withpuppy.magicCode.member.command.MemberLogin;
 import com.withpuppy.magicCode.member.command.MemberLoginForm;
 import com.withpuppy.magicCode.member.command.MemberLogout;
@@ -31,6 +33,7 @@ import com.withpuppy.magicCode.notice.command.NoticeList;
 import com.withpuppy.magicCode.notice.command.NoticeMenu;
 import com.withpuppy.magicCode.notice.command.NoticeSelect;
 import com.withpuppy.magicCode.notice.command.NoticeUpdate;
+
 
 
 /**
@@ -61,9 +64,11 @@ public class FrontController extends HttpServlet {
 		map.put("/memberInsert.do", new MemberInsert()); // 회원가입 데이터 삽입 
 		map.put("/memberInsertForm.do", new MemberInsertForm()); // 회원가입 화면 호출
 		map.put("/memberInsertSitter.do", new MemberInsertSitter()); //시터 회원가입 데이터 삽입
-		map.put("/memberInsertSitterForm.do", new MemberInsertSitterForm()); //시터 회원가입 폼
+		map.put("/memberInsertSitterForm.do", new MemberInsertSitterForm()); //시터/훈련사/미용사 회원가입 폼
 		map.put("/ajaxCheckId.do", new AjaxCheckId()); // ID중복체크 ajax
+		map.put("/ajaxCheckNick.do", new AjaxCheckNick()); // nick중복 ajax
 		map.put("/memberLogout.do", new MemberLogout()); // 로그아웃수행
+		map.put("/memberList.do", new MemberList()); // 관리자 멤버 List조회
 		
 		// 정현
 		map.put("/noticeMenu.do", new NoticeMenu());	//공지사항 메뉴리스트

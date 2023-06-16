@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.withpuppy.magicCode.member.service.MemberMapper">
+	<!-- 로그인시 사용 -->
 	<select id="memberLogin" resultType="com.withpuppy.magicCode.member.service.MemberVO">
 		SELECT * FROM MEMBER
 		WHERE MEMBER_ID = #{memberId}
@@ -8,14 +9,33 @@
 			AND MEMBER_PW = #{memberPw}
 		</if>
 	</select>
+	
+	<!-- 회원조회시 사용 -->
+	<select id="memberSelectList" resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT * FROM MEMBER
+	</select>
+	
+	<!-- 닉네임중복 조회시 사용 -->
+	<select id="memberSelectByNick" resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT * FROM MEMBER
+		WHERE MEMBER_NICK = #{memberNick}
+	</select>
+	
+	<!-- 일반회원 가입시 사용 -->
 	<insert id="memberInsert">
 		INSERT INTO MEMBER
 		VALUES(#{memberId}, #{memberNick}, #{memberPw}, #{memberName}, #{memberTel}, #{memberAddr}, #{memberAuth})
 	</insert>
 	
+	<!-- 시터, 훈련사, 미용사 회원가입시 사용 -->
 	<insert id="memberInsertSitter"> 
 		INSERT INTO MEMBER
 		VALUES(#{memberId}, #{memberPw}, #{memberName}, #{memberTel}, #{memberAddr}, #{memberAuth})
 	</insert>
+	
+	
+	
+	
+	
 	
 </mapper>
