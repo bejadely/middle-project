@@ -6,6 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<aside style="border-right: 1px solid gray">
+	<a href="seeMyInfo.do">내 정보 조회</a><br>
+	<a href="#">미정</a><br>
+	<a href="#">미정</a><br>
+</aside>
 <body>
 	<div align="center">
 		<h2>내 정보 조회</h2>
