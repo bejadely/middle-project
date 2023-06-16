@@ -27,6 +27,14 @@ import com.withpuppy.magicCode.notice.command.NoticeList;
 import com.withpuppy.magicCode.notice.command.NoticeMenu;
 import com.withpuppy.magicCode.notice.command.NoticeSelect;
 import com.withpuppy.magicCode.notice.command.NoticeUpdate;
+import com.withpuppy.magicCode.psu.command.UserGrommingApplySelect;
+import com.withpuppy.magicCode.psu.command.UserSitterApplySelect;
+import com.withpuppy.magicCode.psu.command.UserTrainningApplySelect;
+import com.withpuppy.magicCode.su.command.SitterAllList;
+//import com.withpuppy.magicCode.su.command.SitterSelect;
+import com.withpuppy.magicCode.su.command.UserGrommingApplyAllList;
+import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
+import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
 
@@ -69,6 +77,16 @@ public class FrontController extends HttpServlet {
 		map.put("/updateMyInfoForm.do", new UpdateMyInfoForm()); // 마이페이지 - 내 정보 수정화면으로 이동
 		map.put("/memberUpdate.do", new MemberUpdate()); // 내 정보 수정 기능 수행
 		
+		//승우
+		//(서비스 사용자)
+		map.put("/userSitterApplyAllList.do", new UserSitterApplyAllList()); // 마이페이지 - 나의 돌봄 서비스 신청 전체 리스트
+	    map.put("/userSitterApplySelect.do", new UserSitterApplySelect()); // 마이페이지 - 나의 돌봄 서비스 신청 전체 리스트 - 상세 조회
+		map.put("/userTrainningApplyAllList.do", new UserTrainningApplyAllList()); // 마이페이지 - 나의 훈련 서비스 신청 전체 리스트
+		map.put("/userTrainningApplySelect.do", new UserTrainningApplySelect()); // 마이페이지 - 나의 훈련 서비스 신청 전체 리스트 - 상세 조회
+		map.put("/userGrommingApplyAllList.do", new UserGrommingApplyAllList()); // 마이페이지 - 나의 미용 서비스 신청 전체 리스트
+	    map.put("/userGrommingApplySelect.do", new UserGrommingApplySelect()); // 마이페이지 - 나의 미용 서비스 신청 전체 리스트 - 상세 조회
+	    map.put("/sitterAllList.do", new SitterAllList()); // 전체 시터 목록 조회
+	   // map.put("/sitterSelect.do", new SitterSelect()); // 시터 단건 조회
 		// 시터입장 - (돌봄/훈련/미용)서비스 등록
 		map.put("/serviceRegistForm.do", new ServiceRegistForm()); // 서비스 등록 폼으로 이동
 		map.put("/serviceRegist.do", new ServiceRegist()); // 서비스 등록 기능 수행
