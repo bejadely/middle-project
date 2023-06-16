@@ -20,6 +20,7 @@ public class MemberLogin implements Command {
 				
 				vo.setMemberId(request.getParameter("memberId")); // 이건 리퀘스트 객체가 가지고있다!!!!!!!
 				vo.setMemberPw(request.getParameter("memberPw"));
+				vo.setMemberNick(request.getParameter("memberNick"));
 				
 				vo = ms.memberLogin(vo);
 				if(vo != null) {
@@ -29,6 +30,7 @@ public class MemberLogin implements Command {
 					session.setAttribute("nick", vo.getMemberNick());
 					session.setAttribute("tel", vo.getMemberTel());
 					session.setAttribute("addr", vo.getMemberAddr());
+					session.setAttribute("auth", vo.getMemberAuth());
 					request.setAttribute("message", vo.getMemberName() + "님 환영합니다.");
 				}else {
 					request.setAttribute("message", "아이디 또는 패스워드가 일치하지 않습니다.");

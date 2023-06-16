@@ -14,8 +14,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.withpuppy.magicCode.common.Command;
 import com.withpuppy.magicCode.main.MainCommand;
+
+import com.withpuppy.magicCode.member.command.AjaxCheckId;
+import com.withpuppy.magicCode.member.command.AjaxCheckNick;
+import com.withpuppy.magicCode.member.command.MemberInsert;
+import com.withpuppy.magicCode.member.command.MemberInsertForm;
+import com.withpuppy.magicCode.member.command.MemberInsertSitter;
+import com.withpuppy.magicCode.member.command.MemberInsertSitterForm;
+import com.withpuppy.magicCode.member.command.MemberList;
 import com.withpuppy.magicCode.member.command.MemberLogin;
 import com.withpuppy.magicCode.member.command.MemberLoginForm;
+import com.withpuppy.magicCode.member.command.MemberLogout;
 import com.withpuppy.magicCode.member.command.MemberUpdate;
 import com.withpuppy.magicCode.member.command.SeeMyInfo;
 import com.withpuppy.magicCode.member.command.UpdateMyInfoForm;
@@ -40,6 +49,8 @@ import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
 
+
+
 /**
  * Servlet implementation class FrontController
  */
@@ -59,9 +70,22 @@ public class FrontController extends HttpServlet {
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		// 초기화
+		// 이선호
 		// 메인 페이지
 		map.put("/main.do", new MainCommand()); // 메인 페이지 호출
+
+		map.put("/memberLogin.do", new MemberLogin()); // 로그인 처리
+		map.put("/memberLoginForm.do", new MemberLoginForm()); //로그인 폼 호출
+		map.put("/memberInsert.do", new MemberInsert()); // 회원가입 데이터 삽입 
+		map.put("/memberInsertForm.do", new MemberInsertForm()); // 회원가입 화면 호출
+		map.put("/memberInsertSitter.do", new MemberInsertSitter()); //시터 회원가입 데이터 삽입
+		map.put("/memberInsertSitterForm.do", new MemberInsertSitterForm()); //시터/훈련사/미용사 회원가입 폼
+		map.put("/ajaxCheckId.do", new AjaxCheckId()); // ID중복체크 ajax
+		map.put("/ajaxCheckNick.do", new AjaxCheckNick()); // nick중복 ajax
+		map.put("/memberLogout.do", new MemberLogout()); // 로그아웃수행
+		map.put("/memberList.do", new MemberList()); // 관리자 멤버 List조회
+		
+		// 정현
 		map.put("/noticeMenu.do", new NoticeMenu());	//공지사항 메뉴리스트
 		map.put("/noticeList.do", new NoticeList());	//공지사항 목록리스트
 		map.put("/noticeSelect.do", new NoticeSelect()); // 공지사항 상세 보기
@@ -75,8 +99,6 @@ public class FrontController extends HttpServlet {
 		
 		// 창민
 		// 마이페이지
-		map.put("/memberLoginForm.do", new MemberLoginForm()); // 로그인 페이지 호출
-		map.put("/memberLogin.do", new MemberLogin()); // 로그인 기능 수행
 		map.put("/seeMyInfo.do", new SeeMyInfo()); // 마이페이지 - 내 정보 조회화면으로 이동
 		map.put("/updateMyInfoForm.do", new UpdateMyInfoForm()); // 마이페이지 - 내 정보 수정화면으로 이동
 		map.put("/memberUpdate.do", new MemberUpdate()); // 내 정보 수정 기능 수행

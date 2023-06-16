@@ -5,12 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.withpuppy.magicCode.common.Command;
 
-public class MemberLoginForm implements Command {
+public class MemberInsertForm implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// 로그인페이지 호출
-		return "member/memberLogin";
+		//회원가입 폼을 보여줌
+		return "member/memberInsert";
 	}
 
 }
