@@ -25,8 +25,8 @@ public class UserRegistVO {
 	private String urRequire;
 	private String urPayment;
 	private String urDate;
-	private int urStartTime;
-	private int urEndTime;
+	private String urStartTime;
+	private String urEndTime;
 	private Double urRate;
 	private String urReview;
 	private int srId;
