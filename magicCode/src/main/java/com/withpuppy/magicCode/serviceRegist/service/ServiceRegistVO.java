@@ -26,10 +26,10 @@ public class ServiceRegistVO {
 	private String srTitle;
 	private String srServerId;
 	private String srServerName;
-	private Date srStartDate;
-	private Date srEndDate;
-	private int srStartTime;
-	private int srEndTime;
+	private String srStartDate;
+	private String srEndDate;
+	private String srStartTime;
+	private String srEndTime;
 	private String srIntroduce;
 	private String srCategory;
 	private int srPrice;

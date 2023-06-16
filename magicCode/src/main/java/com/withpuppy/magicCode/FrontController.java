@@ -35,6 +35,8 @@ import com.withpuppy.magicCode.su.command.SitterAllList;
 import com.withpuppy.magicCode.su.command.UserGrommingApplyAllList;
 import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
 import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
+import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
+import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
 
 /**
  * Servlet implementation class FrontController
@@ -68,6 +70,7 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeInsert.do", new NoticeInsert());
 		
 		// 창민
+		// 마이페이지
 		map.put("/memberLoginForm.do", new MemberLoginForm()); // 로그인 페이지 호출
 		map.put("/memberLogin.do", new MemberLogin()); // 로그인 기능 수행
 		map.put("/seeMyInfo.do", new SeeMyInfo()); // 마이페이지 - 내 정보 조회화면으로 이동
@@ -84,6 +87,9 @@ public class FrontController extends HttpServlet {
 	    map.put("/userGrommingApplySelect.do", new UserGrommingApplySelect()); // 마이페이지 - 나의 미용 서비스 신청 전체 리스트 - 상세 조회
 	    map.put("/sitterAllList.do", new SitterAllList()); // 전체 시터 목록 조회
 	   // map.put("/sitterSelect.do", new SitterSelect()); // 시터 단건 조회
+		// 시터입장 - (돌봄/훈련/미용)서비스 등록
+		map.put("/serviceRegistForm.do", new ServiceRegistForm()); // 서비스 등록 폼으로 이동
+		map.put("/serviceRegist.do", new ServiceRegist()); // 서비스 등록 기능 수행
 	}
 
 	/**
