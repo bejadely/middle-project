@@ -32,10 +32,10 @@
 				<label>서비스 제공 가능시간</label><br>
 				<label><input type = "time" id="srStartTime" name="srStartTime" required="required" min="09:00" max="23:00" value="09:00"></label> 부터 ~
 				<label><input type = "time" id="srEndTime" name="srEndTime" required="required" min="09:00" max="23:00" value="09:00"></label> 까지 <br>
-				<label for = "srIntroduce">소개글 등록하기</label>
+				<label for = "srIntroduce">소개글 등록하기</label><br>
 				<textarea rows="10" cols="100" id = "srIntroduce" name = "srIntroduce" required="required"></textarea><br>
-				<label>서비스 1회당 제공가를 입력해 주십시오.</label><br>
-				<label>1회당 <input type = "number" id="srPrice" name="srPrice" required="required" value="0"> 원</label><br>
+				<label>서비스 제공가를 입력해 주십시오.</label><br>
+				<label>시간당 <input type = "number" id="srPrice" name="srPrice" required="required" value="0"> 원</label><br>
 				<label>돌봄 장소를 입력해 주십시오.<input type = "text" id="srLocation" name="srLocation" required="required"></label><br>
 				<!-- 자격증 정보 등록은 우선 미구현 -->
 				<label>자격증 이름
