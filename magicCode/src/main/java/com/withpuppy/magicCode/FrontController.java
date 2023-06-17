@@ -49,6 +49,8 @@ import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
 import com.withpuppy.magicCode.serviceRegist.command.imgTest;
+import com.withpuppy.magicCode.serviceRegist.command.traningServiceRegist;
+import com.withpuppy.magicCode.serviceRegist.commande.traningServiceRegistForm;
 
 
 
@@ -120,6 +122,8 @@ public class FrontController extends HttpServlet {
 		map.put("/serviceRegistForm.do", new ServiceRegistForm()); // 서비스 등록 폼으로 이동
 		map.put("/serviceRegist.do", new ServiceRegist()); // 서비스 등록 기능 수행
 		map.put("/imgTest.do", new imgTest()); // 이미지 불러오기 테스트
+		map.put("/traningServiceRegistForm.do", new traningServiceRegistForm()); // 트레이닝 서비스 등록 폼으로 이동
+		map.put("/traningServiceRegist.do", new traningServiceRegist()); // 트레이닝 서비스 등록
 		
 		
 	}
