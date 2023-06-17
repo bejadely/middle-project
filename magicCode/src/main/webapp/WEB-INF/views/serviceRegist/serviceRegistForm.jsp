@@ -1,3 +1,5 @@
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,7 +13,7 @@
 		<h1>서비스 등록</h1>
 	</div>
 	<div>
-		<form id = "frm" action="serviceRegist.do" onsubmit="formCheck()" method = "post">
+		<form id = "frm" action="serviceRegist.do" onsubmit="formCheck()" method = "post" enctype="multipart/form-data">
 			<!-- id와 name값은 vo객체가 가지고 있는 필드명과 똑같이 작성한다 -->
 			<!-- memberName 값은 승우씨가 만든 전체 조회 화면에서 버튼 누를때 값을 말아서 받아와야한다. 1. 우선 이걸 써보자.(or session활용해서 내가 등록하는 메뉴 실행할때 session에 담아서 가져올 수도 있음 -->
 			<div>
@@ -40,7 +42,7 @@
 				<!-- 자격증 정보 등록은 우선 미구현 -->
 				<label>자격증 이름
 				<input type="text" id="certificationName" name="certificationName"></label>
-				<label>사진 첨부<input type="file" id="srPicturePath" name="srPicturePath"></label>
+				<label>사진 첨부<input type="file" id="cfile" name="cfile"></label>
 			</div>
 			<div>
 				<input type="hidden" id="srServerId" name="srServerId" value="${id}">
