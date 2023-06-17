@@ -9,20 +9,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<c:if test="${member.memberAuth eq A}">
+	<c:if test="${auth eq 'A'}">
   	<li><a href="memberList.do">회원관리</a></li>
 	</c:if>
-	
-	<c:if test="${empty id }">
-		<li><a class="menuLink" href="memberLoginForm.do">로그인/회원가입</a></li>
-	</c:if>
-	<c:if test="${not empty id }">
-		<li><a class="menuLink" href="memberLogout.do#">로그아웃</a></li>
-	</c:if>
-	<c:if test="${not empty name }">
-		<li><a class="menuLink" href="#">${name }님 로그인</a></li>
-	</c:if>
-	<hr>
 <div align="center">
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	<div class="container">
@@ -31,19 +20,46 @@
         <span class="fa fa-bars"></span> Menu
       	</button>
 		<div class="collapse navbar-collapse" id="ftco-nav">
-        	<ul class="navbar-nav ml-auto">
-        	<li class="nav-item"><a href="main.do" class="nav-link">Home</a></li>
-        	<!-- 임시버튼(있으면 삭제헤주세요) -->
-        	<li class="nav-item"><a href="serviceRegistForm.do" class="nav-link">임시1</a></li>
-        	<li class="nav-item"><a href="imgTest.do" class="nav-link">임시2</a></li>
-        	<li class="nav-item"><a href="#" class="nav-link">임시3</a></li>
-        	<li class="nav-item"><a href="sitterAllList.do" class="nav-link">돌봄 서비스</a></li>
-        	<li class="nav-item"><a href="#" class="nav-link">훈련 서비스</a></li>
-        	<li class="nav-item"><a href="#" class="nav-link">미용 서비스</a></li>
-        	<li class="nav-item"><a href="seeMyInfo.do" class="nav-link">마이페이지</a></li>
-        	<li class="nav-item"><a href="memberLoginForm.do" class="nav-link">로그인</a></li>
-        	<li class="nav-item"><a href="noticeMenu.do" class="nav-link">공지사항</a></li>
-        	</ul>
+	        <!-- 관리자를 제외한 회원/시터 네비 화면 -->
+	        <c:if test="${auth ne 'A'}">		
+	        	<ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="main.do" class="nav-link">Home</a></li>
+	        	<!-- 임시버튼(있으면 삭제헤주세요) -->
+	        	<li class="nav-item"><a href="serviceRegistForm.do" class="nav-link">임시1</a></li>
+	        	<li class="nav-item"><a href="imgTest.do" class="nav-link">임시2</a></li>
+	        	<li class="nav-item"><a href="sitterAllList.do" class="nav-link">돌봄 서비스</a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link">훈련 서비스</a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link">미용 서비스</a></li>
+	        	<li class="nav-item"><a href="seeMyInfo.do" class="nav-link">마이페이지</a></li>
+	        	<c:if test="${empty id }">
+		        	<li class="nav-item"><a href="memberLoginForm.do" class="nav-link">로그인</a></li>
+				</c:if>
+				<c:if test="${not empty id }">
+					<li class="nav-item"><a href="memberLogout.do" class="nav-link">${name} 님 / 로그아웃</a></li>
+				</c:if>
+	        	<li class="nav-item"><a href="noticeMenu.do" class="nav-link">공지사항</a></li>
+	        	</ul>
+	        </c:if>
+	        <!-- 관리자 로그인 네비 화면 -->
+	        <c:if test="${auth eq 'A'}">		
+	        	<ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="main.do" class="nav-link">Home</a></li>
+	        	<!-- 임시버튼(있으면 삭제헤주세요) -->
+	        	<li class="nav-item"><a href="serviceRegistForm.do" class="nav-link">임시1</a></li>
+	        	<li class="nav-item"><a href="memberList.do" class="nav-link">회원관리</a></li>
+	        	<li class="nav-item"><a href="sitterAllList.do" class="nav-link">돌봄 서비스</a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link">훈련 서비스</a></li>
+	        	<li class="nav-item"><a href="#" class="nav-link">미용 서비스</a></li>
+	        	<li class="nav-item"><a href="seeMyInfo.do" class="nav-link">마이페이지</a></li>
+	        	<c:if test="${empty id }">
+		        	<li class="nav-item"><a href="memberLoginForm.do" class="nav-link">로그인</a></li>
+				</c:if>
+				<c:if test="${not empty id }">
+					<li class="nav-item"><a href="memberLogout.do" class="nav-link">${name} 님 / 로그아웃</a></li>
+				</c:if>
+	        	<li class="nav-item"><a href="noticeMenu.do" class="nav-link">공지사항</a></li>
+	        	</ul>
+	        </c:if>
 		</div>
 	</div>
 </nav>
