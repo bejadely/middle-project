@@ -20,7 +20,6 @@ public class ServiceRegist implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		// 서비스 등록 수행
-		// 작업중(창민)
 		ServiceRegistService srs = new ServiceRegistServiceImpl();
 		ServiceRegistVO vo = new ServiceRegistVO();
 		
@@ -37,10 +36,17 @@ public class ServiceRegist implements Command {
 		try {
 			MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, "utf-8", new DefaultFileRenamePolicy());
 			String cfile = multi.getFilesystemName("cfile");
-			cfile = saveDir + cfile; // 물리적인 저장위치를 앞에 붙여줌
+			cfile = saveDir + "\\" + cfile; // 물리적인 저장위치를 앞에 붙여줌
 			String ofile = multi.getOriginalFileName("cfile"); // 여기서 cfile은 실제 폼에서 가져오는 cfile네임
 			
-			vo.setSrPicturePath(multi.getParameter("srPicturePath"));
+			// 훈련사 사진 업로드용
+			String mfile = multi.getFilesystemName("mfile");
+			mfile = saveDir + "\\" + mfile; // 물리적인 저장위치를 앞에 붙여줌
+			
+			// 사용 할 일 있을때 주석 풀것
+			// String omfile = multi.getOriginalFileName("mfile"); // 여기서 cfile은 실제 폼에서 가져오는 cfile네임
+			
+			vo.setSrPicturePath(mfile);
 			vo.setSrTitle(multi.getParameter("srTitle"));
 			vo.setSrServerId(multi.getParameter("srServerId"));
 			vo.setSrServerName(multi.getParameter("srServerName"));
@@ -59,9 +65,6 @@ public class ServiceRegist implements Command {
 			if(ofile != null) {
 				cVo.setCertificationImgname(ofile); // 실제 이미지 이름
 				cVo.setCertificationPath(cfile); // 경로 + 이미지명
-				System.out.println(ofile + "ofile임");
-				System.out.println(cfile + "cfile임");
-				System.out.println(cVo.getMemberId());
 			}
 			
 			// SQL문 실행

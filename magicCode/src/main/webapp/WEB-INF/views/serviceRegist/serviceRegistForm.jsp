@@ -40,13 +40,15 @@
 				<label>시간당 <input type = "number" id="srPrice" name="srPrice" required="required" value="0"> 원</label><br>
 				<label>돌봄 장소를 입력해 주십시오.<input type = "text" id="srLocation" name="srLocation" required="required"></label><br>
 				<!-- 자격증 정보 등록은 우선 미구현 -->
+				<label>훈련사 사진 첨부
+				<input type="file" id="mfile" name="mfile"></label>
 				<label>자격증 이름
 				<input type="text" id="certificationName" name="certificationName"></label>
 				<label>사진 첨부<input type="file" id="cfile" name="cfile"></label>
 			</div>
 			<div>
 				<input type="hidden" id="srServerId" name="srServerId" value="${id}">
-				<input type="hidden" id="srCategory" name="srCategory" value="S">
+				<input type="hidden" id="srCategory" name="srCategory" value="${auth}">
 			</div>
 			<div>
 				<input type="submit" value = "등 록" >&nbsp;

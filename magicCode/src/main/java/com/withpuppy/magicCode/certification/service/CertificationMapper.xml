@@ -3,8 +3,11 @@
 <mapper namespace="com.withpuppy.magicCode.certification.service.CertificationMapper">
 	<select id="certificationSelectList"
 	resultType="com.withpuppy.magicCode.certification.service.CertificationVO">
+	SELECT * FROM certification
 	</select>
 	<select id="certificationSelect" resultType="com.withpuppy.magicCode.certification.service.CertificationVO">
+	SELECT * FROM certification
+	WHERE certification_id = #{certificationId}
 	</select>
 	<insert id="certificationInsert" parameterType="com.withpuppy.magicCode.certification.service.CertificationVO">
 		<selectKey keyProperty="certificationId" resultType="int" order="BEFORE">
