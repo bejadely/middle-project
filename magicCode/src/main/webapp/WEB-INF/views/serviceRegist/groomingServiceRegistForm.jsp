@@ -15,7 +15,7 @@
 	<div>
 		<form id = "frm" action="traningServiceRegist.do" onsubmit="formCheck()" method = "post" enctype="multipart/form-data">
 			<div>
-				<label>훈련사명<input type = "text" id="srServerName" name="srServerName" required="required" value="${name}" readonly></label><br>
+				<label>미용사명<input type = "text" id="srServerName" name="srServerName" required="required" value="${name}" readonly></label><br>
 				<label>제목<input type = "text" id="srTitle" name="srTitle" required="required"></label><br>
 				<label for="srStartDate">서비스 시작 날짜를 선택해 주십시오
 				  <input type="date"
@@ -36,9 +36,9 @@
 				<textarea rows="10" cols="100" id = "srIntroduce" name = "srIntroduce" required="required"></textarea><br>
 				<label>서비스 제공가를 입력해 주십시오.</label><br>
 				<label>1회당 <input type = "number" id="srPrice" name="srPrice" required="required" value="0"> 원</label><br>
-				<label>훈련 장소를 입력해 주십시오.<input type = "text" id="srLocation" name="srLocation" required="required"></label><br>
+				<label>미용실 주소를 입력해 주십시오.<input type = "text" id="srLocation" name="srLocation" required="required"></label><br>
 				<!-- 자격증 정보 등록은 우선 미구현 -->
-				<label>훈련사 사진 첨부
+				<label>미용사 사진 첨부
 				<input type="file" id="mfile" name="mfile"></label>
 				<label>자격증 이름
 				<input type="text" id="certificationName" name="certificationName"></label>

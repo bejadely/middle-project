@@ -15,7 +15,7 @@ import com.withpuppy.magicCode.serviceRegist.service.ServiceRegistService;
 import com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO;
 import com.withpuppy.magicCode.serviceRegist.serviceImpl.ServiceRegistServiceImpl;
 
-public class traningServiceRegist implements Command {
+public class TraningServiceRegist implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
@@ -29,8 +29,8 @@ public class traningServiceRegist implements Command {
 		
 		String saveDir = request.getServletContext().getRealPath("/upload"); // 아직은 여기에 저장은 가능하지만, 여기있는것을 불러오지는 못함(서버 디렉토리로 인식하지 못하기때문 > web.xml에 설정해줘야함)
 		int maxSize = 100 * 1024 * 1024; // 파일의 최고 크기 설정 (기본적으로 서버에 생으로 default값을 넣으면 최대 200mb까지 전송가능)
-		
 		int n = 0;
+		int m = 0;
 		
 		//cos 라이브러리에서 제공
 		try {
@@ -69,7 +69,7 @@ public class traningServiceRegist implements Command {
 			
 			// SQL문 실행
 			n = srs.serviceRegistInsert(vo);			
-			cs.certificationInsert(cVo);
+			m = cs.certificationInsert(cVo);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -77,12 +77,16 @@ public class traningServiceRegist implements Command {
 		
 		
 		if( n != 0) {
-			request.setAttribute("message", "서비스 등록이 정상적으로 수행되었습니다.");
+			if( m != 0) {
+				request.setAttribute("message", "서비스 등록이 정상적으로 수행되었습니다.");
+			} else {
+				request.setAttribute("message", "서비스 등록에 실패하였습니다. 다시 시도해주십시오.");
+			}
 		}else {
 			request.setAttribute("message", "서비스 등록에 실패하였습니다. 다시 시도해주십시오.");
 		}
 		
-		return "main/main";
+		return "serviceRegist/serviceRegistMessage";
 	}
 
 }

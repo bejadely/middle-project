@@ -1,11 +1,11 @@
-package com.withpuppy.magicCode.serviceRegist.commande;
+package com.withpuppy.magicCode.serviceRegist.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.withpuppy.magicCode.common.Command;
 
-public class traningServiceRegistForm implements Command {
+public class TraningServiceRegistForm implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
