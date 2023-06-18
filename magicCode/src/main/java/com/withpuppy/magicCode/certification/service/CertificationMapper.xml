@@ -13,7 +13,7 @@
 		<selectKey keyProperty="certificationId" resultType="int" order="BEFORE">
 				SELECT MAX(certification_id) + 1 AS certificationId FROM certification
 		</selectKey>
-		INSERT INTO certification VALUES(#{certificationId}, #{certificationName}, #{certificationPath}, #{memberId}, #{certificationImgname})
+		INSERT INTO certification VALUES(#{certificationId}, #{certificationName}, #{certificationPath}, #{memberId})
 	</insert>
 	<update id="certificationUpdate">
 	</update>

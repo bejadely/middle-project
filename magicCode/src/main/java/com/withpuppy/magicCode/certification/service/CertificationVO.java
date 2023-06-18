@@ -15,7 +15,6 @@ public class CertificationVO {
 	private String certificationName;
 	private String certificationPath;
 	private String memberId;
-	private String certificationImgname;
 	
 	public int getCertificationId() {
 		return certificationId;
@@ -40,12 +39,6 @@ public class CertificationVO {
 	}
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
-	}
-	public String getCertificationImgname() {
-		return certificationImgname;
-	}
-	public void setCertificationImgname(String certificationImgname) {
-		this.certificationImgname = certificationImgname;
 	}
 	
 	
