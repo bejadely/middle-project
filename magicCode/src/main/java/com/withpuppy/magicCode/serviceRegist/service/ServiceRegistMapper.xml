@@ -22,4 +22,18 @@
 		DELETE service_regist
 		WHERE sr_id = #{srId}
 	</delete>
+	<select id="selectListById"
+	resultType="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO">
+		SELECT *
+		FROM service_regist
+		WHERE sr_server_id = #{srServerId}
+		ORDER BY sr_id DESC
+	</select>
+	<select id="selectListByName"
+	resultType="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO">
+		SELECT *
+		FROM service_regist
+		WHERE sr_server_name = #{srServerName}
+		ORDER BY sr_id DESC
+	</select>
 </mapper>

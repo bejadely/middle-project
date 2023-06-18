@@ -11,22 +11,29 @@
 	<div align="center">
 		<h2>등록된 게시글 전체 조회</h2>
 	</div>
-	<div>
+	<div align="right">
 		<!-- 검색창(아이디로 조회 / 이름으로 조회) 구현 예정 -->
 		<hr>
-		<p>아이디 검색창 만들거임</p>
+		<form id = "serchForm" action="searchAllServiceRegistBykey.do" method="post">
+			<select id="key" name="key">
+			    <option value="id">아이디로 검색</option>
+			    <option value="name">이름으로 검색</option>
+		   </select> &nbsp;&nbsp;
+		   <input type="text" id="val" name="val">
+		   <button type="submit">검색</button>
+		</form>
 		<hr>
 	</div>
 	<div align="center">
 		<table border="1" >
 			<thead>
 				<tr>
-					<th width="100">등록 번호</th>
-					<th width="150">서비스 종류</th>
-					<th width="300">제 목</th>
-					<th width="200">작성자ID</th>
-					<th width="100">작성자</th>
-					<th width="120">삭제하기</th>
+					<th width="100" align="center">등록 번호</th>
+					<th width="150" align="center">서비스 종류</th>
+					<th width="300" align="center">제 목</th>
+					<th width="200" align="center">작성자ID</th>
+					<th width="100" align="center">작성자</th>
+					<th width="120" align="center">삭제하기</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -44,7 +51,6 @@
 		</table>
 	</div><br>
 	<div>
-		<!-- 삭제하기는 좀 있다 구현하자(Ajax 써야할 듯) -->
 		<form id="deleteform" action="deleteServiceRegist.do" method="post">
 			<input type="hidden" id = "srId" name="srId">		
 		</form>

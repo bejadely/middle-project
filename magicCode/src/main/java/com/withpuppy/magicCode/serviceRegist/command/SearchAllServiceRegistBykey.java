@@ -11,23 +11,22 @@ import com.withpuppy.magicCode.serviceRegist.service.ServiceRegistService;
 import com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO;
 import com.withpuppy.magicCode.serviceRegist.serviceImpl.ServiceRegistServiceImpl;
 
-public class DeleteServiceRegist implements Command {
+public class SearchAllServiceRegistBykey implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// 게시글 삭제 및 전체 게시글 재조회 기능
-		
+		// (이름/아이디)로 특정 게시물 검색
+		List<ServiceRegistVO> serviceRegist = new ArrayList<>();
 		ServiceRegistService srs = new ServiceRegistServiceImpl();
 		ServiceRegistVO vo = new ServiceRegistVO();
-		List<ServiceRegistVO> serviceRegist = new ArrayList<>();
 		
-		// 1. 게시글 삭제
-		vo.setSrId(Integer.valueOf(request.getParameter("srId")));
-		
-		srs.serviceRegistDelete(vo);
-		
-		// 2. 게시글 재조회
-		serviceRegist = srs.serviceRegistSelectList();
+		if(request.getParameter("key").equals("id")) {
+			vo.setSrServerId(request.getParameter("val"));
+			serviceRegist = srs.selectListById(vo);
+		} else if(request.getParameter("key").equals("name")) {
+			vo.setSrServerName(request.getParameter("val"));
+			serviceRegist = srs.selectListByName(vo);
+		}
 		
 		request.setAttribute("serviceRegist", serviceRegist);
 		
