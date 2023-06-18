@@ -94,8 +94,8 @@ public class FrontController extends HttpServlet {
 		map.put("/memberUpdateByAdmin.do", new memberUpdateByAdmin());
 		map.put("/memberUpdateByAdminForm.do", new memberUpdateByAdminForm());
 		map.put("/memberDelete.do", new memberDelete()); //멤버삭제
-		map.put("/memberNameSearch", new MemberNameSearch()); //회원 이름으로 검색
-		map.put("/memberIdSearch", new MemberIdSearch()); //멤버Id검색
+		map.put("/memberNameSearch.do", new MemberNameSearch()); //회원 이름으로 검색
+		map.put("/memberIdSearch.do", new MemberIdSearch()); //멤버Id검색
 		
 		// 정현
 		map.put("/noticeMenu.do", new NoticeMenu());	//공지사항 메뉴리스트

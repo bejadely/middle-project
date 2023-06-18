@@ -4,20 +4,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
 <body>
 	<div align="center">
 		<div><h1>회원목록</h1></div>
 		<div align="center">
-			<form action="memberList.do" method="get">
+			<form action="memberIdSearch.do" method="get">
 				<label for="searchId">ID 검색:</label> 
 				<input type="text" id="searchId" name="searchId"> <input type="submit"value="검색">
 			</form>
 			<br>
-			<form action="memberList.do" method="get">
+			<form action="memberNameSearch.do" method="get">
 				<label for="searchName">이름 검색:</label> 
 				<input type="text" id="searchName" name="searchName"> <input type="submit" value="검색">
 			</form>
