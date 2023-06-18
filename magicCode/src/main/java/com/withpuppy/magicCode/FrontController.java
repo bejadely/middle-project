@@ -27,18 +27,21 @@ import com.withpuppy.magicCode.notice.command.NoticeList;
 import com.withpuppy.magicCode.notice.command.NoticeMenu;
 import com.withpuppy.magicCode.notice.command.NoticeSelect;
 import com.withpuppy.magicCode.notice.command.NoticeUpdate;
-import com.withpuppy.magicCode.review.command.ReviewList;
-import com.withpuppy.magicCode.review.command.ReviewSelectList;
 import com.withpuppy.magicCode.psu.command.UserGrommingApplySelect;
 import com.withpuppy.magicCode.psu.command.UserSitterApplySelect;
 import com.withpuppy.magicCode.psu.command.UserTrainningApplySelect;
+import com.withpuppy.magicCode.review.command.ReviewDelete;
+import com.withpuppy.magicCode.review.command.ReviewInsert;
+import com.withpuppy.magicCode.review.command.ReviewInsertForm;
+import com.withpuppy.magicCode.review.command.ReviewList;
+import com.withpuppy.magicCode.review.command.ReviewSelectList;
+import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
+import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
 import com.withpuppy.magicCode.su.command.SitterAllList;
 //import com.withpuppy.magicCode.su.command.SitterSelect;
 import com.withpuppy.magicCode.su.command.UserGrommingApplyAllList;
 import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
 import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
-import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
-import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
 
 /**
  * Servlet implementation class FrontController
@@ -72,6 +75,9 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeInsert.do", new NoticeInsert());	//공지사항 입력
 		map.put("/reviewList.do", new ReviewList());		//전체리뷰조회
 		map.put("/reviewSelectList.do", new ReviewSelectList());	//해당 srId를 가진 게시물의 평균평점/리뷰리스트확인
+		map.put("/reviewInsertForm.do", new ReviewInsertForm());	//ㄹ리뷰입력폼
+		map.put("/reviewInsert.do", new ReviewInsert());	//리뷰입력
+		map.put("/reviewDelete.do", new ReviewDelete());	//리뷰삭제
 		
 		// 창민
 		// 마이페이지

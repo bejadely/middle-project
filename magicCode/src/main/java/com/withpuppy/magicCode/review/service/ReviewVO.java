@@ -6,6 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ReviewVO {
+	int urId;
 	String memberId;
 	String memberNick;
 	int srId;

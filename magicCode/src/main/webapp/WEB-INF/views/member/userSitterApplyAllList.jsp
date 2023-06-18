@@ -38,7 +38,7 @@
 							<td width="150">${u.srPrice }</td>
 							<td> <!-- 서비스 완료가 되었는지 확인하는 부분 -->
 							<c:if test="${u.urCheck eq 'E'}">
-								<button type="button" onclick="location.href=''">리뷰 작성</button>&nbsp;&nbsp;
+								<button type="button" onclick="location.href='reviewInsertForm.do'">리뷰 1작성</button>&nbsp;&nbsp;
 							</c:if> 
 							</td>
 						</tr>

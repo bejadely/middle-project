@@ -16,9 +16,9 @@
 				<property name="driver"
 					value="oracle.jdbc.driver.OracleDriver" />
 				<property name="url"
-					value="jdbc:oracle:thin:@192.168.0.29:1521:xe" />
-				<property name="username" value="magiccode" />
-				<property name="password" value="withpuppy" />
+					value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="C##KIMS01" />
+				<property name="password" value="1234" />
 			</dataSource>
 		</environment>
 	</environments>

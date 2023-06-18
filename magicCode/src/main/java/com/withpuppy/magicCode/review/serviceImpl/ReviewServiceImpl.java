@@ -9,6 +9,7 @@ import com.withpuppy.magicCode.review.service.ReviewMapper;
 import com.withpuppy.magicCode.review.service.ReviewService;
 import com.withpuppy.magicCode.review.service.ReviewVO;
 import com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO;
+import com.withpuppy.magicCode.userRegist.service.UserRegistVO;
 
 public class ReviewServiceImpl implements ReviewService {
 	
@@ -28,7 +29,7 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 
 	@Override
-	public int reviewInsert(ReviewVO vo) {
+	public int reviewInsert(UserRegistVO vo) {
 		// TODO Auto-generated method stub
 		return map.reviewInsert(vo);
 	}
@@ -40,7 +41,7 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 
 	@Override
-	public int reviewDelete(ReviewVO vo) {
+	public int reviewDelete(UserRegistVO vo) {
 		// TODO Auto-generated method stub
 		return map.reviewDelete(vo);
 	}
