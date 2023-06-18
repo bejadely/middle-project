@@ -8,22 +8,22 @@ import com.withpuppy.magicCode.review.service.ReviewService;
 import com.withpuppy.magicCode.review.serviceImpl.ReviewServiceImpl;
 import com.withpuppy.magicCode.userRegist.service.UserRegistVO;
 
-public class ReviewDelete implements Command {
+public class ReviewUpdate implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		//리뷰삭제
+		//DB에 리뷰 수정
 		ReviewService rs = new ReviewServiceImpl();
 		UserRegistVO vo = new UserRegistVO();
-		//urId를 파라미터로 가져와야함
-		//request.setAttribute("urId", UrId);
 		vo.setUrId(Integer.valueOf(request.getParameter("urId")));
+		vo.setUrRate(Integer.valueOf(request.getParameter("urRate")));
+		vo.setUrReview(request.getParameter("urReview"));
 		
-		int n = rs.reviewDelete(vo);
+		int n = rs.reviewUpdate(vo);
 		if(n != 0) {
-			request.setAttribute("message", "게시글이 정상적으로 삭제되었습니다.");
+			request.setAttribute("message", "리뷰가 정상적으로 수정되었습니다.");
 		}else {
-			request.setAttribute("message", "게시글 삭제에 실패하였습니다. 다시 시도해주십시오.");
+			request.setAttribute("message", "리뷰수정에 실패하였습니다. 다시 시도해주십시오.");
 		}
 		return "review/Message";
 	}

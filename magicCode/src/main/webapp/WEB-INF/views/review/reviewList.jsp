@@ -32,6 +32,7 @@
 	            </tr>
 	            <tr>
 	            	<td><a onclick="urMemberIdChoice(${r.urId })"><input type="button" value="리뷰삭제"></a></td>
+	            	<td><a onclick="urMemberIdChoice1(${r.urId })"><input type="button" value="리뷰수정"></a></td>
 	            </tr>
 	        </c:forEach>
 	        </tbody>
@@ -44,11 +45,19 @@
 		<form id="frm" action="reviewDelete.do" method="post">
 			<input type="hidden" id="urId" name="urId">
 		</form>
+		<form id="frm1" action="reviewUpdateForm.do" method="post">
+			<input type="hidden" id="urId" name="urId">
+		</form>
 	</div>
 </body>
 <script type="text/javascript">
 	function urMemberIdChoice(id) {
 		let frm = document.getElementById("frm");
+		frm.urId.value = id;
+		frm.submit();
+	}
+	function urMemberIdChoice1(id) {
+		let frm = document.getElementById("frm1");
 		frm.urId.value = id;
 		frm.submit();
 	}

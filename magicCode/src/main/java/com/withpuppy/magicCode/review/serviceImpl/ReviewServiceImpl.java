@@ -35,7 +35,7 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 
 	@Override
-	public int reviewUpdate(ReviewVO vo) {
+	public int reviewUpdate(UserRegistVO vo) {
 		// TODO Auto-generated method stub
 		return map.reviewUpdate(vo);
 	}

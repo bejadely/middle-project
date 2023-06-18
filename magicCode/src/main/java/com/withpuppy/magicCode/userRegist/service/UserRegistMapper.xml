@@ -5,6 +5,8 @@
 	resultType="com.withpuppy.magicCode.userRegist.service.UserRegistVO">
 	</select>
 	<select id="userRegistSelect" resultType="com.withpuppy.magicCode.userRegist.service.UserRegistVO">
+		SELECET * FROM user_regist
+		WHERE ur_id=#{urId}
 	</select>
 	<insert id="userRegistInsert">
 	</insert>
