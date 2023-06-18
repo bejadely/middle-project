@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<c:if test="${auth eq 'A'}">
-  	<li><a href="memberList.do">회원관리</a></li>
-	</c:if>
 <div align="center">
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	<div class="container">
@@ -46,7 +43,7 @@
 	        	<li class="nav-item"><a href="main.do" class="nav-link">Home</a></li>
 	        	<!-- 임시버튼(있으면 삭제헤주세요) -->
 	        	<li class="nav-item"><a href="serviceRegistForm.do" class="nav-link">임시1</a></li>
-	        	<li class="nav-item"><a href="memberList.do" class="nav-link">회원관리</a></li>
+	        	<li class="nav-item"><a href="memberList.do" class="nav-link">관리페이지</a></li>
 	        	<li class="nav-item"><a href="sitterAllList.do" class="nav-link">돌봄 서비스</a></li>
 	        	<li class="nav-item"><a href="#" class="nav-link">훈련 서비스</a></li>
 	        	<li class="nav-item"><a href="#" class="nav-link">미용 서비스</a></li>

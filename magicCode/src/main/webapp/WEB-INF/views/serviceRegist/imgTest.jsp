@@ -9,6 +9,6 @@
 <body>
 	${path}
 	<img alt="증명서 사진 가져오기" src="upload/미용사자격증예시.jpg">
-	<img alt="증명서 사진 가져오기" src="/upload/미용사자격증예시.jpg">
+	<img alt="증명서 사진 가져오기" src="D:/git/middle-project/magicCode/src/main/webapp/upload/강형욱님.jpg">
 </body>
 </html>

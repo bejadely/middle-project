@@ -11,7 +11,7 @@
 	<div align="center">
 		<h2>등록된 게시글 전체 조회</h2>
 	</div>
-	<div align="right">
+	<div align="center">
 		<!-- 검색창(아이디로 조회 / 이름으로 조회) 구현 예정 -->
 		<hr>
 		<form id = "serchForm" action="searchAllServiceRegistBykey.do" method="post">

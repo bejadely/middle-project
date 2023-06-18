@@ -7,6 +7,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<aside style="border-right: 1px solid gray">
+	<p>임시로 만들었습니다(창민)</p>
+	<a href="memberList.do">전체 회원 정보 조회</a><br>
+	<a href="#">회원 단건 정보 조회</a><br>
+	<a href="seeAllServiceRegist.do">전체 게시글 조회</a><br>
+	<a href="#">리뷰 전체 조회(정현형님꺼)</a><br>
+	<a href="#">리뷰 단건 조회(정현형님꺼)</a><br>
+	<a href="noticeMenu.do">전체 공지 조회</a><br>
+	<a href="#">공지 단건 조회</a><br>
+	<a href="authRequestList.do">권한 승인 요청</a><br>
+</aside>
 <body>
 	<div align="center">
 		<div><h1>회원목록</h1></div>

@@ -41,12 +41,16 @@ public class GroomingServiceRegist implements Command {
 			
 			// 훈련사 사진 업로드용
 			String mfile = multi.getFilesystemName("mfile");
-			mfile = saveDir + "\\" + mfile; 
+			mfile = saveDir + "\\" + mfile;
+			// 실제경로 하나만 넣고 사진 뽑아내기위한 실험용
+			String mofile = multi.getOriginalFileName("mfile");
+			mofile = "upload/" + mofile;
+			
 			
 			// 사용 할 일 있을때 주석 풀것
 			// String omfile = multi.getOriginalFileName("mfile"); 
 			
-			vo.setSrPicturePath(mfile);
+			vo.setSrPicturePath(mofile);
 			vo.setSrTitle(multi.getParameter("srTitle"));
 			vo.setSrServerId(multi.getParameter("srServerId"));
 			vo.setSrServerName(multi.getParameter("srServerName"));
