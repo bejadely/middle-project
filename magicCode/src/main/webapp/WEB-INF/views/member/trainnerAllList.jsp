@@ -19,11 +19,11 @@
 	</div>
 	<div align="center">
 		<div>
-			<h1>전체 펫 돌보미 조회</h1>
+			<h1>전체 펫 훈련사 조회</h1>
 		</div>
 		<div>
-				<c:if test="${auth eq 'S'}">
-					<button type="button" onclick="location.href=''">돌봄 서비스 등록</button>&nbsp;&nbsp;
+				<c:if test="${auth eq 'T'}">
+					<button type="button" onclick="location.href=''">훈련 서비스 등록</button>&nbsp;&nbsp;
 				</c:if> 
 		</div>
 		<div>
@@ -33,8 +33,8 @@
 						<tr>
 							<th width="150">사진</th>
 							<th width="150">제목</th>
-							<th width="150">돌보미 명</th>
-							<th width="150">돌보미 평점</th>
+							<th width="150">훈련사 명</th>
+							<th width="150">훈련사 평점</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -53,7 +53,7 @@
 			</div>
 		</div>
 		<div>
-			<form id="frm" action="sitterSelect.do" method="post">
+			<form id="frm" action="trainnerSelect.do" method="post">
 				<input type="hidden" id="srId" name="srId">
 			</form>
 		</div>

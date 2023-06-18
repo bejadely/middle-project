@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.withpuppy.magicCode.cmsu.command.GrommerSelect;
+import com.withpuppy.magicCode.cmsu.command.SitterSelect;
+import com.withpuppy.magicCode.cmsu.command.TrainnerSelect;
 import com.withpuppy.magicCode.common.Command;
 import com.withpuppy.magicCode.main.MainCommand;
 
@@ -28,6 +31,10 @@ import com.withpuppy.magicCode.member.command.MemberLogout;
 import com.withpuppy.magicCode.member.command.MemberUpdate;
 import com.withpuppy.magicCode.member.command.SeeMyInfo;
 import com.withpuppy.magicCode.member.command.UpdateMyInfoForm;
+import com.withpuppy.magicCode.mpsu.command.GrommingRequestHistory;
+import com.withpuppy.magicCode.mpsu.command.SitterRequestHistory;
+import com.withpuppy.magicCode.mpsu.command.SitterRequestSelect;
+import com.withpuppy.magicCode.mpsu.command.TrainningRequestHistory;
 import com.withpuppy.magicCode.notice.command.NoticeDelete;
 import com.withpuppy.magicCode.notice.command.NoticeEdit;
 import com.withpuppy.magicCode.notice.command.NoticeInsert;
@@ -38,10 +45,13 @@ import com.withpuppy.magicCode.notice.command.NoticeSelect;
 import com.withpuppy.magicCode.notice.command.NoticeUpdate;
 import com.withpuppy.magicCode.review.command.ReviewList;
 import com.withpuppy.magicCode.review.command.ReviewSelectList;
+import com.withpuppy.magicCode.psu.command.SitterReservation;
 import com.withpuppy.magicCode.psu.command.UserGrommingApplySelect;
 import com.withpuppy.magicCode.psu.command.UserSitterApplySelect;
 import com.withpuppy.magicCode.psu.command.UserTrainningApplySelect;
+import com.withpuppy.magicCode.su.command.GrommerAllList;
 import com.withpuppy.magicCode.su.command.SitterAllList;
+import com.withpuppy.magicCode.su.command.TrainnerAllList;
 //import com.withpuppy.magicCode.su.command.SitterSelect;
 import com.withpuppy.magicCode.su.command.UserGrommingApplyAllList;
 import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
@@ -112,7 +122,20 @@ public class FrontController extends HttpServlet {
 		map.put("/userGrommingApplyAllList.do", new UserGrommingApplyAllList()); // 마이페이지 - 나의 미용 서비스 신청 전체 리스트
 	    map.put("/userGrommingApplySelect.do", new UserGrommingApplySelect()); // 마이페이지 - 나의 미용 서비스 신청 전체 리스트 - 상세 조회
 	    map.put("/sitterAllList.do", new SitterAllList()); // 전체 시터 목록 조회
-	   // map.put("/sitterSelect.do", new SitterSelect()); // 시터 단건 조회
+	    map.put("/sitterSelect.do", new SitterSelect()); // 시터 단건 조회
+	    map.put("/trainnerAllList.do", new TrainnerAllList()); //전체 훈련사 목록 조회
+	    map.put("/trainnerSelect.do", new TrainnerSelect()); //훈련사 단건 조회
+	    map.put("/grommerAllList.do", new GrommerAllList()); //전체 미용사 목록 조회
+	    map.put("/grommerSelect.do", new GrommerSelect()); //미용사 단건 조회
+	    map.put("/sitterReservation.do", new SitterReservation()); //돌봄 서비스 예약
+	    //(서비스 제공자)
+	    map.put("/sitterRequestHistory.do", new SitterRequestHistory()); //돌봄 서비스 요청 내역 조회(전체)
+	    map.put("/sitterRequestSelect.do", new SitterRequestSelect()); //돌봄 서비스 요청 단건 조회
+	    map.put("/trainningRequestHistory.do", new TrainningRequestHistory()); //훈련 서비스 요청 내역 조회(전체)
+//	    map.put("/trainningRequestSelect.do", new TrainningRequestSelect()); //훈련 서비스 요청 단건 조회
+	    map.put("/grommingRequestHistory.do", new GrommingRequestHistory()); //미용 서비스 요청 내역 조회(전체)
+//	    map.put("/grommingRequestSelect.do", new GrommingRequestSelect()); //미용 서비스 요청 단건 조회
+	    
 		// 시터입장 - (돌봄/훈련/미용)서비스 등록
 		map.put("/serviceRegistForm.do", new ServiceRegistForm()); // 서비스 등록 폼으로 이동
 		map.put("/serviceRegist.do", new ServiceRegist()); // 서비스 등록 기능 수행

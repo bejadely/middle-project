@@ -37,8 +37,8 @@
         	<!-- 임시버튼(있으면 삭제헤주세요) -->
         	<li class="nav-item"><a href="serviceRegistForm.do" class="nav-link">임시버튼</a></li>
         	<li class="nav-item"><a href="sitterAllList.do" class="nav-link">돌봄 서비스</a></li>
-        	<li class="nav-item"><a href="#" class="nav-link">훈련 서비스</a></li>
-        	<li class="nav-item"><a href="#" class="nav-link">미용 서비스</a></li>
+        	<li class="nav-item"><a href="trainnerAllList.do" class="nav-link">훈련 서비스</a></li>
+        	<li class="nav-item"><a href="grommerAllList.do" class="nav-link">미용 서비스</a></li>
         	<li class="nav-item"><a href="seeMyInfo.do" class="nav-link">마이페이지</a></li>
         	<li class="nav-item"><a href="memberLoginForm.do" class="nav-link">로그인</a></li>
         	<li class="nav-item"><a href="noticeMenu.do" class="nav-link">공지사항</a></li>

@@ -1,15 +1,21 @@
-package com.withpuppy.magicCode.psu.service;
-
-import java.sql.Date;
+package com.withpuppy.magicCode.mpsu.service;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-
-//사용자 입장 서비스 신청 내역 상세 조회 용
-public class PsuVO {	
+public class MpsuVO {
+	private String memberId;
+	private String memberNick;
+	private String memberPw;
+	private String memberName;
+	private String memberTel;
+	private String memberAddr;
+	private String memberAuth; 
+	private int memberCertificationId; 
+	private String memberCertificationName; 
+	private String memberCertificationPath; 
 	
 	private String petName;
 	private String petKind;
@@ -40,5 +46,4 @@ public class PsuVO {
 	private String urReview;
 	private int srId;
 	private String urCheck;
-	
 }
