@@ -9,10 +9,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div align="center"><!-- 선호 -->
+	<div align="center">
 		<div><h1>회원목록</h1></div>
-		<!-- <form id="frm" action="memberList.do" method="post">  -->
-		
+		<div align="center">
+			<form action="memberList.do" method="get">
+				<label for="searchId">ID 검색:</label> 
+				<input type="text" id="searchId" name="searchId"> <input type="submit"value="검색">
+			</form>
+			<br>
+			<form action="memberList.do" method="get">
+				<label for="searchName">이름 검색:</label> 
+				<input type="text" id="searchName" name="searchName"> <input type="submit" value="검색">
+			</form>
+		</div>
+
 		<div align="center">
 			<table border="1" >
 				<thead>
@@ -41,7 +51,7 @@
 				</tbody>
 			</table>
 		</div><br>
-		<!-- </form>  -->
+		
 		<div>
 		<form id="frm" action="memberSelect.do" method="post">
 			<input type="hidden" id="memberId" name = "memberId">

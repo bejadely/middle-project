@@ -21,6 +21,19 @@
 		SELECT * FROM MEMBER
 		WHERE MEMBER_ID = #{memberId}
 	</select>
+
+	<!-- 이름으로 회원 검색 -->
+	<select id="memberSelectByName" parameterType="java.lang.String"
+		resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT * FROM MEMBER WHERE MEMBER_NAME LIKE CONCAT('%', #{memberName}, '%')
+	</select>
+
+	<!-- ID로 회원 검색 -->
+	<select id="memberSelectById" parameterType="java.lang.String"
+		resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT * FROM MEMBER WHERE MEMBER_ID = #{memberId}
+	</select>
+	
 	
 	<!-- 닉네임중복 조회시 사용 -->
 	<select id="memberSelectByNick" resultType="com.withpuppy.magicCode.member.service.MemberVO">
