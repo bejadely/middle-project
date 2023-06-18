@@ -13,6 +13,9 @@
 	</div>
 	<div>
 		<!-- 검색창(아이디로 조회 / 이름으로 조회) 구현 예정 -->
+		<hr>
+		<p>아이디 검색창 만들거임</p>
+		<hr>
 	</div>
 	<div align="center">
 		<table border="1" >
@@ -42,12 +45,16 @@
 	</div><br>
 	<div>
 		<!-- 삭제하기는 좀 있다 구현하자(Ajax 써야할 듯) -->
-		<form id="deleteform" action="deleteServiceRegist.do"></form>
+		<form id="deleteform" action="deleteServiceRegist.do" method="post">
+			<input type="hidden" id = "srId" name="srId">		
+		</form>
 	</div>
 </body>
 <script type="text/javascript">
 	function deleteService(id){
-		
+		let form = document.getElementById("deleteform")
+		form.srId.value = id
+		form.submit()
 	}
 </script>
 </html>

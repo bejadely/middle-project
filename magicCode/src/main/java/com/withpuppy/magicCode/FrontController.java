@@ -46,6 +46,7 @@ import com.withpuppy.magicCode.su.command.SitterAllList;
 import com.withpuppy.magicCode.su.command.UserGrommingApplyAllList;
 import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
 import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
+import com.withpuppy.magicCode.serviceRegist.command.DeleteServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegistForm;
 import com.withpuppy.magicCode.serviceRegist.command.SeeAllServiceRegist;
@@ -132,6 +133,7 @@ public class FrontController extends HttpServlet {
 		
 		// 관리자 입장
 		map.put("/seeAllServiceRegist.do", new SeeAllServiceRegist()); // 전체 등록 서비스 조회화면 호출 및 조회기능
+		map.put("/deleteServiceRegist.do", new DeleteServiceRegist()); // 게시글 삭제 및 전체 게시글 재조회 기능
 	}
 
 	/**

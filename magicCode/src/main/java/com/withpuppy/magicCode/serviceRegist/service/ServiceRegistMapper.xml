@@ -19,5 +19,7 @@
 	<update id="serviceRegistUpdate">
 	</update>
 	<delete id="serviceRegistDelete">
+		DELETE service_regist
+		WHERE sr_id = #{srId}
 	</delete>
 </mapper>
