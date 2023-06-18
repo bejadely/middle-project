@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<c:if test="${member.memberAuth eq A}">
+	<c:if test="${member.memberAuth eq A}">  <!-- 임시로 모두가 볼수있게 'A' 제외 -->
   	<li><a href="memberList.do">회원관리</a></li>
 	</c:if>
+	
+	
 	
 	<c:if test="${empty id }">
 		<li><a class="menuLink" href="memberLoginForm.do">로그인/회원가입</a></li>

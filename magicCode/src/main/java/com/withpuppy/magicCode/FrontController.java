@@ -25,9 +25,13 @@ import com.withpuppy.magicCode.member.command.MemberList;
 import com.withpuppy.magicCode.member.command.MemberLogin;
 import com.withpuppy.magicCode.member.command.MemberLoginForm;
 import com.withpuppy.magicCode.member.command.MemberLogout;
+import com.withpuppy.magicCode.member.command.MemberSelect;
 import com.withpuppy.magicCode.member.command.MemberUpdate;
 import com.withpuppy.magicCode.member.command.SeeMyInfo;
 import com.withpuppy.magicCode.member.command.UpdateMyInfoForm;
+import com.withpuppy.magicCode.member.command.memberDelete;
+import com.withpuppy.magicCode.member.command.memberUpdateByAdmin;
+import com.withpuppy.magicCode.member.command.memberUpdateByAdminForm;
 import com.withpuppy.magicCode.notice.command.NoticeDelete;
 import com.withpuppy.magicCode.notice.command.NoticeEdit;
 import com.withpuppy.magicCode.notice.command.NoticeInsert;
@@ -84,6 +88,10 @@ public class FrontController extends HttpServlet {
 		map.put("/ajaxCheckNick.do", new AjaxCheckNick()); // nick중복 ajax
 		map.put("/memberLogout.do", new MemberLogout()); // 로그아웃수행
 		map.put("/memberList.do", new MemberList()); // 관리자 멤버 List조회
+		map.put("/memberSelect.do", new MemberSelect()); //멤버 상세보기
+		map.put("/memberUpdateByAdmin.do", new memberUpdateByAdmin());
+		map.put("/memberUpdateByAdminForm.do", new memberUpdateByAdminForm());
+		map.put("/memberDelete.do", new memberDelete());
 		
 		// 정현
 		map.put("/noticeMenu.do", new NoticeMenu());	//공지사항 메뉴리스트

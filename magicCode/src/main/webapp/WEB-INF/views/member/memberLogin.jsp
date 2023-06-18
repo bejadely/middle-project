@@ -25,11 +25,5 @@
 		</form>
 	</div>
 </div>
-<!--  <script type="text/javascript">
-	function GrdCheck(){
-		let frm = document.getElmentBy
-	}
- //시터, 훈련사 폼 회원가입 완성후 작성예정 
-</script> -->
 </body>
 </html>

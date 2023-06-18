@@ -4,13 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<div align="center"><!-- 선호 -->
 		<div><h1>회원목록</h1></div>
-		<form id="frm" action="memberList.do" method="post">
+		<!-- <form id="frm" action="memberList.do" method="post">  -->
+		
 		<div align="center">
 			<table border="1" >
 				<thead>
@@ -25,7 +27,9 @@
 				</thead>
 				<tbody>
 					<c:forEach items="${members }" var="m">
-						<tr>
+						<tr onmouseover='this.style.background="#263343";' 
+							onmouseleave='this.style.background="#FFFFFF";'  
+							onclick="memberIdChois(${m.memberId})">
 							<td align="center">${m.memberId}</td>
 							<td align="center">${m.memberNick }</td>
 							<td align="center">${m.memberName }</td>
@@ -37,8 +41,25 @@
 				</tbody>
 			</table>
 		</div><br>
+		<!-- </form>  -->
+		<div>
+		<form id="frm" action="memberSelect.do" method="post">
+			<input type="hidden" id="memberId" name = "memberId">
 		</form>
 	</div>
+</div>
+
+
 
 </body>
+
+<script type="text/javascript">
+function memberIdChois(id) {
+	let frm = document.getElementById("frm");
+	frm.memberId.value = id;
+	frm.submit();
+}
+	
+</script>
+
 </html>

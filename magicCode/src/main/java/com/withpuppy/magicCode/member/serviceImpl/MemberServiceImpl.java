@@ -63,6 +63,12 @@ public class MemberServiceImpl implements MemberService {
 		return map.memberSelectByNick(vo);
 	}
 
+	@Override
+	public int memberUpdateByAdmin(MemberVO vo) {
+		// TODO Auto-generated method stub
+		return map.memberUpdateByAdmin(vo);
+	}
+
 //	@Override
 //	public List<MemberVO> memberSelectAll() {
 //		// TODO Auto-generated method stub

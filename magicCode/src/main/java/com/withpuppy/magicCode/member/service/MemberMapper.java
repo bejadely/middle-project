@@ -13,6 +13,9 @@ public interface MemberMapper {
 	int memberInsert(MemberVO vo);
 	int memberInsertSitter(MemberVO vo);
 	int memberUpdate(MemberVO vo);
+	int memberUpdateByAdmin(MemberVO vo);
 	int memberDelete(MemberVO vo);
+	
+	
 }
 
