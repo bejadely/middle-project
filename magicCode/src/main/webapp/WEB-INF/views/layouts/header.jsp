@@ -26,7 +26,7 @@
 	        	<li class="nav-item"><a href="main.do" class="nav-link">Home</a></li>
 	        	<!-- 임시버튼(있으면 삭제헤주세요) -->
 	        	<li class="nav-item"><a href="serviceRegistForm.do" class="nav-link">임시1</a></li>
-	        	<li class="nav-item"><a href="imgTest.do" class="nav-link">임시2</a></li>
+	        	<li class="nav-item"><a href="seeAllServiceRegist.do" class="nav-link">임시2</a></li>
 	        	<li class="nav-item"><a href="sitterAllList.do" class="nav-link">돌봄 서비스</a></li>
 	        	<li class="nav-item"><a href="#" class="nav-link">훈련 서비스</a></li>
 	        	<li class="nav-item"><a href="#" class="nav-link">미용 서비스</a></li>

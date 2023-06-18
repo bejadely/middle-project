@@ -48,6 +48,7 @@ import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
 import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
 import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegistForm;
+import com.withpuppy.magicCode.serviceRegist.command.SeeAllServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
 import com.withpuppy.magicCode.serviceRegist.command.imgTest;
@@ -129,7 +130,8 @@ public class FrontController extends HttpServlet {
 		map.put("/groomingServiceRegistForm.do", new GroomingServiceRegistForm()); // 그루밍 서비스 등록 폼으로 이동
 		map.put("/groomingServiceRegist.do", new GroomingServiceRegist()); // 그루밍 서비스 등록
 		
-		
+		// 관리자 입장
+		map.put("/seeAllServiceRegist.do", new SeeAllServiceRegist()); // 전체 등록 서비스 조회화면 호출 및 조회기능
 	}
 
 	/**
