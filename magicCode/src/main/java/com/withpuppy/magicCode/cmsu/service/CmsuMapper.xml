@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.withpuppy.magicCode.cmsu.service.CmsuMapper">
-	<!-- 예약 폼  -->
-	<select id=""
+	<!-- 시터 단건 조회용  -->
+	<select id="sitterSelect"
 	parameterType="com.withpuppy.magicCode.cmsu.service.CmsuVO"
 	resultType="com.withpuppy.magicCode.cmsu.service.CmsuVO">
-		
+		<!-- SELECT s.SR_PICTURE_PATH, s.SR_SERVER_NAME, m.MEMBER_TEL, u.UR_RATE, s.SR_START_DATE, s.SR_END_DATE,
+		       s.SR_START_TIME, s.SR_END_TIME, c.CERTIFICATION_NAME, s.SR_INTRODUCE
+		FROM CERTIFICATION c JOIN MEMBER m ON c.MEMBER_ID = m.MEMBER_ID 
+		     JOIN SERVICE_REGIST s ON m.MEMBER_auth = s.SR_category 
+		     JOIN USER_REGIST u ON s.SR_ID = u.SR_ID
+		WHERE s.SR_ID = #{srId}  -->
+		SELECT s.SR_PICTURE_PATH, s.SR_SERVER_NAME, m.MEMBER_TEL,s.SR_START_DATE, s.SR_END_DATE,
+		       s.SR_START_TIME, s.SR_END_TIME, c.CERTIFICATION_NAME, s.SR_INTRODUCE
+		FROM CERTIFICATION c JOIN MEMBER m ON c.MEMBER_ID = m.MEMBER_ID 
+		     JOIN SERVICE_REGIST s ON m.MEMBER_auth = s.SR_category 
+		WHERE s.SR_ID = #{srId}
 	</select>
 
+	<!-- 훈련사 단건 조회  -->
+	<select id="trainnerSelect"
+	parameterType="com.withpuppy.magicCode.cmsu.service.CmsuVO"
+	resultType="com.withpuppy.magicCode.cmsu.service.CmsuVO">
+		SELECT s.SR_PICTURE_PATH, s.SR_SERVER_NAME, m.MEMBER_TEL, s.SR_START_DATE, s.SR_END_DATE,
+		       s.SR_START_TIME, s.SR_END_TIME, c.CERTIFICATION_NAME, s.SR_INTRODUCE
+		FROM CERTIFICATION c JOIN MEMBER m ON c.MEMBER_ID = m.MEMBER_ID 
+		     JOIN SERVICE_REGIST s ON m.MEMBER_auth = s.SR_category 
+		WHERE s.SR_ID = #{srId}
+	</select>
+	
+	<!-- 미용사 단건 조회  -->
+	<select id="grommerSelect"
+	parameterType="com.withpuppy.magicCode.cmsu.service.CmsuVO"
+	resultType="com.withpuppy.magicCode.cmsu.service.CmsuVO">
+		SELECT s.SR_PICTURE_PATH, s.SR_SERVER_NAME, m.MEMBER_TEL, s.SR_START_DATE, s.SR_END_DATE,
+		       s.SR_START_TIME, s.SR_END_TIME, c.CERTIFICATION_NAME, s.SR_INTRODUCE
+		FROM CERTIFICATION c JOIN MEMBER m ON c.MEMBER_ID = m.MEMBER_ID 
+		     JOIN SERVICE_REGIST s ON m.MEMBER_auth = s.SR_category 
+		WHERE s.SR_ID = #{srId}
+	</select>
 </mapper>

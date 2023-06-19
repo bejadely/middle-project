@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +9,20 @@
 </head>
 <aside style="border-right: 1px solid gray">
 	<a href="seeMyInfo.do">내 정보 조회</a><br>
-	<a href="userSitterApplyAllList.do">마이 펫 돌보미 신청 현황</a><br>
-	<a href="userTrainningApplyAllList.do">마이 펫 훈련 신청 현황</a><br>
-	<a href="userGrommingApplyAllList.do">마이 펫 미용 신청 현황</a><br>
+	<c:if test="${auth eq 'N'}">
+		<a href="userSitterApplyAllList.do">마이 펫 돌보미 신청 현황</a><br>
+		<a href="userTrainningApplyAllList.do">마이 펫 훈련 신청 현황</a><br>
+		<a href="userGrommingApplyAllList.do">마이 펫 미용 신청 현황</a><br>
+	</c:if>
+	<c:if test="${auth eq 'S'}">
+		<a href="sitterRequestHistory.do">돌봄 서비스 요청 내역 조회</a><br>
+	</c:if>
+	<c:if test="${auth eq 'T'}">
+		<a href="trainningRequestHistory.do">훈련 서비스 요청 내역 조회</a><br>
+	</c:if>
+	<c:if test="${auth eq 'G'}">
+		<a href="grommingRequestHistory.do">미용 서비스 요청 내역 조회</a><br>
+	</c:if>
 </aside>
 <body>
 	<div align="center">

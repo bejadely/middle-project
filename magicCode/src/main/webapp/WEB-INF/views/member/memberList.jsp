@@ -21,7 +21,18 @@
 <body>
 	<div align="center">
 		<div><h1>회원목록</h1></div>
-		<form id="frm" action="memberList.do" method="post">
+		<div align="center">
+			<form action="memberIdSearch.do" method="get">
+				<label for="searchId">ID 검색:</label> 
+				<input type="text" id="searchId" name="searchId"> <input type="submit" value="검색">
+			</form>
+			<br>
+			<form action="memberNameSearch.do" method="get">
+				<label for="searchName">이름 검색:</label> 
+				<input type="text" id="searchName" name="searchName"> <input type="submit" value="검색">
+			</form>
+		</div>
+
 		<div align="center">
 			<table border="1" >
 				<thead>
@@ -35,21 +46,40 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${members }" var="m">
-						<tr>
+					<c:forEach items="${members}" var="m">
+						<tr onmouseover='this.style.background="#d9d9d9";' 
+						onmouseleave='this.style.background="#FFFFFF";'
+						onclick="memberIdChois(${m.memberId})"
+						>
+							
 							<td align="center">${m.memberId}</td>
-							<td align="center">${m.memberNick }</td>
-							<td align="center">${m.memberName }</td>
-							<td align="center">${m.memberTel }</td>
-							<td align="center">${m.memberAddr }</td>
-							<td align="center">${m.memberAuth }</td>
+							<td align="center">${m.memberNick}</td>
+							<td align="center">${m.memberName}</td>
+							<td align="center">${m.memberTel}</td>
+							<td align="center">${m.memberAddr}</td>
+							<td align="center">${m.memberAuth}</td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div><br>
+		
+		<div>
+		<form id="frm" action="memberSelect.do" method="post">
+			<input type="hidden" id="memberId" name ="memberId">
 		</form>
 	</div>
+</div>
 
 </body>
+
+<script type="text/javascript">
+function memberIdChois(id) {
+	let frm = document.getElementById("frm");
+	frm.memberId.value = id;
+	frm.submit();
+}
+	
+</script>
+
 </html>
