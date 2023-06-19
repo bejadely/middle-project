@@ -47,8 +47,28 @@
 	        </tbody>
 	    </table>
 	</div>
-	<div>
-		<a href="reviewInsertForm.do">리뷰입력</a>
+	<div align="center">
+		<a href="reviewInsertForm.do">리뷰입력</a>&nbsp;&nbsp;
+		<form method="post" name="search" action="reviewSearch.do">
+			<table>
+				<tr>
+					<td>
+						<select class="form-control" name="searchField">
+							<option value="0">선택</option>
+							<option value="urReview">내용</option>
+							<option value="memberNick">작성자 닉네임</option>
+						</select>
+					</td>
+					<td>
+						<input type="text" class="form-control"
+						placeholder="검색어 입력" name="searchText" maxlength="100">
+					</td>
+					<td>
+						<button type="submit" class="btn btn-success">검색</button>
+					</td>
+				</tr>
+			</table>
+		</form>
 	</div>
 	<div>
 		<form id="frm" action="reviewDelete.do" method="post">

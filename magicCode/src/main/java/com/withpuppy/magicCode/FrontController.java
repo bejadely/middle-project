@@ -45,6 +45,7 @@ import com.withpuppy.magicCode.review.command.ReviewList;
 import com.withpuppy.magicCode.review.command.ReviewListAdmin;
 import com.withpuppy.magicCode.review.command.ReviewListSrId;
 import com.withpuppy.magicCode.review.command.ReviewListUrId;
+import com.withpuppy.magicCode.review.command.ReviewSearch;
 import com.withpuppy.magicCode.review.command.ReviewUpdate;
 import com.withpuppy.magicCode.review.command.ReviewUpdateForm;
 import com.withpuppy.magicCode.serviceRegist.command.DeleteServiceRegist;
@@ -115,6 +116,7 @@ public class FrontController extends HttpServlet {
 		map.put("/reviewListAdmin.do", new ReviewListAdmin());	//전체리뷰조회 관리자
 		map.put("/reviewListUrId.do", new ReviewListUrId());	//UrId에 해당하는 리뷰 조회
 		map.put("/reviewListSrId.do", new ReviewListSrId());	//SrId에 해당하는 전체리뷰 조회
+		map.put("/reviewSearch.do", new ReviewSearch());	//리뷰 검색(관리자용)
 		
 		
 		// 창민
