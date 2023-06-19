@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>	
-	
+	<c:if test="${auth eq A }">
   	<li><a href="memberList.do">회원관리</a></li>
-	
+	</c:if>
 	
 	
 	

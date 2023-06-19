@@ -16,7 +16,7 @@
 	</aside>
 	
 	<div align="center">
-	<div><h2>회원정보 수정 또는 삭제</h2></div>
+	<div><h2>회원정보 수정/삭제</h2></div>
 	<div>
 		<table border="1" >
 			<thead>
@@ -30,7 +30,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${members }" var="m">
+					<c:forEach items="${member}" var="m">
 						<tr>
 							<td align="center">${m.memberId}</td>
 							<td align="center">${m.memberNick }</td>

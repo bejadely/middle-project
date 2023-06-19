@@ -14,7 +14,7 @@
 		<div align="center">
 			<form action="memberIdSearch.do" method="get">
 				<label for="searchId">ID 검색:</label> 
-				<input type="text" id="searchId" name="searchId"> <input type="submit"value="검색">
+				<input type="text" id="searchId" name="searchId"> <input type="submit" value="검색">
 			</form>
 			<br>
 			<form action="memberNameSearch.do" method="get">
@@ -36,16 +36,18 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${members }" var="m">
-						<tr onmouseover='this.style.background="#263343";' 
-							onmouseleave='this.style.background="#FFFFFF";'  
-							onclick="memberIdChois(${m.memberId})">
+					<c:forEach items="${members}" var="m">
+						<tr onmouseover='this.style.background="#d9d9d9";' 
+						onmouseleave='this.style.background="#FFFFFF";'
+						onclick="memberIdChois(${m.memberId})"
+						>
+							
 							<td align="center">${m.memberId}</td>
-							<td align="center">${m.memberNick }</td>
-							<td align="center">${m.memberName }</td>
-							<td align="center">${m.memberTel }</td>
-							<td align="center">${m.memberAddr }</td>
-							<td align="center">${m.memberAuth }</td>
+							<td align="center">${m.memberNick}</td>
+							<td align="center">${m.memberName}</td>
+							<td align="center">${m.memberTel}</td>
+							<td align="center">${m.memberAddr}</td>
+							<td align="center">${m.memberAuth}</td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -54,12 +56,10 @@
 		
 		<div>
 		<form id="frm" action="memberSelect.do" method="post">
-			<input type="hidden" id="memberId" name = "memberId">
+			<input type="hidden" id="memberId" name ="memberId">
 		</form>
 	</div>
 </div>
-
-
 
 </body>
 

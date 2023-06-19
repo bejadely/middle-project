@@ -16,8 +16,9 @@ public class MemberSelect implements Command {
 		MemberService ms = new MemberServiceImpl();
 		MemberVO vo = new MemberVO();
 		vo.setMemberId(request.getParameter("memberId"));
-		vo = ms.memberSelect(vo);
+		System.out.println(request.getParameter("memberId"));
 		
+		vo = ms.memberSelect(vo);		
 		request.setAttribute("member", vo);
 		return "member/memberSelect";
 	}
