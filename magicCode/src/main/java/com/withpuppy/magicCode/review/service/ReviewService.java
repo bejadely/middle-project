@@ -8,6 +8,7 @@ import com.withpuppy.magicCode.userRegist.service.UserRegistVO;
 public interface ReviewService {
 	List<ReviewVO> reviewSelectList();
 	List<ReviewVO> reviewSelectSrId(ServiceRegistVO vo);
+	List<ReviewVO> reviewSelectUrId(UserRegistVO vo);
 	int reviewInsert(UserRegistVO vo);
 	int reviewUpdate(UserRegistVO vo);
 	int reviewDelete(UserRegistVO vo);

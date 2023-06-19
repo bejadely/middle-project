@@ -20,13 +20,11 @@
 				</tr>
 				<tr></tr>
 			</table>
+			<!-- hidden 변수 생성 -->
+			<input type="hidden" id="urId" name="urId" value="${urs.urId}">
 		</form>
 		<div>
-			<!-- hidden 변수 생성 -->
-			<input type="hidden" id="noticeId" name="noticeId" value="${urs.urId}">
-		</div>
-		<div>
-			<button type="submit">수정</button>&nbsp;
+			<button type="submit" form="frm">수정</button>&nbsp;
 			<button type="button" onclick="location.href='reviewList.do'">취소</button>&nbsp;
 		</div>
 	</div>

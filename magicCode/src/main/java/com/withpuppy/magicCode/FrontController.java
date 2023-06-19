@@ -81,7 +81,7 @@ public class FrontController extends HttpServlet {
 		map.put("/reviewInsert.do", new ReviewInsert());	//리뷰입력
 		map.put("/reviewDelete.do", new ReviewDelete());	//리뷰삭제
 		map.put("/reviewUpdateForm.do", new ReviewUpdateForm());	//리뷰수정폼
-		map.put("/reviewUpdate.do", new ReviewUpdate());
+		map.put("/reviewUpdate.do", new ReviewUpdate());	//리뷰수정
 		
 		// 창민
 		// 마이페이지

@@ -20,7 +20,7 @@ public class ReviewUpdateForm implements Command {
 		vo = urs.userRegistSelect(vo);
 		request.setAttribute("urs", vo);
 		
-		return "notice/noticeUpdateForm";
+		return "review/reviewUpdateForm";
 	}
 
 }
