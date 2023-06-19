@@ -137,12 +137,6 @@ public class PsuVO {
 	public void setUrPayment(String urPayment) {
 		this.urPayment = urPayment;
 	}
-	public Date getUrDate() {
-		return urDate;
-	}
-	public void setUrDate(Date urDate) {
-		this.urDate = urDate;
-	}
 	public String getUrStartTime() {
 		return urStartTime;
 	}

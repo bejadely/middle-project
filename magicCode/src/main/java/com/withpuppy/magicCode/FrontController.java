@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.withpuppy.magicCode.cm.command.ApproveAuthRequest;
+import com.withpuppy.magicCode.cm.command.AuthRequestList;
+import com.withpuppy.magicCode.cm.command.RejectAuthRequest;
 import com.withpuppy.magicCode.cmsu.command.GrommerSelect;
 import com.withpuppy.magicCode.cmsu.command.SitterSelect;
 import com.withpuppy.magicCode.cmsu.command.TrainnerSelect;
@@ -187,6 +190,9 @@ public class FrontController extends HttpServlet {
 		map.put("/seeAllServiceRegist.do", new SeeAllServiceRegist()); // 전체 등록 서비스 조회화면 호출 및 조회기능
 		map.put("/deleteServiceRegist.do", new DeleteServiceRegist()); // 게시글 삭제 및 전체 게시글 재조회 기능
 		map.put("/searchAllServiceRegistBykey.do", new SearchAllServiceRegistBykey()); // (아이디/이름)으로 특정 게시물 검색
+		map.put("/authRequestList.do", new AuthRequestList()); // 권한승인신청 전체조회 페이지 호출 및 신청현황 불러오기 기능
+		map.put("/approveAuthRequest.do", new ApproveAuthRequest()); // 권한승인 신청 승인 
+		map.put("/rejectAuthRequest.do", new RejectAuthRequest()); // 권한승인 신청 거절
 	}
 
 	/**
