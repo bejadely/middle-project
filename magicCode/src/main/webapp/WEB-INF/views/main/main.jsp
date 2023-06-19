@@ -24,7 +24,7 @@
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-11 ftco-animate text-center">
-          	<h1 class="mb-4">당신을 위한 탁월한 선택!<br>매직코드가 제공하는 펫케어서비스</h1>
+          	<h1 class="mb-4">당신을 위한 탁월한 선택!<br>위드퍼피가 제공하는 펫케어서비스</h1>
             <p><a href="#" class="btn btn-primary mr-md-4 py-3 px-4">Learn more <span class="ion-ios-arrow-forward"></span></a></p>
           </div>
         </div>

@@ -13,4 +13,6 @@ public interface ReviewService {
 	int reviewUpdate(UserRegistVO vo);
 	int reviewDelete(UserRegistVO vo);
 	Double reviewRateAvg(int srId);
+	
+	
 }

@@ -9,9 +9,7 @@ public class MemberLoginForm implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// 로그인페이지 호출(창민)
-		
-		
+		// 로그인페이지 호출
 		return "member/memberLogin";
 	}
 
