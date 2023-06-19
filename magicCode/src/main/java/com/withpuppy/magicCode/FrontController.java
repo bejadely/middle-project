@@ -52,6 +52,15 @@ import com.withpuppy.magicCode.psu.command.UserGrommingApplySelect;
 import com.withpuppy.magicCode.psu.command.UserSitterApplySelect;
 import com.withpuppy.magicCode.psu.command.UserTrainningApplySelect;
 import com.withpuppy.magicCode.su.command.GrommerAllList;
+import com.withpuppy.magicCode.review.command.ReviewDelete;
+import com.withpuppy.magicCode.review.command.ReviewInsert;
+import com.withpuppy.magicCode.review.command.ReviewInsertForm;
+import com.withpuppy.magicCode.review.command.ReviewList;
+import com.withpuppy.magicCode.review.command.ReviewSelectList;
+import com.withpuppy.magicCode.review.command.ReviewUpdate;
+import com.withpuppy.magicCode.review.command.ReviewUpdateForm;
+import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
+import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
 import com.withpuppy.magicCode.su.command.SitterAllList;
 import com.withpuppy.magicCode.su.command.TrainnerAllList;
 //import com.withpuppy.magicCode.su.command.SitterSelect;
@@ -59,10 +68,16 @@ import com.withpuppy.magicCode.su.command.UserGrommingApplyAllList;
 import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
 import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
 import com.withpuppy.magicCode.userRegist.command.UrCheckCInsert;
+import com.withpuppy.magicCode.serviceRegist.command.DeleteServiceRegist;
+import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegist;
+import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegistForm;
+import com.withpuppy.magicCode.serviceRegist.command.SearchAllServiceRegistBykey;
+import com.withpuppy.magicCode.serviceRegist.command.SeeAllServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
-
-
+import com.withpuppy.magicCode.serviceRegist.command.imgTest;
+import com.withpuppy.magicCode.serviceRegist.command.TraningServiceRegist;
+import com.withpuppy.magicCode.serviceRegist.command.TraningServiceRegistForm;
 
 /**
  * Servlet implementation class FrontController
@@ -109,6 +124,11 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeInsert.do", new NoticeInsert());	//공지사항 입력
 		map.put("/reviewList.do", new ReviewList());		//전체리뷰조회
 		map.put("/reviewSelectList.do", new ReviewSelectList());	//해당 srId를 가진 게시물의 평균평점/리뷰리스트확인
+		map.put("/reviewInsertForm.do", new ReviewInsertForm());	//ㄹ리뷰입력폼
+		map.put("/reviewInsert.do", new ReviewInsert());	//리뷰입력
+		map.put("/reviewDelete.do", new ReviewDelete());	//리뷰삭제
+		map.put("/reviewUpdateForm.do", new ReviewUpdateForm());	//리뷰수정폼
+		map.put("/reviewUpdate.do", new ReviewUpdate());	//리뷰수정
 		
 		// 창민
 		// 마이페이지
@@ -145,6 +165,16 @@ public class FrontController extends HttpServlet {
 		map.put("/urCheckCInsert.do", new UrCheckCInsert()); //서비스 요청 취소
 		//map.put("/urCheckNInsert.do", new UrCheckNInsert()); //서비스 요청 전
 		//map.put("/urCheckEInsert.do", new UrCheckEInsert()); //서비스 요청 완료
+		map.put("/imgTest.do", new imgTest()); // 이미지 불러오기 테스트
+		map.put("/traningServiceRegistForm.do", new TraningServiceRegistForm()); // 트레이닝 서비스 등록 폼으로 이동
+		map.put("/traningServiceRegist.do", new TraningServiceRegist()); // 트레이닝 서비스 등록
+		map.put("/groomingServiceRegistForm.do", new GroomingServiceRegistForm()); // 그루밍 서비스 등록 폼으로 이동
+		map.put("/groomingServiceRegist.do", new GroomingServiceRegist()); // 그루밍 서비스 등록
+		
+		// 관리자 입장
+		map.put("/seeAllServiceRegist.do", new SeeAllServiceRegist()); // 전체 등록 서비스 조회화면 호출 및 조회기능
+		map.put("/deleteServiceRegist.do", new DeleteServiceRegist()); // 게시글 삭제 및 전체 게시글 재조회 기능
+		map.put("/searchAllServiceRegistBykey.do", new SearchAllServiceRegistBykey()); // (아이디/이름)으로 특정 게시물 검색
 	}
 
 	/**

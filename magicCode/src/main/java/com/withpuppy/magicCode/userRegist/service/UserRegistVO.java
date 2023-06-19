@@ -19,7 +19,7 @@ public class UserRegistVO {
 //	sr_id	number	no		11
 //	ur_check	varchar2(10 byte)	no		12
 	
-	private String urId;
+	private int urId;
 	private String urMemberId;
 	private int urPetId;
 	private String urRequire;
@@ -27,7 +27,7 @@ public class UserRegistVO {
 	private String urDate;
 	private String urStartTime;
 	private String urEndTime;
-	private Double urRate;
+	private int urRate;
 	private String urReview;
 	private int srId;
 	private String urCheck;
