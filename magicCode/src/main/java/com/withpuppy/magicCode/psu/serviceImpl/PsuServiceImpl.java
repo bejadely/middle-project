@@ -30,4 +30,22 @@ public class PsuServiceImpl implements PsuService{
 		return map.userGrommingApplySelect(vo);
 	}
 
+	@Override
+	public int srTableInsert(PsuVO vo) {
+		//돌봄 서비스 예약(예약날짜, 시간, 장소, 금액)입력
+		return map.srTableInsert(vo);
+	}
+
+	@Override
+	public int petTableInsert(PsuVO vo) {
+		//돌봄 서비스 예약(반려동물 정보)입력
+		return map.petTableInsert(vo);
+	}
+
+	@Override
+	public int urTableInsert(PsuVO vo) {
+		//돌봄 서비스 예약(요청사항, 결제수단) 입력
+		return map.urTableInsert(vo);
+	}	
+
 }

@@ -18,6 +18,10 @@ public class PsuVO {
 	private int petWeight;
 	private String petSign;
 	
+	private String srStartDate;
+	private String srEndDate;
+	private String srStartTime;
+	private String srEndTime;
 	private String srServerId;
 	private String srServerName;
 	private int srPrice;
@@ -29,7 +33,7 @@ public class PsuVO {
 	private int urPetId;
 	private String urRequire;
 	private String urPayment;
-	private Date urDate;
+	private String urDate;
 	private String urStartTime;
 	private String urEndTime;
 	private double urRate;

@@ -37,4 +37,17 @@ public class SuServiceImpl implements SuService{
 		return map.sitterAllList();
 	}
 
+	@Override
+	public List<SuVO> trainnerAllList() {
+		//전체 훈련사 목록 조회
+		return map.trainnerAllList();
+	}
+
+	@Override
+	public List<SuVO> grommerAllList() {
+		//전체 미용사 목록 조회
+		return map.grommerAllList();
+	}
+	
+
 }

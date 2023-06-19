@@ -2,10 +2,15 @@ package com.withpuppy.magicCode.userRegist.service;
 
 import java.util.List;
 
+import com.withpuppy.magicCode.member.service.MemberVO;
+
 public interface UserRegistService {
 	List<UserRegistVO> userRegistSelectList();
 	UserRegistVO userRegistSelect(UserRegistVO vo);
 	int userRegistInsert(UserRegistVO vo);
 	int userRegistUpdate(UserRegistVO vo);
 	int userRegistDelete(UserRegistVO vo);
+	
+	int urCheckCUpdate(MemberVO vo); //서비스 요청 취소
+	int urCheckEUpdate(MemberVO vo); //서비스 요청 완료
 }

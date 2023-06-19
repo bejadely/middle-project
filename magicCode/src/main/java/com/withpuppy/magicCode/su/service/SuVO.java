@@ -10,7 +10,7 @@ import lombok.Setter;
 //사용자 입장 서비스 신청 내역 전체 조회
 //사용자 입장 시터 전체 조회
 public class SuVO {
-	
+
 	private int urId;
 	private String urMemberId;
 	private int urPetId;
