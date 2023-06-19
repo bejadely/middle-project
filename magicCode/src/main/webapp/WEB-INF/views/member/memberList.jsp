@@ -47,9 +47,9 @@
 				</thead>
 				<tbody>
 					<c:forEach items="${members}" var="m">
-						<tr onmouseover='this.style.background="#d9d9d9";' 
-						onmouseleave='this.style.background="#FFFFFF";'
-						onclick="memberIdChois(${m.memberId})"
+						<tr onmouseover='this.style.background="#d9d9d9";'
+    						onmouseleave='this.style.background="#FFFFFF";'
+    						onclick='memberIdChois("${m.memberId}")'
 						>
 							
 							<td align="center">${m.memberId}</td>

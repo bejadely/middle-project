@@ -1,10 +1,6 @@
 package com.withpuppy.magicCode.member.service;
 
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class MemberVO {
 	//선호
 //	MEMBER_ID	VARCHAR2(100 BYTE)	No		1	회원아이디

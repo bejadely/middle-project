@@ -16,17 +16,9 @@ public class memberUpdateByAdminForm implements Command {
 		MemberService ms = new MemberServiceImpl();
 		MemberVO vo = new MemberVO();
 		
-		vo.setMemberName(request.getParameter("memberName"));
-		vo.setMemberTel(request.getParameter("memberTel"));
-		vo.setMemberAddr(request.getParameter("memberAddr"));
-		
-		int n = ms.memberUpdateByAdmin(vo);
-		
-		if(n != 0) {
-			request.setAttribute("message", "해당회원의 정보가 정상적으로 수정되었습니다.");
-		} else {
-			request.setAttribute("message", "해당회원의 정보 수정이 정상적으로 이루어지지 않았습니다. \n다시 시도해 주십시오.");
-		}
+		vo.setMemberId(request.getParameter("memberId"));
+		vo = ms.memberSelect(vo);
+		request.setAttribute("member", vo);
 		
 		return "member/memberUpdateByAdminForm";
 	}
