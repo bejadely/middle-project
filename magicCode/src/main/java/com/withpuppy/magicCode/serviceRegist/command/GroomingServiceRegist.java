@@ -15,11 +15,11 @@ import com.withpuppy.magicCode.serviceRegist.service.ServiceRegistService;
 import com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO;
 import com.withpuppy.magicCode.serviceRegist.serviceImpl.ServiceRegistServiceImpl;
 
-public class ServiceRegist implements Command {
+public class GroomingServiceRegist implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// 서비스 등록 수행
+		// (시터) 그루밍 서비스 등록 
 		ServiceRegistService srs = new ServiceRegistServiceImpl();
 		ServiceRegistVO vo = new ServiceRegistVO();
 		
@@ -27,12 +27,12 @@ public class ServiceRegist implements Command {
 		CertificationService cs = new CertificationServiceImpl();
 		CertificationVO cVo = new CertificationVO();
 		
-		String saveDir = request.getServletContext().getRealPath("/upload"); // 아직은 여기에 저장은 가능하지만, 여기있는것을 불러오지는 못함(서버 디렉토리로 인식하지 못하기때문 > web.xml에 설정해줘야함)
-		int maxSize = 100 * 1024 * 1024; // 파일의 최고 크기 설정 (기본적으로 서버에 생으로 default값을 넣으면 최대 200mb까지 전송가능)
+		String saveDir = request.getServletContext().getRealPath("/upload"); 
+		int maxSize = 100 * 1024 * 1024; 
 		int n = 0;
 		int m = 0;
 		
-		//cos 라이브러리에서 제공
+		//cos
 		try {
 			MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, "utf-8", new DefaultFileRenamePolicy());
 			String cfile = multi.getFilesystemName("cfile");
@@ -43,10 +43,10 @@ public class ServiceRegist implements Command {
 			String mfile = multi.getFilesystemName("mfile");
 			mfile = "upload/" + mfile; // 물리적인 저장위치를 앞에 붙여줌
 			
-			// 사용 할 일 있을때 주석 풀것
-			// String omfile = multi.getOriginalFileName("mfile"); // 여기서 cfile은 실제 폼에서 가져오는 cfile네임
 			
-			// vo.setSrPicturePath(mfile) 원래는 mfile 넣어줬음
+			// 사용 할 일 있을때 주석 풀것
+			// String omfile = multi.getOriginalFileName("mfile"); 
+			
 			vo.setSrPicturePath(mfile);
 			vo.setSrTitle(multi.getParameter("srTitle"));
 			vo.setSrServerId(multi.getParameter("srServerId"));
@@ -64,7 +64,7 @@ public class ServiceRegist implements Command {
 			cVo.setMemberId(multi.getParameter("srServerId"));
 			
 			if(cfile != null) {
-				cVo.setCertificationPath(cfile); // 경로 + 이미지명
+				cVo.setCertificationPath(cfile); 
 			}
 			
 			// SQL문 실행

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistMapper">
+	<select id="serviceRegistSelectList"
+	resultType="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO">
+		SELECT *
+		FROM service_regist
+		ORDER BY sr_id DESC
+	</select>
+	<select id="serviceRegistSelect" resultType="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO">
+	</select>
+	<insert id="serviceRegistInsert" parameterType="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO">
+		<selectKey keyProperty="srId" resultType="int" order="BEFORE">
+				SELECT Max(sr_id) + 1 AS srId FROM service_regist
+		</selectKey>
+		INSERT INTO service_regist VALUES(#{srId}, #{srPicturePath}, #{srTitle}, #{srServerId}, 
+		#{srServerName}, #{srStartDate}, #{srEndDate}, #{srStartTime}, #{srEndTime}, #{srIntroduce}, #{srCategory}, #{srPrice}, #{srLocation})
+	</insert>
+	<update id="serviceRegistUpdate">
+	</update>
+	<delete id="serviceRegistDelete">
+		DELETE service_regist
+		WHERE sr_id = #{srId}
+	</delete>
+	<select id="selectListById"
+	resultType="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO">
+		SELECT *
+		FROM service_regist
+		WHERE sr_server_id = #{srServerId}
+		ORDER BY sr_id DESC
+	</select>
+	<select id="selectListByName"
+	resultType="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO">
+		SELECT *
+		FROM service_regist
+		WHERE sr_server_name = #{srServerName}
+		ORDER BY sr_id DESC
+	</select>
+</mapper>

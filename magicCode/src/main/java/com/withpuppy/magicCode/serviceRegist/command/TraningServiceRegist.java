@@ -15,11 +15,11 @@ import com.withpuppy.magicCode.serviceRegist.service.ServiceRegistService;
 import com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO;
 import com.withpuppy.magicCode.serviceRegist.serviceImpl.ServiceRegistServiceImpl;
 
-public class ServiceRegist implements Command {
+public class TraningServiceRegist implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// 서비스 등록 수행
+		// (시터) 트레이닝 서비스 등록 기능
 		ServiceRegistService srs = new ServiceRegistServiceImpl();
 		ServiceRegistVO vo = new ServiceRegistVO();
 		
@@ -46,7 +46,6 @@ public class ServiceRegist implements Command {
 			// 사용 할 일 있을때 주석 풀것
 			// String omfile = multi.getOriginalFileName("mfile"); // 여기서 cfile은 실제 폼에서 가져오는 cfile네임
 			
-			// vo.setSrPicturePath(mfile) 원래는 mfile 넣어줬음
 			vo.setSrPicturePath(mfile);
 			vo.setSrTitle(multi.getParameter("srTitle"));
 			vo.setSrServerId(multi.getParameter("srServerId"));

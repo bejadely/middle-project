@@ -15,4 +15,31 @@ public class CertificationVO {
 	private String certificationName;
 	private String certificationPath;
 	private String memberId;
+	
+	public int getCertificationId() {
+		return certificationId;
+	}
+	public void setCertificationId(int certificationId) {
+		this.certificationId = certificationId;
+	}
+	public String getCertificationName() {
+		return certificationName;
+	}
+	public void setCertificationName(String certificationName) {
+		this.certificationName = certificationName;
+	}
+	public String getCertificationPath() {
+		return certificationPath;
+	}
+	public void setCertificationPath(String certificationPath) {
+		this.certificationPath = certificationPath;
+	}
+	public String getMemberId() {
+		return memberId;
+	}
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
+	
+	
 }
