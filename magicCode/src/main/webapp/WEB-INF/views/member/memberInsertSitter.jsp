@@ -43,10 +43,10 @@
 
 	function formCheck() {
 		let frm = document.getElementById("frm");
-		if (frm.memberPw.value != frm.passwordcheck.value) {
-			alert("패스워드가 일치 하지 않습니다.");
+		if (frm.memberPw.value != frm.passwordCheck.value) {
+			alert("패스워드가 일치 하지 않습니다. 다시 입력해주십시오");
 			frm.memberPw.value = "";
-			frm.passwordcheck.value = "";
+			frm.passwordCheck.value = "";
 			frm.memberPw.focus();
 			return false;
 		} else if (frm.checkId.value != "Yes") {
