@@ -15,14 +15,14 @@
 	<delete id="userRegistDelete">
 	</delete>
 	<!-- 서비스 요청 취소 -->
-	<update id="urCheckCUpdate">
-		UPDATE USER_REGIST SET UR_CHECK 'C'
+	<update id="urCheckCUpdate" parameterType="com.withpuppy.magicCode.userRegist.service.UserRegistVO">
+		UPDATE USER_REGIST SET UR_CHECK = 'C'
 		WHERE UR_ID = #{urId}
 	</update>
 	
 	<!-- 서비스 완료 -->
 	<update id="urCheckEUpdate">
-		UPDATE USER_REGIST SET UR_CHECK 'E'
+		UPDATE USER_REGIST SET UR_CHECK = 'E'
 		WHERE UR_ID = #{urId}
 	</update>
 </mapper>

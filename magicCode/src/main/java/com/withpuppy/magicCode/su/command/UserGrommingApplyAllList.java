@@ -20,8 +20,9 @@ public class UserGrommingApplyAllList implements Command {
 		HttpSession session = request.getSession();
 		
 		String urMemberId = String.valueOf(session.getAttribute("id"));	
-		List<SuVO> userRegists = ss.userSitterApplyAllList(urMemberId);
-
+		List<SuVO> userRegists = ss.userGrommingApplyAllList(urMemberId);
+		System.out.println(urMemberId);
+		
 		request.setAttribute("userRegists", userRegists);
 		return "member/userGrommingApplyAllList";
 	}
