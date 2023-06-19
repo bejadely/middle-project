@@ -46,7 +46,7 @@
 			</div>
 			<div>
 				<input type="hidden" id="srServerId" name="srServerId" value="${id}">
-				<input type="hidden" id="srCategory" name="srCategory" value="${auth}">
+				<input type="hidden" id="srCategory" name="srCategory" value="T">
 			</div>
 			<div>
 				<input type="submit" value = "등 록" >&nbsp;

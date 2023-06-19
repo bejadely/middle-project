@@ -36,8 +36,8 @@ public class GroomingServiceRegist implements Command {
 		try {
 			MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, "utf-8", new DefaultFileRenamePolicy());
 			String cfile = multi.getFilesystemName("cfile");
-			cfile = saveDir + "\\" + cfile; 
-			String ofile = multi.getOriginalFileName("cfile"); 
+			cfile = "upload/" + cfile; // 물리적인 저장위치를 앞에 붙여줌
+//			String ofile = multi.getOriginalFileName("cfile"); // 여기서 cfile은 실제 폼에서 가져오는 cfile네임
 			
 			// 훈련사 사진 업로드용
 			String mfile = multi.getFilesystemName("mfile");
@@ -63,7 +63,7 @@ public class GroomingServiceRegist implements Command {
 			cVo.setCertificationName(multi.getParameter("certificationName"));
 			cVo.setMemberId(multi.getParameter("srServerId"));
 			
-			if(ofile != null) {
+			if(cfile != null) {
 				cVo.setCertificationPath(cfile); 
 			}
 			
