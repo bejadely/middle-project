@@ -32,9 +32,11 @@ import com.withpuppy.magicCode.member.command.MemberUpdate;
 import com.withpuppy.magicCode.member.command.SeeMyInfo;
 import com.withpuppy.magicCode.member.command.UpdateMyInfoForm;
 import com.withpuppy.magicCode.mpsu.command.GrommingRequestHistory;
+import com.withpuppy.magicCode.mpsu.command.GrommingRequestSelect;
 import com.withpuppy.magicCode.mpsu.command.SitterRequestHistory;
 import com.withpuppy.magicCode.mpsu.command.SitterRequestSelect;
 import com.withpuppy.magicCode.mpsu.command.TrainningRequestHistory;
+import com.withpuppy.magicCode.mpsu.command.TrainningRequestSelect;
 import com.withpuppy.magicCode.notice.command.NoticeDelete;
 import com.withpuppy.magicCode.notice.command.NoticeEdit;
 import com.withpuppy.magicCode.notice.command.NoticeInsert;
@@ -56,6 +58,7 @@ import com.withpuppy.magicCode.su.command.TrainnerAllList;
 import com.withpuppy.magicCode.su.command.UserGrommingApplyAllList;
 import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
 import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
+import com.withpuppy.magicCode.userRegist.command.UrCheckCInsert;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
 
@@ -132,13 +135,16 @@ public class FrontController extends HttpServlet {
 	    map.put("/sitterRequestHistory.do", new SitterRequestHistory()); //돌봄 서비스 요청 내역 조회(전체)
 	    map.put("/sitterRequestSelect.do", new SitterRequestSelect()); //돌봄 서비스 요청 단건 조회
 	    map.put("/trainningRequestHistory.do", new TrainningRequestHistory()); //훈련 서비스 요청 내역 조회(전체)
-//	    map.put("/trainningRequestSelect.do", new TrainningRequestSelect()); //훈련 서비스 요청 단건 조회
+	    map.put("/trainningRequestSelect.do", new TrainningRequestSelect()); //훈련 서비스 요청 단건 조회
 	    map.put("/grommingRequestHistory.do", new GrommingRequestHistory()); //미용 서비스 요청 내역 조회(전체)
-//	    map.put("/grommingRequestSelect.do", new GrommingRequestSelect()); //미용 서비스 요청 단건 조회
+	    map.put("/grommingRequestSelect.do", new GrommingRequestSelect()); //미용 서비스 요청 단건 조회
 	    
 		// 시터입장 - (돌봄/훈련/미용)서비스 등록
 		map.put("/serviceRegistForm.do", new ServiceRegistForm()); // 서비스 등록 폼으로 이동
 		map.put("/serviceRegist.do", new ServiceRegist()); // 서비스 등록 기능 수행
+		map.put("/urCheckCInsert.do", new UrCheckCInsert()); //서비스 요청 취소
+		//map.put("/urCheckNInsert.do", new UrCheckNInsert()); //서비스 요청 전
+		//map.put("/urCheckEInsert.do", new UrCheckEInsert()); //서비스 요청 완료
 	}
 
 	/**

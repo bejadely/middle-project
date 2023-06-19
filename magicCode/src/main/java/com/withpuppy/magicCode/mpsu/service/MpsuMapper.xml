@@ -5,7 +5,7 @@
 	<select id="sitterRequestHistory" 
 	parameterType="com.withpuppy.magicCode.mpsu.service.MpsuVO"
 	resultType="com.withpuppy.magicCode.mpsu.service.MpsuVO">
-		SELECT u.UR_DATE, u.UR_START_TIME, u.UR_END_TIME, m.MEMBER_NAME, p.PET_NAME, p.PET_KIND, s.SR_LOCATION, s.SR_PRICE
+		SELECT u.UR_DATE, u.UR_START_TIME, u.UR_END_TIME, m.MEMBER_NAME, p.PET_NAME, p.PET_KIND, s.SR_LOCATION, s.SR_PRICE, u.UR_ID
 		FROM MEMBER m JOIN PET p ON m.MEMBER_ID = p.OWNER_ID
                		  JOIN USER_REGIST u ON p.PET_ID = u.UR_PET_ID
                       JOIN SERVICE_REGIST s ON u.SR_ID = s.SR_ID
@@ -16,7 +16,7 @@
 	<select id="trainningRequestHistory" 
 	parameterType="com.withpuppy.magicCode.mpsu.service.MpsuVO"
 	resultType="com.withpuppy.magicCode.mpsu.service.MpsuVO">
-		SELECT u.UR_DATE, u.UR_START_TIME, u.UR_END_TIME, m.MEMBER_NAME, p.PET_NAME, p.PET_KIND, s.SR_LOCATION, s.SR_PRICE
+		SELECT u.UR_DATE, u.UR_START_TIME, u.UR_END_TIME, m.MEMBER_NAME, p.PET_NAME, p.PET_KIND, s.SR_LOCATION, s.SR_PRICE, u.UR_ID
 		FROM MEMBER m JOIN PET p ON m.MEMBER_ID = p.OWNER_ID
                		  JOIN USER_REGIST u ON p.PET_ID = u.UR_PET_ID
                       JOIN SERVICE_REGIST s ON u.SR_ID = s.SR_ID
@@ -27,7 +27,7 @@
 	<select id="grommingRequestHistory" 
 	parameterType="com.withpuppy.magicCode.mpsu.service.MpsuVO"
 	resultType="com.withpuppy.magicCode.mpsu.service.MpsuVO">
-		SELECT u.UR_DATE, u.UR_START_TIME, u.UR_END_TIME, m.MEMBER_NAME, p.PET_NAME, p.PET_KIND, s.SR_LOCATION, s.SR_PRICE
+		SELECT u.UR_DATE, u.UR_START_TIME, u.UR_END_TIME, m.MEMBER_NAME, p.PET_NAME, p.PET_KIND, s.SR_LOCATION, s.SR_PRICE, u.UR_ID
 		FROM MEMBER m JOIN PET p ON m.MEMBER_ID = p.OWNER_ID
                		  JOIN USER_REGIST u ON p.PET_ID = u.UR_PET_ID
                       JOIN SERVICE_REGIST s ON u.SR_ID = s.SR_ID
@@ -42,7 +42,7 @@
 		FROM MEMBER m JOIN PET p ON m.MEMBER_ID = p.OWNER_ID
                		  JOIN USER_REGIST u ON p.PET_ID = u.UR_PET_ID
                       JOIN SERVICE_REGIST s ON u.SR_ID = s.SR_ID
-        WHERE u.UR_ID = #{urId} AND s.SR_CATEGORY = 's'
+        WHERE u.UR_ID = #{urId} AND s.SR_CATEGORY = 'S'
 	</select>
 	
 	<!-- 훈련 서비스 요청 단건 조회 -->

@@ -51,7 +51,7 @@
 			<button type="button" onclick="location.href='seeMyInfo.do'">뒤로가기</button>&nbsp;&nbsp;
 		</div>
 		<div>
-			<form id="frm" action="" method="post">
+			<form id="frm" action="trainningRequestSelect.do" method="post">
 				<input type="hidden" id="urId" name="urId">
 			</form>
 		</div>
