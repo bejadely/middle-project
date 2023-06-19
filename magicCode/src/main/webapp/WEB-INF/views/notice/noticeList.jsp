@@ -22,7 +22,7 @@
 		<h1>공지사항 목록</h1>
 	</div>
 	<div>
-		<c:if test="${name eq 'admin'}">
+		<c:if test="${auth eq 'A'}">
 			<a href="noticeInsertForm.do">공지사항 작성</a>
 		</c:if>
 	</div>
@@ -31,7 +31,7 @@
 	        <thead>
 	            <tr>
 	                <th>No.1</th>
-	                <th>제목</th>
+	                <th width="200px">제목</th>
 	                <th>작성자</th>
 	                <th>작성일</th>
 	            </tr>

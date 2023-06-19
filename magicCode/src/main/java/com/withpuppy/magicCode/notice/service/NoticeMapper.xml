@@ -5,7 +5,7 @@
 	<select id="noticeSelectList"
 		resultType="com.withpuppy.magicCode.notice.service.NoticeVO">
 		SELECT notice_id, notice_title, notice_subject, notice_writer, TO_CHAR(notice_time, 'YYYY/MM/DD') as "NOTICE_TIME" FROM NOTICE
-		ORDER BY notice_id
+		ORDER BY notice_id desc
 	</select>
 	<select id="noticeSelect"
 		resultType="com.withpuppy.magicCode.notice.service.NoticeVO">

@@ -32,7 +32,7 @@
 			<br>
 			<div>
 				<!-- c:if문에서 로그인할때 세션에 가져올 id값으로 비교해야함 -->
-				<c:if test="${notice.noticeWriter eq notice.noticeWriter}">
+				<c:if test="${auth eq 'A'}">
 					<button type="button" onclick="callFunction('E')">수정</button>&nbsp;
 					<button type="button" onclick="callFunction('D')">삭제</button>
 				</c:if>

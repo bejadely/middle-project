@@ -15,7 +15,7 @@ public class ReviewInsert implements Command {
 		
 		ReviewService urs = new ReviewServiceImpl();
 		UserRegistVO vo = new UserRegistVO();
-		//urId를 파라미터로 가져와야함
+		//urId를 파라미터로 가져와야함 userRegist urid값을 가져오는 구문 필요함!
 		int UrId = 13;
 		//request.setAttribute("urId", UrId);
 		vo.setUrId(UrId);
