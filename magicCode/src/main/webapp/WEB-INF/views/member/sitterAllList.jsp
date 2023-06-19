@@ -22,11 +22,9 @@
 			<h1>전체 펫 돌보미 조회</h1>
 		</div>
 		<div>
-			<c:forEach items="${services }" var="s">
-				<c:if test="${s.srCategory eq 'S'}">
+				<c:if test="${auth eq 'S'}">
 					<button type="button" onclick="location.href=''">돌봄 서비스 등록</button>&nbsp;&nbsp;
 				</c:if> 
-			</c:forEach>
 		</div>
 		<div>
 			<div>
@@ -43,7 +41,7 @@
 					 	<c:forEach items="${services }" var="s">
 							<tr onmouseover='this.style.background="#263343";' 
 							onmouseleave='this.style.background="#FFFFFF";' 
-							onclick="chois(${s.urId })">
+							onclick="chois(${s.srId })">
 								<td>${s.srPicturePath }</td>
 								<td>${s.srTitle}</td>
 								<td>${s.srServerName}</td>
@@ -56,14 +54,14 @@
 		</div>
 		<div>
 			<form id="frm" action="sitterSelect.do" method="post">
-				<input type="hidden" id="urId" name="urId">
+				<input type="hidden" id="srId" name="srId">
 			</form>
 		</div>
 	</div>
 	<script type="text/javascript">
 		function chois(id) {
 			let frm = document.getElementById("frm");
-			frm.urId.value = id;
+			frm.srId.value = id;
 			frm.submit();
 		}
 	</script>

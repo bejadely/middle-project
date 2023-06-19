@@ -17,4 +17,16 @@ public class CmsuServiceImpl implements CmsuService {
 		return map.sitterSelect(vo);
 	}
 
+	@Override
+	public CmsuVO trainnerSelect(CmsuVO vo) {
+		// 훈련사 단건 조회
+		return map.trainnerSelect(vo);
+	}
+
+	@Override
+	public CmsuVO grommerSelect(CmsuVO vo) {
+		// 미용사 단건 조회
+		return map.grommerSelect(vo);
+	}
+
 }

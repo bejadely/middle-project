@@ -36,4 +36,18 @@
 			 JOIN PET p ON u.UR_PET_ID = p.PET_ID
 		WHERE UR_ID = #{urId} AND s.SR_CATEGORY = 'G'
 	</select>
+	
+	<!-- 돌봄 서비스 예약(예약날짜, 시간, 장소, 금액)입력 -->
+	<insert id="srTableInsert">
+	</insert>
+	
+	<!-- 돌봄 서비스 예약(반려동물 정보)입력 -->
+	<insert id="petTableInsert">
+	</insert>
+	
+	<!-- 돌봄 서비스 예약(요청사항, 결제수단) 입력 -->
+	<insert id="urTableInsert">
+		INSERT INTO USER_REGIST
+		VALUES(#{urId}, #{urMemberId} ,#{urPetId}, #{urRequire}, #{urPayment}, #{urDate}, #{urStartTime}, #{urEndTime}, #{urRate}, #{urReview}, #{srId}, 'N')
+	</insert>
 </mapper>

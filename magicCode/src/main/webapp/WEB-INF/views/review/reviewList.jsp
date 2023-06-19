@@ -28,11 +28,38 @@
 	                <td>견종 : ${r.petKind }</td>
 	            </tr>
 	            <tr>
-	                <td>${r.urReview}</td>
+	                <td>리뷰 : ${r.urReview}</td>
+	            </tr>
+	            <tr>
+	            	<td><a onclick="urMemberIdChoice(${r.urId })"><input type="button" value="리뷰삭제"></a></td>
+	            	<td><a onclick="urMemberIdChoice1(${r.urId })"><input type="button" value="리뷰수정"></a></td>
 	            </tr>
 	        </c:forEach>
 	        </tbody>
 	    </table>
 	</div>
+	<div>
+		<a href="reviewInsertForm.do">리뷰입력</a>
+	</div>
+	<div>
+		<form id="frm" action="reviewDelete.do" method="post">
+			<input type="hidden" id="urId" name="urId">
+		</form>
+		<form id="frm1" action="reviewUpdateForm.do" method="post">
+			<input type="hidden" id="urId" name="urId">
+		</form>
+	</div>
 </body>
+<script type="text/javascript">
+	function urMemberIdChoice(id) {
+		let frm = document.getElementById("frm");
+		frm.urId.value = id;
+		frm.submit();
+	}
+	function urMemberIdChoice1(id) {
+		let frm = document.getElementById("frm1");
+		frm.urId.value = id;
+		frm.submit();
+	}
+</script>
 </html>
