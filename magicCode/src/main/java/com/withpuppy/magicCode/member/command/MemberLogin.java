@@ -22,7 +22,7 @@ public class MemberLogin implements Command {
 				vo.setMemberPw(request.getParameter("memberPw"));
 				vo.setMemberNick(request.getParameter("memberNick"));
 				
-				vo = ms.memberLogin(vo);
+				vo = ms.memberLogin(vo); //DB실행주체
 				if(vo != null) {
 					session.setAttribute("id", vo.getMemberId()); // 요거는 vo 객체랑 구분해 주는게 좋으니까 변수명을 main이라고 한다.
 					session.setAttribute("pw", vo.getMemberPw()); //

@@ -11,11 +11,26 @@
 		</if>
 	</select>
 	
-	<!-- 회원조회시 사용 -->
+	<!-- 전체회원 조회시 사용 -->
 	<select id="memberSelectList" resultType="com.withpuppy.magicCode.member.service.MemberVO">
 		SELECT * FROM MEMBER
 	</select>
-	
+	<!-- 회원상세 조회시 사용 -->
+	<select id="memberSelect" resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT * FROM MEMBER
+		WHERE MEMBER_ID = #{memberId}
+	</select>
+
+	<!-- 이름으로 회원 검색 -->
+	<select id="memberSelectByName" parameterType="java.lang.String"
+		resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT * FROM MEMBER WHERE MEMBER_NAME LIKE CONCAT('%', #{memberName}, '%')
+	</select>
+	<!-- ID로 회원 검색 -->
+	<select id="memberSelectById" parameterType="java.lang.String"
+		resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT * FROM MEMBER WHERE MEMBER_ID = #{memberId}
+	</select>
 	<!-- 닉네임중복 조회시 사용 -->
 	<select id="memberSelectByNick" resultType="com.withpuppy.magicCode.member.service.MemberVO">
 		SELECT * FROM MEMBER
@@ -43,7 +58,15 @@
 		</set>
 		WHERE member_id = #{memberId} 
 	</update>
-	
+	<!-- 관리자에의한 회원정보수정 -->
+	<update id="memberUpdateByAdmin">
+		UPDATE MEMBER
+		<set>
+			<if test="memberName != null">MEMBER_NAME = #{memberName},</if>
+			<if test="memberTel != null">MEMBER_TEL = #{memberTel},</if>
+			<if test="memberAddr != null">MEMBER_ADDR = #{memberAddr}</if>
+		</set>
+	</update>
 	<delete id="memberDelete">
 		delete from MEMBER
 		where member_id = #{memberId}

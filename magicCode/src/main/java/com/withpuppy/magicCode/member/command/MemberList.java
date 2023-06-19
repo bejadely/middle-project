@@ -17,11 +17,14 @@ public class MemberList implements Command {
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		// 멤버목록 조회
 		MemberService ms = new MemberServiceImpl();
-		List<MemberVO> members = new ArrayList<MemberVO>();
+		List<MemberVO> members = new ArrayList<MemberVO>();		
 		members = ms.memberSelectList();
 		
 		request.setAttribute("members", members);
 		return "member/memberList";
+		
+		
+		
 	}
 
 }
