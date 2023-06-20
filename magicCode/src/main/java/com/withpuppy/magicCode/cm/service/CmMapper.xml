@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.withpuppy.magicCode.cm.service.CmMapper">
+	<select id="cmSelectList"
+	resultType="com.withpuppy.magicCode.cm.service.CmVO">
+		SELECT m.member_id as "member_id", m.member_name as "member_name", c.certification_path as "certificaion_path", m.member_auth as "member_auth"
+		FROM  member m JOIN certification c
+		ON m.member_id = c.member_id
+		WHERE m.member_auth = 'UT' or m.member_auth = 'UG'
+	</select>
+	<select id="cmSelect" resultType="com.withpuppy.magicCode.cm.service.CmVO">
+	</select>
+	<insert id="cmInsert">
+	</insert>
+	<update id="cmUpdate">
+	</update>
+	<delete id="cmDelete">
+	</delete>
+</mapper>
