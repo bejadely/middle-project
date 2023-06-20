@@ -43,9 +43,21 @@
     	</p><br>
 	</div>
 	<div align="center">
-		<button type="button" onclick="location.href='trainnerReservation.do'">예약하기</button>&nbsp;&nbsp;
+		<button type="button" onclick="chois(${srId})">예약하기</button>&nbsp;&nbsp;
 		<button type="button" onclick="location.href='trainnerAllList.do'">목록으로</button>
 	</div>
+	<div>
+		<form id="frm" action="trainnerReservation.do" method="post">
+			<input type="hidden" id="srId" name="srId">
+		</form>
+	</div>
 </div>
+<script type="text/javascript">
+	function chois(id) {
+		let frm = document.getElementById("frm");
+		frm.srId.value = id;
+		frm.submit();
+	}
+</script>
 </body>
 </html>

@@ -57,31 +57,31 @@
     	</p><br>
 	</div>
 	<div align="center">
-	    <button type="button" onclick="chois1(${sitter.urId})">승인</button>
-	    <button type="button" onclick="chois2(${sitter.urId})">거절</button>
+	    <button type="button" onclick="choisE(${sitter.urId})">승인</button>
+	    <button type="button" onclick="choisC(${sitter.urId})">거절</button>
 		<button type="button" onclick="location.href='sitterRequestHistory.do'">나가기</button>
 	</div>
 	<div>
-		<form id="frm2" action="urCheckCUpdate.do" method="post">
+		<form id="frmC" action="urCheckCUpdate.do" method="post">
 			<input type="hidden" id="urId" name="urId">
 		</form>
-		<form id="frm1" action="urCheckEUpdate.do" method="post">
+		<form id="frmE" action="urCheckEUpdate.do" method="post">
 			<input type="hidden" id="urId" name="urId">
 		</form>
 	</div>
 </div>
 	<script type="text/javascript">
-		function chois1(id) {
-			let frm1 = document.getElementById("frm");
-			frm1.urId.value = id;
-			frm1.submit();
+		function choisE(id) {
+			let frmE = document.getElementById("frmE");
+			frmE.urId.value = id;
+			frmE.submit();
 		}
 	</script>
 	<script type="text/javascript">
-		function chois2(id) {
-			let frm2 = document.getElementById("frm");
-			frm2.urId.value = id;
-			frm2.submit();
+		function choisC(id) {
+			let frmC = document.getElementById("frmC");
+			frmC.urId.value = id;
+			frmC.submit();
 		}
 	</script>
 </body>
