@@ -32,7 +32,7 @@
 						<c:forEach items="${trainning }" var="t">
 						<tr onmouseover='this.style.background="#263343";' 
 							onmouseleave='this.style.background="#FFFFFF";' 
-							onclick="Chois(${u.urId })">
+							onclick="chois(${t.urId })">
 							<td width="150">${t.urDate }</td>
 							<td width="150">${t.urStartTime }</td>
 							<td width="150">${t.urEndTime }</td>
@@ -57,7 +57,7 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		function Chois(id) {
+		function chois(id) {
 			let frm = document.getElementById("frm");
 			frm.urId.value = id;
 			frm.submit();

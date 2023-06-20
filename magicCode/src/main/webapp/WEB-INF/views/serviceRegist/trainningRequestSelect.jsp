@@ -57,10 +57,32 @@
     	</p><br>
 	</div>
 	<div align="center">
-	    <button type="button" onclick="location.href=''">승인</button>
-	    <button type="button" onclick="location.href=''">거절</button>
+	    <button type="button" onclick="choisE(${trainning.urId})">승인</button>
+	    <button type="button" onclick="choisC(${trainning.urId})">거절</button>
 		<button type="button" onclick="location.href='trainningRequestHistory.do'">나가기</button>
 	</div>
+	<div>
+		<form id="frmC" action="urCheckCUpdate.do" method="post">
+			<input type="hidden" id="urId" name="urId">
+		</form>
+		<form id="frmE" action="urCheckEUpdate.do" method="post">
+			<input type="hidden" id="urId" name="urId">
+		</form>
+	</div>
 </div>
+	<script type="text/javascript">
+		function choisE(id) {
+			let frmE = document.getElementById("frmE");
+			frmE.urId.value = id;
+			frmE.submit();
+		}
+	</script>
+	<script type="text/javascript">
+		function choisC(id) {
+			let frmC = document.getElementById("frmC");
+			frmC.urId.value = id;
+			frmC.submit();
+		}
+	</script>
 </body>
 </html>

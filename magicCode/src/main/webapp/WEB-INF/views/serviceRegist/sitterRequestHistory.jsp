@@ -33,7 +33,7 @@
 						<tr onmouseover='this.style.background="#263343";' 
 							onmouseleave='this.style.background="#FFFFFF";' 
 							onclick="chois(${s.urId })">
-							<td width="150">${s.urId }</td>
+							<td width="150">${s.urDate }</td>
 							<td width="150">${s.urStartTime }</td>
 							<td width="150">${s.urEndTime }</td>
 							<td width="150">${s.memberName }</td>

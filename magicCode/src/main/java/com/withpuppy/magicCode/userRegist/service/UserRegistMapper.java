@@ -11,6 +11,6 @@ public interface UserRegistMapper {
 	int userRegistUpdate(UserRegistVO vo);
 	int userRegistDelete(UserRegistVO vo);
 	
-	int urCheckCUpdate(MemberVO vo); //서비스 요청 취소
-	int urCheckEUpdate(MemberVO vo); //서비스 요청 완료
+	int urCheckCUpdate(UserRegistVO vo); //서비스 요청 취소
+	int urCheckEUpdate(UserRegistVO vo); //서비스 요청 완료
 }

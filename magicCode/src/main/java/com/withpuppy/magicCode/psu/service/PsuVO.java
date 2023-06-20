@@ -1,7 +1,5 @@
 package com.withpuppy.magicCode.psu.service;
 
-import java.sql.Date;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -137,7 +135,6 @@ public class PsuVO {
 	public void setUrPayment(String urPayment) {
 		this.urPayment = urPayment;
 	}
-	
 	public String getUrStartTime() {
 		return urStartTime;
 	}
@@ -174,7 +171,4 @@ public class PsuVO {
 	public void setUrCheck(String urCheck) {
 		this.urCheck = urCheck;
 	}
-	
-	
-	
 }

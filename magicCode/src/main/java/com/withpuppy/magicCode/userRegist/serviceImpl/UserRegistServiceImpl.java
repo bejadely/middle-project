@@ -46,13 +46,13 @@ public class UserRegistServiceImpl implements UserRegistService {
 	}
 
 	@Override
-	public int urCheckCUpdate(MemberVO vo) {
+	public int urCheckCUpdate(UserRegistVO vo) {
 		//서비스 요청 취소
 		return map.urCheckCUpdate(vo);
 	}
 
 	@Override
-	public int urCheckEUpdate(MemberVO vo) {
+	public int urCheckEUpdate(UserRegistVO vo) {
 		//서비스 완료
 		return map.urCheckEUpdate(vo);
 	}

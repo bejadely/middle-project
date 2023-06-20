@@ -9,7 +9,7 @@
 <body>
 	<div><h1>일반회원가입</h1></div>
 	<div><!-- 선호 form은 request에다가 담아주는 역할-->  
-		<form id="frm" action="memberInsert.do" onsubmit="return formCheck()" method="get">
+		<form id="frm" action="memberInsert.do" onsubmit="formCheck()" method="get">
 			<div>
 			<p>(*표시는 반드시 기입하셔야 하는 항목입니다.)</p>
 				<table border="1">
@@ -70,10 +70,10 @@
 
 	function formCheck(){
 		let frm = document.getElementById("frm");
-		if(frm.memberPw.value != frm.passwordcheck.value){
+		if(frm.memberPw.value != frm.passwordCheck.value){
 			alert("패스워드가 일치 하지 않습니다.");
 			frm.memberPw.value = "";
-			frm.passwordcheck.value = "";
+			frm.passwordCheck.value = "";
 			frm.memberPw.focus();
 			return false;
 		}else if(frm.checkId.value != "Yes") {

@@ -22,10 +22,6 @@
       		<label>서비스 끝 시간 선택
       		<input type="text" id="urEndTime" name="urEndTime" required="required"></label>
     	</p><br>
-    	<p>
-      		<label>방문장소 장소
-      		<input type="text" id="srLocation" name="srLocation" required="required"></label>
-    	</p><br>
     <!-- 	<p>
       		<label>맡길 반려 동물 
      		<input type="text" value="이름">

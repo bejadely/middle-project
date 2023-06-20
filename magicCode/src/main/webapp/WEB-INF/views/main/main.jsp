@@ -42,7 +42,7 @@
               <div class="media-body">
                 <h3 class="heading">펫시터 서비스</h3>
                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right.</p>
-                <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
+                <a href="sitterAllList.do" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
               </div>
             </div>    
           </div>
@@ -54,7 +54,7 @@
               <div class="media-body">
                 <h3 class="heading">펫 훈련 서비스</h3>
                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right.</p>
-                <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
+                <a href="trainnerAllList.do" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
               </div>
             </div>    
           </div>
@@ -66,7 +66,7 @@
               <div class="media-body">
                 <h3 class="heading">펫 미용 서비스</h3>
                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right.</p>
-                <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
+                <a href="grommerAllList.do" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
               </div>
             </div>      
           </div>

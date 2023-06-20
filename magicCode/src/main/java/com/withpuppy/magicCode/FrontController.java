@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.withpuppy.magicCode.cm.command.ApproveAuthRequest;
+import com.withpuppy.magicCode.cm.command.AuthRequestList;
+import com.withpuppy.magicCode.cm.command.RejectAuthRequest;
 import com.withpuppy.magicCode.cmsu.command.GrommerSelect;
 import com.withpuppy.magicCode.cmsu.command.SitterSelect;
 import com.withpuppy.magicCode.cmsu.command.TrainnerSelect;
@@ -72,7 +75,8 @@ import com.withpuppy.magicCode.su.command.TrainnerAllList;
 import com.withpuppy.magicCode.su.command.UserGrommingApplyAllList;
 import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
 import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
-import com.withpuppy.magicCode.userRegist.command.UrCheckCInsert;
+import com.withpuppy.magicCode.userRegist.command.UrCheckCUpdate;
+import com.withpuppy.magicCode.userRegist.command.UrCheckEUpdate;
 import com.withpuppy.magicCode.serviceRegist.command.DeleteServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegistForm;
@@ -169,13 +173,13 @@ public class FrontController extends HttpServlet {
 	    map.put("/trainningRequestSelect.do", new TrainningRequestSelect()); //훈련 서비스 요청 단건 조회
 	    map.put("/grommingRequestHistory.do", new GrommingRequestHistory()); //미용 서비스 요청 내역 조회(전체)
 	    map.put("/grommingRequestSelect.do", new GrommingRequestSelect()); //미용 서비스 요청 단건 조회
+
+		map.put("/urCheckCUpdate.do", new UrCheckCUpdate()); //서비스 요청 취소
+		map.put("/urCheckEUpdate.do", new UrCheckEUpdate()); //서비스 완료
 	    
 		// 시터입장 - (돌봄/훈련/미용)서비스 등록
 		map.put("/serviceRegistForm.do", new ServiceRegistForm()); // 서비스 등록 폼으로 이동
 		map.put("/serviceRegist.do", new ServiceRegist()); // 서비스 등록 기능 수행
-		map.put("/urCheckCInsert.do", new UrCheckCInsert()); //서비스 요청 취소
-		//map.put("/urCheckNInsert.do", new UrCheckNInsert()); //서비스 요청 전
-		//map.put("/urCheckEInsert.do", new UrCheckEInsert()); //서비스 요청 완료
 		map.put("/imgTest.do", new imgTest()); // 이미지 불러오기 테스트
 		map.put("/traningServiceRegistForm.do", new TraningServiceRegistForm()); // 트레이닝 서비스 등록 폼으로 이동
 		map.put("/traningServiceRegist.do", new TraningServiceRegist()); // 트레이닝 서비스 등록
@@ -186,6 +190,9 @@ public class FrontController extends HttpServlet {
 		map.put("/seeAllServiceRegist.do", new SeeAllServiceRegist()); // 전체 등록 서비스 조회화면 호출 및 조회기능
 		map.put("/deleteServiceRegist.do", new DeleteServiceRegist()); // 게시글 삭제 및 전체 게시글 재조회 기능
 		map.put("/searchAllServiceRegistBykey.do", new SearchAllServiceRegistBykey()); // (아이디/이름)으로 특정 게시물 검색
+		map.put("/authRequestList.do", new AuthRequestList()); // 권한승인신청 전체조회 페이지 호출 및 신청현황 불러오기 기능
+		map.put("/approveAuthRequest.do", new ApproveAuthRequest()); // 권한승인 신청 승인 
+		map.put("/rejectAuthRequest.do", new RejectAuthRequest()); // 권한승인 신청 거절
 	}
 
 	/**
