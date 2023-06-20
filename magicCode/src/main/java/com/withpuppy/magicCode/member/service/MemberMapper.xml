@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.withpuppy.magicCode.member.service.MemberMapper">
-	<!-- 선호 -->
+	
 	<!-- 로그인시 사용 -->
 	<select id="memberLogin" resultType="com.withpuppy.magicCode.member.service.MemberVO">
 		SELECT * FROM MEMBER
@@ -11,65 +11,104 @@
 		</if>
 	</select>
 	
-	<!-- 전체회원 조회시 사용 -->
-	<select id="memberSelectList" resultType="com.withpuppy.magicCode.member.service.MemberVO">
-		SELECT * FROM MEMBER
-	</select>
-	<!-- 회원상세 조회시 사용 -->
-	<select id="memberSelect" resultType="com.withpuppy.magicCode.member.service.MemberVO">
-		SELECT * FROM MEMBER
-		WHERE MEMBER_ID = #{memberId}
-	</select>
-
-	<!-- 이름으로 회원 검색 -->
-	<select id="memberSelectByName" parameterType="java.lang.String"
-		resultType="com.withpuppy.magicCode.member.service.MemberVO">
-		SELECT * FROM MEMBER WHERE MEMBER_NAME LIKE CONCAT('%', #{memberName}, '%')
-	</select>
-	<!-- ID로 회원 검색 -->
-	<select id="memberSelectById" parameterType="java.lang.String"
-		resultType="com.withpuppy.magicCode.member.service.MemberVO">
-		SELECT * FROM MEMBER WHERE MEMBER_ID = #{memberId}
-	</select>
 	<!-- 닉네임중복 조회시 사용 -->
 	<select id="memberSelectByNick" resultType="com.withpuppy.magicCode.member.service.MemberVO">
-		SELECT * FROM MEMBER
+		SELECT * 
+		FROM MEMBER
 		WHERE MEMBER_NICK = #{memberNick}
 	</select>
 	
 	<!-- 일반회원 가입시 사용 -->
 	<insert id="memberInsert">
 		INSERT INTO MEMBER
-		VALUES(#{memberId}, #{memberNick}, #{memberPw}, #{memberName}, #{memberTel}, #{memberAddr}, #{memberAuth})
+		VALUES(
+		#{memberId}, 
+		#{memberNick}, 
+		#{memberPw}, 
+		#{memberName}, 
+		#{memberTel}, 
+		#{memberAddr}, 
+		#{memberAuth})
 	</insert>
 	
 	<!-- 시터, 훈련사, 미용사 회원가입시 사용 -->
 	<insert id="memberInsertSitter"> 
 		INSERT INTO MEMBER
-		VALUES(#{memberId}, #{memberPw}, #{memberName}, #{memberTel}, #{memberAddr}, #{memberAuth})
+		VALUES(
+		#{memberId}, 
+		#{memberPw}, 
+		#{memberName}, 
+		#{memberTel}, 
+		#{memberAddr}, 
+		#{memberAuth})
 	</insert>
 	
 	<update id="memberUpdate">
 		UPDATE MEMBER
 		<set>
-			<if test="memberPw != null">MEMBER_PW = #{memberPw},</if>
-			<if test="memberTel != null">MEMBER_TEL = #{memberTel},</if>
-			<if test="memberAddr != null">MEMBER_ADDR = #{memberAddr}</if>
-			<if test="memberAuth != null">MEMBER_AUTH = #{memberAuth}</if>
+			<if test="memberPw != null">
+			MEMBER_PW = #{memberPw},</if>
+			<if test="memberTel != null">
+			MEMBER_TEL = #{memberTel},</if>
+			<if test="memberAddr != null">
+			MEMBER_ADDR = #{memberAddr}</if>
+			<if test="memberAuth != null">
+			MEMBER_AUTH = #{memberAuth}</if>
 		</set>
 		WHERE member_id = #{memberId} 
 	</update>
+	
 	<!-- 관리자에의한 회원정보수정 -->
 	<update id="memberUpdateByAdmin">
 		UPDATE MEMBER
 		<set>
-			<if test="memberName != null">MEMBER_NAME = #{memberName},</if>
-			<if test="memberTel != null">MEMBER_TEL = #{memberTel},</if>
-			<if test="memberAddr != null">MEMBER_ADDR = #{memberAddr}</if>
+			<if test="memberName != null">
+			MEMBER_NAME = #{memberName},</if>
+			<if test="memberTel != null">
+			MEMBER_TEL = #{memberTel},</if>
+			<if test="memberAddr != null">
+			MEMBER_ADDR = #{memberAddr}</if>
 		</set>
+		WHERE MEMBER_ID = #{memberId}
 	</update>
+	
+	<!-- 관리자에의한 회원삭제 -->
 	<delete id="memberDelete">
 		delete from MEMBER
 		where member_id = #{memberId}
 	</delete>
+	
+	<!-- 전체회원 조회시 사용 -->
+	<select id="memberSelectList"
+	 resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT * 
+		FROM MEMBER
+		ORDER BY MEMBER_NAME
+	</select>
+	
+	<!-- 회원상세 조회시 사용 -->
+	<select id="memberSelect"
+	 resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT * 
+		FROM MEMBER
+		WHERE MEMBER_ID = #{memberId}
+	</select>
+	
+	<!-- 이름으로 회원 검색 -->
+	<select id="memberSelectListByName"
+		resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT *
+		FROM MEMBER
+		WHERE MEMBER_NAME = #{memberName}
+		ORDER BY MEMBER_NAME
+	</select>
+	
+	<!-- ID로 회원검색 -->
+	<select id="memberSelectListById"
+		resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT *
+		FROM MEMBER
+		WHERE MEMBER_ID = #{memberId}
+		ORDER BY MEMBER_ID
+	</select>
 </mapper>

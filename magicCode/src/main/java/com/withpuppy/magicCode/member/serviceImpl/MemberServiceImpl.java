@@ -70,14 +70,16 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberVO memberSelectByName(String memberName) {
+	public List<MemberVO> memberSelectListByName(MemberVO vo) {
 		// TODO Auto-generated method stub
-		return map.memberSelectByName(memberName);
+		return map.memberSelectListByName(vo);
 	}
 
 	@Override
-	public MemberVO memberSelectById(String memberId) {
+	public List<MemberVO> memberSelectListById(MemberVO vo) {
 		// TODO Auto-generated method stub
-		return map.memberSelectById(memberId);
+		return map.memberSelectListById(vo);
 	}
+
+
 }

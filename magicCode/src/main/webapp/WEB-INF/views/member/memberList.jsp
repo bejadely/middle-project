@@ -21,17 +21,6 @@
 <body>
 	<div align="center">
 		<div><h1>회원목록</h1></div>
-		<div align="center">
-			<form action="memberIdSearch.do" method="get">
-				<label for="searchId">ID 검색:</label> 
-				<input type="text" id="searchId" name="searchId"> <input type="submit" value="검색">
-			</form>
-			<br>
-			<form action="memberNameSearch.do" method="get">
-				<label for="searchName">이름 검색:</label> 
-				<input type="text" id="searchName" name="searchName"> <input type="submit" value="검색">
-			</form>
-		</div>
 
 		<div align="center">
 			<table border="1" >
@@ -47,9 +36,9 @@
 				</thead>
 				<tbody>
 					<c:forEach items="${members}" var="m">
-						<tr onmouseover='this.style.background="#d9d9d9";' 
-						onmouseleave='this.style.background="#FFFFFF";'
-						onclick="memberIdChois(${m.memberId})"
+						<tr onmouseover='this.style.background="#d9d9d9";'
+    						onmouseleave='this.style.background="#FFFFFF";'
+    						onclick='memberIdChois("${m.memberId}")'
 						>
 							
 							<td align="center">${m.memberId}</td>
@@ -63,6 +52,19 @@
 				</tbody>
 			</table>
 		</div><br>
+		<div align="center">
+		<!-- 검색창(아이디로 조회 / 이름으로 조회) 구현 예정 -->
+		<hr>
+		<form id = "serchForm" action="searchAllMemberBykey.do" method="post">
+			<select id="key" name="key">
+			    <option value="id">아이디로 검색</option>
+			    <option value="name">이름으로 검색</option>
+		   </select> &nbsp;&nbsp;
+		   <input type="text" id="val" name="val">
+		   <button type="submit">검색</button>
+		</form>
+		<hr>
+		</div>
 		
 		<div>
 		<form id="frm" action="memberSelect.do" method="post">

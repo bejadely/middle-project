@@ -42,7 +42,7 @@
 							<tr onmouseover='this.style.background="#263343";' 
 							onmouseleave='this.style.background="#FFFFFF";' 
 							onclick="chois(${s.srId })">
-								<td>${s.srPicturePath }</td>
+								<td><img src="${s.srPicturePath}"></td>
 								<td>${s.srTitle}</td>
 								<td>${s.srServerName}</td>
 								<td>${s.urRate}</td>

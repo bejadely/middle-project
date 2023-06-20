@@ -21,10 +21,12 @@ public class memberDelete implements Command {
         int result = ms.memberDelete(vo);
         
         if (result > 0) {
-            return "redirect:/memberList.do"; // 성공하면 회원 목록으로 리다이렉트
+        	request.setAttribute("message", "성공적으로 삭제되었습니다.");
+    
         } else {
-            return "member/memberMessage"; // 실패하면 멤버메시지 페이지로 이동 (에러페이지 따로 만드는게 좋음)
+        	request.setAttribute("message", "삭제에 실패했습니다. \n다시 시도 해주세요");
         }
+        return "member/memberMessage"; // 실패하면 멤버메시지 페이지로 이동 (에러페이지 따로 만드는게 좋음)
     }
 
 }
