@@ -16,6 +16,7 @@ public class GrommerSelect implements Command {
 		CmsuService cs = new CmsuServiceImpl();
 		CmsuVO vo = new CmsuVO();
 		vo.setSrId(Integer.valueOf(request.getParameter("srId")));
+		//System.out.println(request.getParameter("srId"));
 		vo = cs.grommerSelect(vo);
 		request.setAttribute("grommer", vo);
 		return "member/grommerSelect";

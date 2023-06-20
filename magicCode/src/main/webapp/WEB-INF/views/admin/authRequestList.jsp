@@ -24,21 +24,50 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${authRequestList}" var="a">
+				<c:forEach items="${list}" var="l">
 					<tr>
-						<td align="center" id="srId">${a.}</td>
-						<td align="center">${s.srCategory}</td>
-						<td align="center">${s.srTitle}</td>
-						<td align="center">${s.srServerId}</td>
+						<td align="center">${l.memberId}</td>
+						<td align="center">${l.memberName}</td>
+						<td align="center"><img src="${l.certificaionPath}"></td>
 						<td align="center">
-						<button type="button" id="deleteButton" name="deleteButton" onclick="deleteService(${s.srId})">삭제하기</button>
-						<button type="button" id="deleteButton" name="deleteButton" onclick="deleteService(${s.srId})">삭제하기</button>
+						<c:if test="${l.memberAuth eq 'UT'}">
+							훈련사
+						</c:if>
+						<c:if test="${l.memberAuth eq 'UG'}">
+							미용사						
+						</c:if>
+						</td>
+						<td align="center">
+						<button type="button" id="approveButton" name="approveButton" onclick="approve('${l.memberId}', '${l.memberAuth}')">승인</button>
+						<button type="button" id="rejectButton" name="rejectButton" onclick="reject('${l.memberId}', '${l.memberAuth}')">반려</button>
 						</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div><br>
+	<div>
+		<form id="form" method="post">
+			<input type="hidden" id="memberId" name="memberId">
+			<input type="hidden" id="memberAuth" name="memberAuth">
+		</form>
+	</div>
 	</div>
 </body>
+<script type="text/javascript">
+	function approve(id, auth){
+		let form = document.getElementById("form")
+		form.memberId.value = id
+		form.memberAuth.value = auth
+		form.action = "approveAuthRequest.do"
+		form.submit();
+	}
+	function reject(id, auth){
+		let form = document.getElementById("form")
+		form.memberId.value = id
+		form.memberAuth.value = auth
+		form.action = "rejectAuthRequest.do"
+		form.submit();
+	}
+</script>
 </html>

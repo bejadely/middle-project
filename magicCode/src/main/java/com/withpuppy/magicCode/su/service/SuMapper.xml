@@ -7,7 +7,8 @@
 	resultType="com.withpuppy.magicCode.su.service.SuVO">
 		SELECT *
 		FROM USER_REGIST u JOIN SERVICE_REGIST s ON u.SR_ID = s.SR_ID 
-		WHERE u.UR_MEMBER_ID = #{urMemberId} AND s.SR_CATEGORY = 'S'
+		WHERE u.UR_MEMBER_ID = #{urMemberId} 
+			  AND s.SR_CATEGORY = 'S'
 	</select>
 	
 	<!-- 나의 훈련 서비스 신청 전체 리스트 -->
@@ -16,7 +17,8 @@
 	resultType="com.withpuppy.magicCode.su.service.SuVO">
 		SELECT *
 		FROM USER_REGIST u JOIN SERVICE_REGIST s ON u.SR_ID = s.SR_ID 
-		WHERE u.UR_MEMBER_ID = #{urMemberId} AND s.SR_CATEGORY = 'T'
+		WHERE u.UR_MEMBER_ID = #{urMemberId} 
+			  AND s.SR_CATEGORY = 'T'
 	</select>
 
 	<!--나의 미용 서비스 신청 전체 리스트 -->
@@ -25,7 +27,8 @@
 	resultType="com.withpuppy.magicCode.su.service.SuVO">
 		SELECT *
 		FROM USER_REGIST u JOIN SERVICE_REGIST s ON u.SR_ID = s.SR_ID 
-		WHERE u.UR_MEMBER_ID = #{urMemberId} AND s.SR_CATEGORY = 'G'
+		WHERE u.UR_MEMBER_ID = #{urMemberId} 
+		      AND s.SR_CATEGORY = 'G'
 	</select>
 	
 	<!--전체 시터 목록 조회 -->
