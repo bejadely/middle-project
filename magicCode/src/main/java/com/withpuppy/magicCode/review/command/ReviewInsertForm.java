@@ -17,7 +17,6 @@ public class ReviewInsertForm implements Command {
 		UserRegistVO vo = new UserRegistVO();
 		System.out.println(request.getParameter("urId"));
 		vo.setUrId(Integer.valueOf(request.getParameter("urId")));
-		System.out.println(vo.getUrId());
 		
 		vo = urs.userRegistSelect(vo);
 		request.setAttribute("userRegist", vo);

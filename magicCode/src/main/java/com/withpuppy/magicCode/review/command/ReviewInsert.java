@@ -20,7 +20,6 @@ public class ReviewInsert implements Command {
 		vo.setUrId(Integer.valueOf(request.getParameter("urId")));
 		vo.setUrRate(Integer.valueOf(request.getParameter("urRate")));
 		vo.setUrReview(request.getParameter("urReview"));
-		System.out.print(vo.getUrId());
 		
 		int n = urs.reviewInsert(vo);
 		if(n != 0) {
