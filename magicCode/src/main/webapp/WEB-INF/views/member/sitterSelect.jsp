@@ -11,7 +11,7 @@
 	<div>
 		<p>
       		<label>돌보미 사진
-      		<input type="text" value="${sitter.srPicturePath }"></label>
+      		<img src="${sitter.srPicturePath}"></label>
     	</p><br>
     	<p>
       		<label>돌보미 명
@@ -41,21 +41,27 @@
       		<label>돌보미 소개
       		<input type="text" value="${sitter.srIntroduce }"></label>
     	</p><br>
+    	<p>
+      		<label>시간당 가격
+      		<input type="text" value="${sitter.srPrice }"></label>
+    	</p><br>
 	</div>
 	<div align="center">
-		<button type="button" onclick="chois(${srId})">예약하기</button>&nbsp;&nbsp;
+		<button type="button" onclick="chois('${sitter.srId}','${sitter.srPrice}')">예약하기</button>&nbsp;&nbsp;
 		<button type="button" onclick="location.href='sitterAllList.do'">목록으로</button>
 	</div>
 	<div>
 		<form id="frm" action="sitterReservation.do" method="post">
 			<input type="hidden" id="srId" name="srId">
+			<input type="hidden" id="srPrice" name="srPrice">
 		</form>
 	</div>
 </div>
 <script type="text/javascript">
-	function chois(id) {
+	function chois(id, price) {
 		let frm = document.getElementById("frm");
 		frm.srId.value = id;
+		frm.srPrice.value = price;
 		frm.submit();
 	}
 </script>
