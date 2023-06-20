@@ -3,6 +3,9 @@
 <mapper namespace="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistMapper">
 	<select id="serviceRegistSelectList"
 	resultType="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO">
+		SELECT *
+		FROM service_regist
+		ORDER BY sr_id DESC
 	</select>
 	<select id="serviceRegistSelect" resultType="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO">
 	</select>

@@ -8,102 +8,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>시터서비스 회원가입</title>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
-<script type="text/javascript"> // function(e)미리 양식이 제출되는것을 방지하기 위함
-document.getElementById("frm").addEventListener("submit", function(e){
-	  e.preventDefault();
-	  
-	  // 주소 API가져오기
-	  var addr_from_api = document.getElementById("loadAddress").value;
-
-	  // user 주소 가져오기
-	  var detail_addr = document.getElementById("detailAddress").value;
-
-	  // 주소 합치기
-	  var full_addr = addr_from_api + " " + detail_addr;
-
-	  // 합친주소 보내기
-	  document.getElementById("memberAddr").value = full_addr;
-
-	  this.submit();
-	});
-</script>
-
-<script>
-    function sample6_execDaumPostcode() {
-        new daum. Postcode({
-            oncomplete: function(data) {
-                var addr = ''; 
-                var extraAddr = ''; 
-
-                if (data.userSelectedType === 'R') {
-                    addr = data. roadAddress;
-                } else { 
-                    addr = data. jibunAddress;
-                }
-
-                if(data.userSelectedType === 'R'){
-                    if(data.bname !== '' && /[to|to|to]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    document.getElementById("sample6_extraAddress").value = extraAddr;
-                
-                } else {
-                    document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                
-                document.getElementById("sample6_address").value = addr;
-                document.getElementById("memberAddr").value = addr; // update memberAddr field with the main address
-                document.getElementById("sample6_detailAddress").focus();
-            }
-        }).open();
-    }
-
-    // update memberAddr with the main address plus the detail address
-    document.getElementById("sample6_detailAddress").addEventListener("change", function() {
-        var mainAddr = document.getElementById("sample6_address").value; //도로명주소
-        var detailAddr = document.getElementById("sample6_detailAddress").value; //상세주소
-        document.getElementById("memberAddr").value = mainAddr + " " + detailAddr; //두개 합치기
-    });
-</script>
 
 </head>
 <body>
-	<div align="center"><h1>퍼피케어서비스 회원가입</h1></div>
-	<div align="center"><!-- 선호 -->
+	<div align="center">
+	<h1>퍼피케어서비스 회원가입</h1></div>
+	<div align="center">
 		<form id="frm" action="memberInsertSitter.do" onsubmit="return formCheck" method="get"> 
+		
 			<div>
-				
 				<p>(*표시는 반드시 기입하셔야 하는 항목입니다.)</p>
-				<label>*아이디</label>
+				<label>* 아이디</label>
 				<input type="email" id="memberId" name="memberId" required="required" placeholder="이메일주소">&nbsp;&nbsp;<button type="button" id="checkId" value="No" onclick="idCheck()">중복체크</button><br>
-				<label>*비밀번호</label>
+				<label>* 비밀번호</label>
 				<input type = "password" id="memberPw" name="memberPw" required="required" placeholder="비밀번호"><br>
-				<label>*비밀번호 확인</label>
+				<label>* 비밀번호 확인</label>
 				<input type = "password" id="passwordCheck" name="passwordCheck" required="required" placeholder="비밀번호확인"><br>
-				<label>*이름</label>
+				<label>* 이름</label>
 				<input type = "text" id="memberName" name="memberName" required="required" placeholder="이름"><br>
-				<label>*전화번호</label>
+				<label>* 전화번호</label>
 				<input type = "tel" id="memberTel" name="memberTel" required="required" placeholder="전화번호"><br>
 				
-				<label>*주소</label><input type = "text" id="memberAddr" name="memberAddr" required="required">&nbsp;&nbsp;
-				<button type="button" onclick="sample6_execDaumPostcode()">주소찾기</button><br>
-				<label>*상세주소</label><input type="text" id="detailAddress" placeholder="상세주소" required="required"><br><br>
+				<input id="member_post"  type="text" placeholder="클릭하세요" readonly onclick="findAddr()"><br>
+			  	<input id="member_addr" type="text" placeholder="Address" readonly><br>
+				<input id="member_detail_addr" type="text" placeholder="상세주소 입력란">
 				
+		<!-- 	<label>* 주소</label> <input type="text" id="sample6_address"
+					name="sample6_address" readonly="readonly" required="required">
+				<button type="button" onclick="sample6_execDaumPostcode()">주소검색</button><br>
+				<label>* 상세주소</label> <input type="text"
+					id="sample6_detailAddress" name="sample6_detailAddress"	required="required"><br>
+				<input type="hidden" id="memberAddr" name="memberAddr">
+		-->		
+				
+				
+				
+				<br>
 				<input type="radio" id="memberAuth" name="memberAuth" value="S">
     			<label for="memberAuth">시터</label>
     			<input type="radio" id="memberAuth" name="memberAuth" value="T">
     			<label for="memberAuth">훈련사</label>
     			<input type="radio" id="memberAuth" name="memberAuth" value="G">
     			<label for="memberAuth">애견미용</label><br>
+    			
 				<!-- 자격증 삽입 구조문  -->
 				<label>자격증or증명서 사진 : </label>
 				<input type="file" name="certificationName" required="required">
@@ -152,10 +99,41 @@ document.getElementById("frm").addEventListener("submit", function(e){
 		}
 	}
 	
-	
+</script>
+
+<script>
+function findAddr(){
+	new daum.Postcode({
+        oncomplete: function(data) {
+        	
+        	console.log(data);
+        	
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+            // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+            var roadAddr = data.roadAddress; // 도로명 주소 변수
+            var jibunAddr = data.jibunAddress; // 지번 주소 변수
+            var postcode = data.zonecode //우편번호
+            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+            document.getElementById('member_post').value = data.zonecode;
+            var addr = '';
+            if(roadAddr !== ''){
+            	addr = roadAddr;
+            } 
+            else if(jibunAddr !== ''){
+            	addr = jibunAddr;
+            }
+                document.getElementById("member_addr").value = roadAddr;
+                //상세주소가져오기
+                var detailAddr = document.getElementById('member_detail_addr').value;
+                //주소 합치기<우편번호, 도로명주소, 상세주소>
+                var memberAddr = postcode + ' ' + addr + ' ' + detailAddr;
+        }
+    }).open();
+}
 </script>
 
 
-
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>

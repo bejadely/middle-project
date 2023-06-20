@@ -11,34 +11,7 @@
 		</if>
 	</select>
 	
-	<!-- 전체회원 조회시 사용 -->
-	<select id="memberSelectList" resultType="com.withpuppy.magicCode.member.service.MemberVO">
-		SELECT * 
-		FROM MEMBER
-	</select>
 	
-	<!-- 회원상세 조회시 사용 -->
-	<select id="memberSelect" resultType="com.withpuppy.magicCode.member.service.MemberVO">
-		SELECT * 
-		FROM MEMBER
-		WHERE MEMBER_ID = #{memberId}
-	</select>
-
-	<!-- 이름으로 회원 검색 -->
-	<select id="memberSelectByName" parameterType="java.lang.String"
-		resultType="com.withpuppy.magicCode.member.service.MemberVO">
-		SELECT * 
-		FROM MEMBER 
-		WHERE MEMBER_NAME LIKE CONCAT('%', #{memberName}, '%')
-	</select>
-	
-	<!-- ID로 회원 검색 -->
-	<select id="memberSelectById" parameterType="java.lang.String"
-		resultType="com.withpuppy.magicCode.member.service.MemberVO">
-		SELECT * 
-		FROM MEMBER 
-		WHERE MEMBER_ID = #{memberId}
-	</select>
 	
 	<!-- 닉네임중복 조회시 사용 -->
 	<select id="memberSelectByNick" resultType="com.withpuppy.magicCode.member.service.MemberVO">
@@ -104,4 +77,36 @@
 		delete from MEMBER
 		where member_id = #{memberId}
 	</delete>
+	
+	<!-- 전체회원 조회시 사용 -->
+	<select id="memberSelectList" resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT * 
+		FROM MEMBER
+		ORDER BY MEMBER_NAME
+	</select>
+	
+	<!-- 회원상세 조회시 사용 -->
+	<select id="memberSelect" resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT * 
+		FROM MEMBER
+		WHERE MEMBER_ID = #{memberId}
+	</select>
+	
+	<!-- 이름으로 회원 검색 -->
+	<select id="memberSelectListByName"
+		resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT *
+		FROM MEMBER
+		WHERE MEMBER_NAME = #{memberName}
+		ORDER BY MEMBER_NAME
+	</select>
+	
+	<!-- ID로 회원검색 -->
+	<select id="memberSelectListById"
+		resultType="com.withpuppy.magicCode.member.service.MemberVO">
+		SELECT *
+		FROM MEMBER
+		WHERE MEMBER_ID = #{memberId}
+		ORDER BY MEMBER_ID
+	</select>
 </mapper>
