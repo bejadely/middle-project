@@ -68,8 +68,10 @@
 			UR_REVIEW = #{urReview}
 		WHERE ur_id= #{urId}
 	</update>
-	<delete id="reviewDelete">
-		DELETE FROM USER_REGIST
-		WHERE ur_id = #{urId}
-	</delete>
+	<update id="reviewDelete" parameterType="com.withpuppy.magicCode.userRegist.service.UserRegistVO">
+		UPDATE USER_REGIST
+		SET UR_RATE = 0,
+			UR_REVIEW = ''
+		WHERE ur_id= #{urId}
+	</update>
 </mapper>

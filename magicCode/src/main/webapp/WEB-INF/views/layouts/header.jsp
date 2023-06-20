@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div align="center">
@@ -22,7 +21,7 @@
 	        	<ul class="navbar-nav ml-auto">
 	        	<li class="nav-item"><a href="main.do" class="nav-link">Home</a></li>
 	        	<!-- 임시버튼(있으면 삭제헤주세요) -->
-	        	<li class="nav-item"><a href="serviceRegistForm.do" class="nav-link">임시1</a></li>
+	        	<li class="nav-item"><a href="main1.do" class="nav-link">메인1</a></li>
 	        	<li class="nav-item"><a href="seeAllServiceRegist.do" class="nav-link">임시2</a></li>
 	        	<li class="nav-item"><a href="sitterAllList.do" class="nav-link">돌봄 서비스</a></li>
 	        	<li class="nav-item"><a href="trainnerAllList.do" class="nav-link">훈련 서비스</a></li>

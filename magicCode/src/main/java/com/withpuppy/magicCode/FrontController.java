@@ -52,12 +52,10 @@ import com.withpuppy.magicCode.notice.command.NoticeList;
 import com.withpuppy.magicCode.notice.command.NoticeMenu;
 import com.withpuppy.magicCode.notice.command.NoticeSelect;
 import com.withpuppy.magicCode.notice.command.NoticeUpdate;
-import com.withpuppy.magicCode.review.command.ReviewList;
 import com.withpuppy.magicCode.psu.command.SitterReservation;
 import com.withpuppy.magicCode.psu.command.UserGrommingApplySelect;
 import com.withpuppy.magicCode.psu.command.UserSitterApplySelect;
 import com.withpuppy.magicCode.psu.command.UserTrainningApplySelect;
-import com.withpuppy.magicCode.su.command.GrommerAllList;
 import com.withpuppy.magicCode.review.command.ReviewDelete;
 import com.withpuppy.magicCode.review.command.ReviewInsert;
 import com.withpuppy.magicCode.review.command.ReviewInsertForm;
@@ -68,16 +66,6 @@ import com.withpuppy.magicCode.review.command.ReviewListUrId;
 import com.withpuppy.magicCode.review.command.ReviewSearch;
 import com.withpuppy.magicCode.review.command.ReviewUpdate;
 import com.withpuppy.magicCode.review.command.ReviewUpdateForm;
-import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
-import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
-import com.withpuppy.magicCode.su.command.SitterAllList;
-import com.withpuppy.magicCode.su.command.TrainnerAllList;
-//import com.withpuppy.magicCode.su.command.SitterSelect;
-import com.withpuppy.magicCode.su.command.UserGrommingApplyAllList;
-import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
-import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
-import com.withpuppy.magicCode.userRegist.command.UrCheckCUpdate;
-import com.withpuppy.magicCode.userRegist.command.UrCheckEUpdate;
 import com.withpuppy.magicCode.serviceRegist.command.DeleteServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegistForm;
@@ -88,11 +76,15 @@ import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
 import com.withpuppy.magicCode.serviceRegist.command.TraningServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.TraningServiceRegistForm;
 import com.withpuppy.magicCode.serviceRegist.command.imgTest;
+import com.withpuppy.magicCode.su.command.GrommerAllList;
 import com.withpuppy.magicCode.su.command.SitterAllList;
+import com.withpuppy.magicCode.su.command.TrainnerAllList;
 //import com.withpuppy.magicCode.su.command.SitterSelect;
 import com.withpuppy.magicCode.su.command.UserGrommingApplyAllList;
 import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
 import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
+import com.withpuppy.magicCode.userRegist.command.UrCheckCUpdate;
+import com.withpuppy.magicCode.userRegist.command.UrCheckEUpdate;
 
 /**
  * Servlet implementation class FrontController
@@ -116,6 +108,7 @@ public class FrontController extends HttpServlet {
 		// 이선호
 		// 메인 페이지
 		map.put("/main.do", new MainCommand()); // 메인 페이지 호출
+		map.put("/main1.do", new MainOne());
 
 		map.put("/memberLogin.do", new MemberLogin()); // 로그인 처리
 		map.put("/memberLoginForm.do", new MemberLoginForm()); //로그인 폼 호출
