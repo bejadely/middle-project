@@ -17,8 +17,35 @@
 				<h4>펫 정보 입력</h4>
 				<label>강아지 이름<input type = "text" id="petName" name="petName" required="required"></label><br>
 				<label>품종<input type = "text" id="petName" name="petName" required="required"></label><br>
-				<label>품종<input type = "text" id="petName" name="petName" required="required"></label><br>
+				<label>나이<input type = "number" id="petAge" name="petAge" required="required"></label><br>
+				<label>성별</label><br>
+				<label for="male">남자아이<input type = "radio" id="male" name="petGender" checked="checked"></label>&nbsp;&nbsp;
+				<label for="female">여자아이<input type = "radio" id="female" name="petGender"></label>
+				<label>특이사항<br>
+				<textarea rows="3" cols="20"></textarea></label>
+			</div>
+			<div>
+				<h4>서비스 신청 내용</h4>
+				<input type="hidden" id="urMemberId" name="urMemberId" value="${id}">
+				<!-- petId는 command 에서 받아올예정 -->
+				<label for="urDate">요청 날짜를 선택해 주십시오.<br>
+				  <input type="date"
+				         id="urDate"
+				         name="urDate"
+				         required="required">
+				</label><br>
+				<label>돌봄 서비스 예약 시간을 선택해 주십시오</label><br>
+				<label><input type = "time" id="urStartTime" name="urStartTime" required="required" min="09:00" max="23:00" value="09:00"></label> 부터 ~
+				<label><input type = "time" id="urEndTime" name="urEndTime" required="required" min="09:00" max="23:00" value="09:00"></label> 까지 <br>
+				<label>결제금액<input type = "text" id="srPrice" name="srPrice" value="${sr.srPrice}" readonly> 원</label><br>
+				<label>결제방식 선택</label><br>
+				<label for="credit">일반 카드 결제<input type = "radio" id="credit" name="petGender" checked="checked"></label><br>
+				<label for="naverPay">네이버 페이<input type = "radio" id="naverPay" name="petGender"></label>
 				
+			</div>
+			
+			<div>
+				<!-- 참조하고 있는 내용 -->
 				<label>돌보미명<input type = "text" id="srServerName" name="srServerName" required="required" value="${name}" readonly></label><br>
 				<label>제목<input type = "text" id="srTitle" name="srTitle" required="required"></label><br>
 				<label for="srStartDate">서비스 시작 날짜를 선택해 주십시오
