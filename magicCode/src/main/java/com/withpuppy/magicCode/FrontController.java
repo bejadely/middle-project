@@ -23,7 +23,6 @@ import com.withpuppy.magicCode.main.MainCommand;
 
 import com.withpuppy.magicCode.member.command.AjaxCheckId;
 import com.withpuppy.magicCode.member.command.AjaxCheckNick;
-import com.withpuppy.magicCode.member.command.MemberIdSearch;
 import com.withpuppy.magicCode.member.command.MemberInsert;
 import com.withpuppy.magicCode.member.command.MemberInsertForm;
 import com.withpuppy.magicCode.member.command.MemberInsertSitter;
@@ -32,7 +31,6 @@ import com.withpuppy.magicCode.member.command.MemberList;
 import com.withpuppy.magicCode.member.command.MemberLogin;
 import com.withpuppy.magicCode.member.command.MemberLoginForm;
 import com.withpuppy.magicCode.member.command.MemberLogout;
-import com.withpuppy.magicCode.member.command.MemberNameSearch;
 import com.withpuppy.magicCode.member.command.MemberSelect;
 import com.withpuppy.magicCode.member.command.MemberUpdate;
 import com.withpuppy.magicCode.member.command.SeeMyInfo;
@@ -40,6 +38,7 @@ import com.withpuppy.magicCode.member.command.UpdateMyInfoForm;
 import com.withpuppy.magicCode.member.command.memberDelete;
 import com.withpuppy.magicCode.member.command.memberUpdateByAdmin;
 import com.withpuppy.magicCode.member.command.memberUpdateByAdminForm;
+import com.withpuppy.magicCode.member.command.searchAllMemberBykey;
 import com.withpuppy.magicCode.mpsu.command.GrommingRequestHistory;
 import com.withpuppy.magicCode.mpsu.command.GrommingRequestSelect;
 import com.withpuppy.magicCode.mpsu.command.SitterRequestHistory;
@@ -123,11 +122,11 @@ public class FrontController extends HttpServlet {
 		map.put("/memberLogout.do", new MemberLogout()); // 로그아웃수행
 		map.put("/memberList.do", new MemberList()); // 관리자 멤버 List조회
 		map.put("/memberSelect.do", new MemberSelect()); //멤버 상세보기
-		map.put("/memberUpdateByAdmin.do", new memberUpdateByAdmin());
-		map.put("/memberUpdateByAdminForm.do", new memberUpdateByAdminForm());
+		map.put("/memberUpdateByAdmin.do", new memberUpdateByAdmin()); //회원정보 업데이트
+		map.put("/memberUpdateByAdminForm.do", new memberUpdateByAdminForm()); //회원정보업데이트 폼
 		map.put("/memberDelete.do", new memberDelete()); //멤버삭제
-		map.put("/memberNameSearch.do", new MemberNameSearch()); //회원 이름으로 검색
-		map.put("/memberIdSearch.do", new MemberIdSearch()); //멤버Id검색
+		map.put("/searchAllMemberBykey.do", new searchAllMemberBykey()); //회원 이름, id조회
+		
 		
 		// 정현
 		map.put("/noticeMenu.do", new NoticeMenu());	//공지사항 메뉴리스트

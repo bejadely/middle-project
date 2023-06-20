@@ -11,7 +11,7 @@
 	<div>
 		<p>
       		<label>훈련사 사진
-      		<input type="text" value="${trainner.srPicturePath }"></label>
+      		<img src="${trainner.srPicturePath}"></label>
     	</p><br>
     	<p>
       		<label>훈련사 명
@@ -38,24 +38,30 @@
       		<input type="text" value="${trainner.certificationName }"></label>
     	</p><br>
     	<p>
-      		<label>돌보미 소개
+      		<label>훈련사 소개
       		<input type="text" value="${trainner.srIntroduce }"></label>
+    	</p><br>
+    	<p>
+      		<label>시간당 가격
+      		<input type="text" value="${trainner.srPrice }"></label>
     	</p><br>
 	</div>
 	<div align="center">
-		<button type="button" onclick="chois(${srId})">예약하기</button>&nbsp;&nbsp;
+		<button type="button" onclick="chois('${trainner.srId}','${trainner.srPrice}')">예약하기</button>&nbsp;&nbsp;
 		<button type="button" onclick="location.href='trainnerAllList.do'">목록으로</button>
 	</div>
 	<div>
 		<form id="frm" action="trainnerReservation.do" method="post">
 			<input type="hidden" id="srId" name="srId">
+			<input type="hidden" id="srPrice" name="srPrice">
 		</form>
 	</div>
 </div>
 <script type="text/javascript">
-	function chois(id) {
+	function chois(id, price) {
 		let frm = document.getElementById("frm");
 		frm.srId.value = id;
+		frm.srPrice.value = price;
 		frm.submit();
 	}
 </script>

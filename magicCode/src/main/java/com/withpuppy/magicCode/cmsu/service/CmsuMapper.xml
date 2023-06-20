@@ -24,7 +24,8 @@
                s.SR_START_TIME, 
                s.SR_END_TIME, 
                c.CERTIFICATION_NAME, 
-               s.SR_INTRODUCE
+               s.SR_INTRODUCE,
+               s.SR_PRICE
 		FROM CERTIFICATION c JOIN SERVICE_REGIST s ON c.MEMBER_ID = s.SR_SERVER_ID
                              JOIN MEMBER m ON s.SR_SERVER_NAME = m.MEMBER_NAME
 		WHERE s.SR_ID = #{srId} AND s.SR_CATEGORY = 'S'
@@ -42,7 +43,8 @@
                s.SR_START_TIME, 
                s.SR_END_TIME, 
                c.CERTIFICATION_NAME, 
-               s.SR_INTRODUCE
+               s.SR_INTRODUCE,
+               s.SR_PRICE
 		FROM CERTIFICATION c JOIN SERVICE_REGIST s ON c.MEMBER_ID = s.SR_SERVER_ID
                              JOIN MEMBER m ON s.SR_SERVER_NAME = m.MEMBER_NAME
 		WHERE s.SR_ID = #{srId} AND s.SR_CATEGORY = 'T'
@@ -60,7 +62,8 @@
                s.SR_START_TIME, 
                s.SR_END_TIME, 
                c.CERTIFICATION_NAME, 
-               s.SR_INTRODUCE
+               s.SR_INTRODUCE,
+               s.SR_PRICE
 		FROM CERTIFICATION c JOIN SERVICE_REGIST s ON c.MEMBER_ID = s.SR_SERVER_ID
                              JOIN MEMBER m ON s.SR_SERVER_NAME = m.MEMBER_NAME
 		WHERE s.SR_ID = #{srId} AND s.SR_CATEGORY = 'G'

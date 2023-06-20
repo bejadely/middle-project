@@ -11,7 +11,7 @@
 	<div>
 		<p>
       		<label>미용사 사진
-      		<input type="text" value="${grommer.srPicturePath }"></label>
+      		<img src="${grommer.srPicturePath}"></label>
     	</p><br>
     	<p>
       		<label>미용사 명
@@ -41,21 +41,27 @@
       		<label>미용사 소개
       		<input type="text" value="${grommer.srIntroduce }"></label>
     	</p><br>
+    	<p>
+      		<label>미용사 가격
+      		<input type="text" value="${grommer.srPrice }"></label>
+    	</p><br>
 	</div>
 	<div align="center">
-		<button type="button" onclick="chois(${srId})">예약하기</button>&nbsp;&nbsp;
+		<button type="button" onclick="chois('${grommer.srId}','${grommer.srPrice}')">예약하기</button>&nbsp;&nbsp;
 		<button type="button" onclick="location.href='grommerAllList.do.do'">목록으로</button>
 	</div>
 	<div>
 		<form id="frm" action="grommerReservation.do" method="post">
 			<input type="hidden" id="srId" name="srId">
+			<input type="hidden" id="srPrice" name="srPrice">
 		</form>
 	</div>
 </div>
 <script type="text/javascript">
-	function chois(id) {
+	function chois(id, price) {
 		let frm = document.getElementById("frm");
 		frm.srId.value = id;
+		frm.srPrice.value = price;
 		frm.submit();
 	}
 </script>
