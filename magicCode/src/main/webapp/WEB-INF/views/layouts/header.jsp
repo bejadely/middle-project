@@ -12,7 +12,7 @@
 <div align="center">
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	<div class="container">
-  		<a class="navbar-brand" href="main.do"><span class="flaticon-pawprint-1 mr-2"></span>위드 퍼피</a>
+  		<a class="navbar-brand" href="main.do"><span class="flaticon-pawprint-1 mr-2"></span></a>
     	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="fa fa-bars"></span> Menu
       	</button>
@@ -21,9 +21,6 @@
 	        <c:if test="${auth ne 'A'}">		
 	        	<ul class="navbar-nav ml-auto">
 	        	<li class="nav-item"><a href="main.do" class="nav-link">Home</a></li>
-	        	<!-- 임시버튼(있으면 삭제헤주세요) -->
-	        	<li class="nav-item"><a href="serviceRegistForm.do" class="nav-link">임시1</a></li>
-	        	<li class="nav-item"><a href="seeAllServiceRegist.do" class="nav-link">임시2</a></li>
 	        	<li class="nav-item"><a href="sitterAllList.do" class="nav-link">돌봄 서비스</a></li>
 	        	<li class="nav-item"><a href="trainnerAllList.do" class="nav-link">훈련 서비스</a></li>
 	        	<li class="nav-item"><a href="grommerAllList.do" class="nav-link">미용 서비스</a></li>
@@ -32,7 +29,8 @@
 		        	<li class="nav-item"><a href="memberLoginForm.do" class="nav-link">로그인</a></li>
 				</c:if>
 				<c:if test="${not empty id }">
-					<li class="nav-item"><a href="memberLogout.do" class="nav-link">${name} 님 / 로그아웃</a></li>
+					<li class="nav-item"><a href="seeMyInfo.do" class="nav-link">${name} 님</a></li>
+					<li class="nav-item"><a href="memberLogout.do" class="nav-link">로그아웃</a></li>
 				</c:if>
 	        	<li class="nav-item"><a href="noticeMenu.do" class="nav-link">공지사항</a></li>
 	        	</ul>
@@ -52,7 +50,8 @@
 		        	<li class="nav-item"><a href="memberLoginForm.do" class="nav-link">로그인</a></li>
 				</c:if>
 				<c:if test="${not empty id }">
-					<li class="nav-item"><a href="memberLogout.do" class="nav-link">${name} 님 / 로그아웃</a></li>
+					<li class="nav-item"><a href="seeMyInfo.do" class="nav-link">${name} 님</a></li>
+					<li class="nav-item"><a href="memberLogout.do" class="nav-link">로그아웃</a></li>
 				</c:if>
 	        	<li class="nav-item"><a href="noticeMenu.do" class="nav-link">공지사항</a></li>
 	        	</ul>
