@@ -12,7 +12,7 @@ public class AjaxCheckNick implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// 아이디 중복체크
+		// 닉네임 중복체크
 		MemberService ms = new MemberServiceImpl();
 		MemberVO vo = new MemberVO();
 		vo.setMemberNick(request.getParameter("nick"));
