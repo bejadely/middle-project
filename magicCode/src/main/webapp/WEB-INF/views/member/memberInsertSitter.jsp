@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div><h1>시터서비스 회원가입</h1></div>
-	<div><!-- 선호 -->
+	<div>
 		<form id="frm" action="memberInsertSitter.do" onsubmit="formCheck()" enctype="multipart/form-data" method="post"> 
 			<div>
 				<!-- member 삽입 구문 -->
@@ -24,7 +24,11 @@
 				<label>*비밀번호 확인</label><input type = "password" id="passwordCheck" name="passwordCheck" required="required"><br>
 				<label>*이름</label><input type = "text" id="memberName" name="memberName" required="required"><br>
 				<label>*전화번호</label><input type = "tel" id="memberTel" name="memberTel" required="required"><br>
-				<label>*주소</label><input type = "text" id="memberAddr" name="memberAddr" required="required"><br>
+				<p>주소 입력란</p><br>
+				<input id="member_post"  type="text" placeholder="클릭하세요" readonly onclick="findAddr()"><br>
+			  	<input id="member_addr" type="text" placeholder="Address" readonly><br>
+				<input id="member_detail_addr" type="text" placeholder="상세주소 입력란">
+				
 				<input type="radio" id="sitter" name="memberAuth" value="S" checked="checked">
     			<label for="sitter">시터</label>
     			<input type="radio" id="trainer" name="memberAuth" value="UT">
@@ -39,6 +43,7 @@
 				<input type="submit" value="등 록">&nbsp;&nbsp;
 				<input type="reset" value="취 소">&nbsp;&nbsp;
 			</div>
+			<input type="hidden" id="memberAddrInput" name="memberAddr"/>
 		</form>
 	</div>
 <script type="text/javascript">
@@ -106,6 +111,8 @@ function findAddr(){
                 var detailAddr = document.getElementById('member_detail_addr').value;
                 //주소 합치기<우편번호, 도로명주소, 상세주소>
                 var memberAddr = postcode + ' ' + addr + ' ' + detailAddr;
+             	// 숨겨진 입력 필드의 값을 설정
+                document.getElementById('memberAddrInput').value = memberAddr;
         }
     }).open();
 }

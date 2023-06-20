@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.withpuppy.magicCode.member.service.MemberMapper">
-	<!-- 선호 -->
+	
 	<!-- 로그인시 사용 -->
 	<select id="memberLogin" resultType="com.withpuppy.magicCode.member.service.MemberVO">
 		SELECT * FROM MEMBER
@@ -10,8 +10,6 @@
 			AND MEMBER_PW = #{memberPw}
 		</if>
 	</select>
-	
-	
 	
 	<!-- 닉네임중복 조회시 사용 -->
 	<select id="memberSelectByNick" resultType="com.withpuppy.magicCode.member.service.MemberVO">
@@ -48,10 +46,14 @@
 	<update id="memberUpdate">
 		UPDATE MEMBER
 		<set>
-			<if test="memberPw != null">MEMBER_PW = #{memberPw},</if>
-			<if test="memberTel != null">MEMBER_TEL = #{memberTel},</if>
-			<if test="memberAddr != null">MEMBER_ADDR = #{memberAddr}</if>
-			<if test="memberAuth != null">MEMBER_AUTH = #{memberAuth}</if>
+			<if test="memberPw != null">
+			MEMBER_PW = #{memberPw},</if>
+			<if test="memberTel != null">
+			MEMBER_TEL = #{memberTel},</if>
+			<if test="memberAddr != null">
+			MEMBER_ADDR = #{memberAddr}</if>
+			<if test="memberAuth != null">
+			MEMBER_AUTH = #{memberAuth}</if>
 		</set>
 		WHERE member_id = #{memberId} 
 	</update>
@@ -77,14 +79,16 @@
 	</delete>
 	
 	<!-- 전체회원 조회시 사용 -->
-	<select id="memberSelectList" resultType="com.withpuppy.magicCode.member.service.MemberVO">
+	<select id="memberSelectList"
+	 resultType="com.withpuppy.magicCode.member.service.MemberVO">
 		SELECT * 
 		FROM MEMBER
 		ORDER BY MEMBER_NAME
 	</select>
 	
 	<!-- 회원상세 조회시 사용 -->
-	<select id="memberSelect" resultType="com.withpuppy.magicCode.member.service.MemberVO">
+	<select id="memberSelect"
+	 resultType="com.withpuppy.magicCode.member.service.MemberVO">
 		SELECT * 
 		FROM MEMBER
 		WHERE MEMBER_ID = #{memberId}
