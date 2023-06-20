@@ -15,8 +15,8 @@ public class MemberSelect implements Command {
 		//관리자가 회원정보 상세보기
 		MemberService ms = new MemberServiceImpl();
 		MemberVO vo = new MemberVO();
+		
 		vo.setMemberId(request.getParameter("memberId"));
-		System.out.println(request.getParameter("memberId"));
 		
 		vo = ms.memberSelect(vo);		
 		request.setAttribute("member", vo);

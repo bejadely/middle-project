@@ -8,13 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<aside style="border-right: 1px solid gray">
+<!-- 	<aside style="border-right: 1px solid gray">
 		<a href="memberList.do">회원정보 리스트</a><br>
 		<a href=".do">게시글조회</a><br>
 		<a href=".do">리뷰전체조회</a><br>
 		<a href=".do">회원신청현황</a><br>
 	</aside>
-	
+	 -->
 	<div align="center">
 	<div><h2>회원정보 수정/삭제</h2></div>
 	<div>
@@ -30,25 +30,25 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${member}" var="m">
 						<tr>
-							<td align="center">${m.memberId}</td>
-							<td align="center">${m.memberNick }</td>
-							<td align="center">${m.memberName }</td>
-							<td align="center">${m.memberTel }</td>
-							<td align="center">${m.memberAddr }</td>
-							<td align="center">${m.memberAuth }</td>
+							<td align="center">${member.memberId}</td>
+							<td align="center">${member.memberNick }</td>
+							<td align="center">${member.memberName }</td>
+							<td align="center">${member.memberTel }</td>
+							<td align="center">${member.memberAddr }</td>
+							<td align="center">${member.memberAuth }</td>
 						</tr>
-					</c:forEach>
 				</tbody>
 			</table>
 		</div><br>
 	</div>
 	<div align="center">
-		<c:if test="${member.memberAuth eq 'A' }"> <!-- 대상값 수정필요 -->
-			<button type="button" onclick="callFunction('E')">수정</button>&nbsp;&nbsp;
-			<button type="button" onclick="callFunction('D')">삭제</button>&nbsp;&nbsp;
-		</c:if>
+
+		<button type="button" onclick="callFunction('E')">수정</button>
+		&nbsp;&nbsp;
+		<button type="button" onclick="callFunction('D')">삭제</button>
+		&nbsp;&nbsp;
+
 	</div>
 	<div>
 		<form id="frm" method="post">
