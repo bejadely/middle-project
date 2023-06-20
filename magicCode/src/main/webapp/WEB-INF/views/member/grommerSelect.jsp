@@ -28,6 +28,12 @@
       		</label>
     	</p><br>
     	<p>
+      		<label>서비스 가능 시간대
+      		<input type="text" value="${grommer.srStartTime }"> ~ 
+      		<input type="text" value="${grommer.srEndTime }">
+      		</label>
+    	</p><br>
+    	<p>
       		<label>보유 자격증
       		<input type="text" value="${grommer.certificationName }"></label>
     	</p><br>
@@ -37,9 +43,21 @@
     	</p><br>
 	</div>
 	<div align="center">
-		<button type="button" onclick="location.href='grommerReservation.do'">예약하기</button>&nbsp;&nbsp;
+		<button type="button" onclick="chois(${srId})">예약하기</button>&nbsp;&nbsp;
 		<button type="button" onclick="location.href='grommerAllList.do.do'">목록으로</button>
 	</div>
+	<div>
+		<form id="frm" action="grommerReservation.do" method="post">
+			<input type="hidden" id="srId" name="srId">
+		</form>
+	</div>
 </div>
+<script type="text/javascript">
+	function chois(id) {
+		let frm = document.getElementById("frm");
+		frm.srId.value = id;
+		frm.submit();
+	}
+</script>
 </body>
 </html>

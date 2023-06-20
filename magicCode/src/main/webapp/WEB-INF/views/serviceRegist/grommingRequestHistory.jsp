@@ -31,7 +31,7 @@
 						<c:forEach items="${gromming}" var="g">
 						<tr onmouseover='this.style.background="#263343";' 
 							onmouseleave='this.style.background="#FFFFFF";' 
-							onclick="Chois(${u.urId })">
+							onclick="chois(${g.urId })">
 							<td width="150">${g.urDate }</td>
 							<td width="150">${g.urStartTime }</td>
 							<td width="150">${g.memberName }</td>
@@ -55,7 +55,7 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		function Chois(id) {
+		function chois(id) {
 			let frm = document.getElementById("frm");
 			frm.urId.value = id;
 			frm.submit();

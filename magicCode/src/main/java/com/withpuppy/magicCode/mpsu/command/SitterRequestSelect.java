@@ -16,7 +16,7 @@ public class SitterRequestSelect implements Command {
 		MpsuService ms = new MpsuServiceImpl();
 		MpsuVO vo = new MpsuVO();
 		vo.setUrId(Integer.valueOf(request.getParameter("urId")));
-		System.out.println(request.getParameter("urId"));
+		//System.out.println(request.getParameter("urId"));
 		vo = ms.sitterRequestSelect(vo);
 		request.setAttribute("sitter", vo);
 		

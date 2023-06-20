@@ -5,33 +5,63 @@
 	<select id="sitterRequestHistory" 
 	parameterType="com.withpuppy.magicCode.mpsu.service.MpsuVO"
 	resultType="com.withpuppy.magicCode.mpsu.service.MpsuVO">
-		SELECT u.UR_DATE, u.UR_START_TIME, u.UR_END_TIME, m.MEMBER_NAME, p.PET_NAME, p.PET_KIND, s.SR_LOCATION, s.SR_PRICE, u.UR_ID
+		SELECT u.UR_DATE, 
+			   u.UR_START_TIME, 
+			   u.UR_END_TIME, 
+			   m.MEMBER_NAME, 
+			   p.PET_NAME, 
+			   p.PET_KIND, 
+			   s.SR_LOCATION, 
+			   s.SR_PRICE, 
+			   u.UR_ID
 		FROM MEMBER m JOIN PET p ON m.MEMBER_ID = p.OWNER_ID
                		  JOIN USER_REGIST u ON p.PET_ID = u.UR_PET_ID
                       JOIN SERVICE_REGIST s ON u.SR_ID = s.SR_ID
-        WHERE s.SR_SERVER_ID = #{id} AND s.SR_CATEGORY = 'S' 
+        WHERE s.SR_SERVER_ID = #{id} 
+        		AND s.SR_CATEGORY = 'S'
+        		AND u.UR_CHECK = 'N' 
 	</select>
 	
 	<!-- 훈련 서비스 요청 내역 조회(전체) -->
 	<select id="trainningRequestHistory" 
 	parameterType="com.withpuppy.magicCode.mpsu.service.MpsuVO"
 	resultType="com.withpuppy.magicCode.mpsu.service.MpsuVO">
-		SELECT u.UR_DATE, u.UR_START_TIME, u.UR_END_TIME, m.MEMBER_NAME, p.PET_NAME, p.PET_KIND, s.SR_LOCATION, s.SR_PRICE, u.UR_ID
+		SELECT u.UR_DATE, 
+			   u.UR_START_TIME, 
+			   u.UR_END_TIME, 
+			   m.MEMBER_NAME, 
+			   p.PET_NAME, 
+			   p.PET_KIND, 
+			   s.SR_LOCATION, 
+			   s.SR_PRICE, 
+			   u.UR_ID
 		FROM MEMBER m JOIN PET p ON m.MEMBER_ID = p.OWNER_ID
                		  JOIN USER_REGIST u ON p.PET_ID = u.UR_PET_ID
                       JOIN SERVICE_REGIST s ON u.SR_ID = s.SR_ID
-        WHERE s.SR_SERVER_ID = #{id} AND s.SR_CATEGORY = 'T' 
+        WHERE s.SR_SERVER_ID = #{id} 
+        		AND s.SR_CATEGORY = 'T' 
+        		AND u.UR_CHECK = 'N'
 	</select>
 	
 	<!-- 미용 서비스 요청 내역 조회(전체) -->
 	<select id="grommingRequestHistory" 
 	parameterType="com.withpuppy.magicCode.mpsu.service.MpsuVO"
 	resultType="com.withpuppy.magicCode.mpsu.service.MpsuVO">
-		SELECT u.UR_DATE, u.UR_START_TIME, u.UR_END_TIME, m.MEMBER_NAME, p.PET_NAME, p.PET_KIND, s.SR_LOCATION, s.SR_PRICE, u.UR_ID
+		SELECT u.UR_DATE, 
+			   u.UR_START_TIME, 
+			   u.UR_END_TIME, 
+			   m.MEMBER_NAME, 
+			   p.PET_NAME, 
+			   p.PET_KIND, 
+			   s.SR_LOCATION, 
+			   s.SR_PRICE, 
+			   u.UR_ID
 		FROM MEMBER m JOIN PET p ON m.MEMBER_ID = p.OWNER_ID
                		  JOIN USER_REGIST u ON p.PET_ID = u.UR_PET_ID
                       JOIN SERVICE_REGIST s ON u.SR_ID = s.SR_ID
-        WHERE s.SR_SERVER_ID = #{id} AND s.SR_CATEGORY = 'G' 
+        WHERE s.SR_SERVER_ID = #{id} 
+        		AND s.SR_CATEGORY = 'G' 
+        		AND u.UR_CHECK = 'N'
 	</select>
 	
 	<!-- 돌봄 서비스 요청 단건 조회 -->
@@ -42,7 +72,8 @@
 		FROM MEMBER m JOIN PET p ON m.MEMBER_ID = p.OWNER_ID
                		  JOIN USER_REGIST u ON p.PET_ID = u.UR_PET_ID
                       JOIN SERVICE_REGIST s ON u.SR_ID = s.SR_ID
-        WHERE u.UR_ID = #{urId} AND s.SR_CATEGORY = 'S'
+        WHERE u.UR_ID = #{urId} 
+        		AND s.SR_CATEGORY = 'S'
 	</select>
 	
 	<!-- 훈련 서비스 요청 단건 조회 -->
@@ -53,7 +84,8 @@
 		FROM MEMBER m JOIN PET p ON m.MEMBER_ID = p.OWNER_ID
                		  JOIN USER_REGIST u ON p.PET_ID = u.UR_PET_ID
                       JOIN SERVICE_REGIST s ON u.SR_ID = s.SR_ID
-        WHERE u.UR_ID = #{urId} AND s.SR_CATEGORY = 'T'
+        WHERE u.UR_ID = #{urId} 
+        		AND s.SR_CATEGORY = 'T'
 	</select>
 	
 	<!-- 미용 서비스 요청 단건 조회 -->
@@ -64,6 +96,7 @@
 		FROM MEMBER m JOIN PET p ON m.MEMBER_ID = p.OWNER_ID
                		  JOIN USER_REGIST u ON p.PET_ID = u.UR_PET_ID
                       JOIN SERVICE_REGIST s ON u.SR_ID = s.SR_ID
-        WHERE u.UR_ID = #{urId} AND s.SR_CATEGORY = 'G'
+        WHERE u.UR_ID = #{urId} 
+        		AND s.SR_CATEGORY = 'G'
 	</select>
 </mapper>
