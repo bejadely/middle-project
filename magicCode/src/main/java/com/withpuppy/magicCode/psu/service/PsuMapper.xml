@@ -5,7 +5,7 @@
 	<select id="userSitterApplySelect" 
 	parameterType="com.withpuppy.magicCode.psu.service.PsuVO"
 	resultType="com.withpuppy.magicCode.psu.service.PsuVO">
-		SELECT U.UR_DATE, U.UR_START_TIME, U.UR_END_TIME, S.SR_SERVER_NAME,
+		SELECT U.UR_ID, U.UR_DATE, U.UR_START_TIME, U.UR_END_TIME, S.SR_SERVER_NAME,
 			   P.PET_NAME, P.PET_KIND, P.PET_AGE, P.PET_GENDER, P.PET_WEIGHT,
 			   P.PET_SIGN, U.UR_REQUIRE, S.SR_PRICE, U.UR_CHECK
 		FROM SERVICE_REGIST s JOIN USER_REGIST u ON s.SR_ID = u.SR_ID 

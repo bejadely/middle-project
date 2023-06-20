@@ -51,7 +51,6 @@ import com.withpuppy.magicCode.notice.command.NoticeMenu;
 import com.withpuppy.magicCode.notice.command.NoticeSelect;
 import com.withpuppy.magicCode.notice.command.NoticeUpdate;
 import com.withpuppy.magicCode.review.command.ReviewList;
-import com.withpuppy.magicCode.review.command.ReviewSelectList;
 import com.withpuppy.magicCode.psu.command.SitterReservation;
 import com.withpuppy.magicCode.psu.command.UserGrommingApplySelect;
 import com.withpuppy.magicCode.psu.command.UserSitterApplySelect;
