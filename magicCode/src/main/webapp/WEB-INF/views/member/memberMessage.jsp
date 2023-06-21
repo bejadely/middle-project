@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div align = "center">
+	<div align = "center" style="margin-top: 50px">
 		<h2>${message}</h2>
-		<button type="button" onclick="location.href='main.do'">메인화면으로 이동</button>
+		<button type="button" class="btn btn-success" onclick = "location.href='main.do'">메인화면으로 이동</button>
 	</div>
 </body>
 </html>
