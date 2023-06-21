@@ -129,7 +129,6 @@ public class FrontController extends HttpServlet {
 		// 이선호
 		// 메인 페이지
 		map.put("/main.do", new MainCommand()); // 메인 페이지 호출
-		map.put("/main1.do", new MainOne());
 
 		map.put("/memberLogin.do", new MemberLogin()); // 로그인 처리
 		map.put("/memberLoginForm.do", new MemberLoginForm()); //로그인 폼 호출

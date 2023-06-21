@@ -59,5 +59,6 @@
 <script type="text/javascript">
 	document.getElementById('srStartDate').value = new Date().toISOString().substring(0, 10);
 	document.getElementById('srStartDate').min = new Date().toISOString().substring(0, 10);
+    }
 </script>
 </html>

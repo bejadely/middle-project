@@ -5,6 +5,7 @@
 <html>
 <head>
 <title>Pet Sitting - Free Bootstrap 4 Template by Colorlib</title>
+<!--
 <style>
 #sitterList{
 	height: 40px;
@@ -21,6 +22,7 @@
 	float:left;
 }
 </style>
+ -->
 </head>
 
 <body>
@@ -31,11 +33,6 @@
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-end">
 				<div class="col-md-9 ftco-animate pb-5">
-					<p class="breadcrumbs mb-2">
-						<span class="mr-2"><a href="main.do">Home <i
-								class="ion-ios-arrow-forward"></i></a></span> <span>시터조회 <i
-							class="ion-ios-arrow-forward"></i></span>
-					</p>
 					<h1 class="mb-0 bread">전체 펫 돌보미 조회</h1>
 				</div>
 			</div>
@@ -43,9 +40,7 @@
 	</section>
 	<div id="sitterList">
 		<div align="center">
-			<ul>
-				<li><a href="orderBySitterUrRate.do">평점 높은 순</a></li>
-			</ul>
+			<a href="orderBySitterUrRate.do">평점 높은 순</a>
 		</div>
 		<nav>
 			<form id = "serchForm" action="searchSitterName.do" method="post">
@@ -56,6 +51,11 @@
 		</nav>
 	</div>
 	<section class="ftco-section bg-light">
+		<div>
+			<c:if test="${auth eq 'S'}">
+				<button type="button" onclick="location.href='serviceRegistForm.do'">돌봄 서비스 등록</button>&nbsp;&nbsp;
+			</c:if> 
+		</div>
 		<div class="container">
 			<div class="row">
 				<c:forEach items="${services }" var="s">
