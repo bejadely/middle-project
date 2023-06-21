@@ -43,6 +43,8 @@ public class ServiceRegist implements Command {
 			String mfile = multi.getFilesystemName("mfile");
 			mfile = "upload/" + mfile; // 물리적인 저장위치를 앞에 붙여줌
 			
+			System.out.println(multi.getParameter("srIntroduce"));
+			
 			// 사용 할 일 있을때 주석 풀것
 			// String omfile = multi.getOriginalFileName("mfile"); // 여기서 cfile은 실제 폼에서 가져오는 cfile네임
 			
