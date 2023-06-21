@@ -21,5 +21,6 @@ public interface MemberMapper {
 	// ID로 회원 검색
 	List<MemberVO> memberSelectListById(MemberVO vo);
 	
+	
 }
 
