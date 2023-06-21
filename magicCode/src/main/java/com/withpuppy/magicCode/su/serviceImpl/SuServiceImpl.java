@@ -48,6 +48,42 @@ public class SuServiceImpl implements SuService{
 		//전체 미용사 목록 조회
 		return map.grommerAllList();
 	}
+
+	@Override
+	public List<SuVO> sitterSelectListByName(String srServerName) {
+		//이름으로 시터 조회
+		return map.sitterSelectListByName(srServerName);
+	}
+
+	@Override
+	public List<SuVO> trainnerSelectListByName(String srServerName) {
+		//이름으로 훈련사 조회
+		return map.trainnerSelectListByName(srServerName);
+	}
+
+	@Override
+	public List<SuVO> grommerSelectListByName(String srServerName) {
+		//이름으로 미용사 조회
+		return map.grommerSelectListByName(srServerName);
+	}
+
+	@Override
+	public List<SuVO> orderBySitterUrRate() {
+		// 전체 시터 목록 조회(평점순)
+		return map.orderBySitterUrRate();
+	}
+
+	@Override
+	public List<SuVO> orderByTrainnerUrRate() {
+		// 전체 훈련사 목록 조회(평점순)
+		return map.orderByTrainnerUrRate();
+	}
+
+	@Override
+	public List<SuVO> orderByGrommerUrRate() {
+		// 전체 미용사 목록 조회(평점순)
+		return map.orderByGrommerUrRate();
+	}
 	
 
 }

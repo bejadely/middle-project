@@ -55,6 +55,12 @@ import com.withpuppy.magicCode.psu.command.SitterReservation;
 import com.withpuppy.magicCode.psu.command.UserGrommingApplySelect;
 import com.withpuppy.magicCode.psu.command.UserSitterApplySelect;
 import com.withpuppy.magicCode.psu.command.UserTrainningApplySelect;
+import com.withpuppy.magicCode.su.command.GrommerAllList;
+import com.withpuppy.magicCode.su.command.OrderByGrommerUrRate;
+import com.withpuppy.magicCode.su.command.OrderBySitterUrRate;
+import com.withpuppy.magicCode.su.command.OrderByTrainnerUrRate;
+import com.withpuppy.magicCode.su.command.SearchSitterName;
+import com.withpuppy.magicCode.su.command.SearchTrainnerName;
 import com.withpuppy.magicCode.review.command.ReviewDelete;
 import com.withpuppy.magicCode.review.command.ReviewInsert;
 import com.withpuppy.magicCode.review.command.ReviewInsertForm;
@@ -65,6 +71,17 @@ import com.withpuppy.magicCode.review.command.ReviewListUrId;
 import com.withpuppy.magicCode.review.command.ReviewSearch;
 import com.withpuppy.magicCode.review.command.ReviewUpdate;
 import com.withpuppy.magicCode.review.command.ReviewUpdateForm;
+import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
+import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
+import com.withpuppy.magicCode.su.command.SitterAllList;
+import com.withpuppy.magicCode.su.command.TrainnerAllList;
+//import com.withpuppy.magicCode.su.command.SitterSelect;
+import com.withpuppy.magicCode.su.command.UserGrommingApplyAllList;
+import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
+import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
+import com.withpuppy.magicCode.su.command.searchGrommerName;
+import com.withpuppy.magicCode.userRegist.command.UrCheckCUpdate;
+import com.withpuppy.magicCode.userRegist.command.UrCheckEUpdate;
 import com.withpuppy.magicCode.serviceRegist.command.DeleteServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegistForm;
@@ -166,10 +183,16 @@ public class FrontController extends HttpServlet {
 		map.put("/userGrommingApplyAllList.do", new UserGrommingApplyAllList()); // 마이페이지 - 나의 미용 서비스 신청 전체 리스트
 	    map.put("/userGrommingApplySelect.do", new UserGrommingApplySelect()); // 마이페이지 - 나의 미용 서비스 신청 전체 리스트 - 상세 조회
 	    map.put("/sitterAllList.do", new SitterAllList()); // 전체 시터 목록 조회
+	    map.put("/orderBySitterUrRate.do", new OrderBySitterUrRate()); // 평점 높은 순으로 정렬(시터)
+	    map.put("/searchSitterName.do", new SearchSitterName()); // 이름으로 시터 조회
 	    map.put("/sitterSelect.do", new SitterSelect()); // 시터 단건 조회
 	    map.put("/trainnerAllList.do", new TrainnerAllList()); //전체 훈련사 목록 조회
+	    map.put("/orderByTrainnerUrRate.do", new OrderByTrainnerUrRate()); //전체 훈련사 목록 조회(평점순)
+	    map.put("/searchTrainnerName.do", new SearchTrainnerName()); // 이름으로 훈련사 조회
 	    map.put("/trainnerSelect.do", new TrainnerSelect()); //훈련사 단건 조회
 	    map.put("/grommerAllList.do", new GrommerAllList()); //전체 미용사 목록 조회
+	    map.put("/orderByGrommerUrRate.do", new OrderByGrommerUrRate()); //전체 미용사 목록 조회(평점순)
+	    map.put("/searchGrommerName.do", new searchGrommerName()); // 이름으로 미용사 조회
 	    map.put("/grommerSelect.do", new GrommerSelect()); //미용사 단건 조회
 	    
 	    //(서비스 제공자)

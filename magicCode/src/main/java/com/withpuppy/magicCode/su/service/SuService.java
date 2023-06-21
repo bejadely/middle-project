@@ -10,4 +10,12 @@ public interface SuService {
 	List<SuVO> sitterAllList(); //전체 시터 목록 조회
 	List<SuVO> trainnerAllList(); //전체 훈련사 목록 조회
 	List<SuVO> grommerAllList(); //전체 미용사 목록 조회
+	
+	List<SuVO> orderBySitterUrRate(); //전체 시터 목록 조회(평점순)
+	List<SuVO> orderByTrainnerUrRate(); //전체 훈련사 목록 조회(평점순)
+	List<SuVO> orderByGrommerUrRate(); //전체 미용사 목록 조회(평점순)
+	
+	List<SuVO> sitterSelectListByName(String srServerName);//이름으로 시터 조회
+	List<SuVO> trainnerSelectListByName(String srServerName);//이름으로 훈련사 조회
+	List<SuVO> grommerSelectListByName(String srServerName);//이름으로 미용사 조회
 }

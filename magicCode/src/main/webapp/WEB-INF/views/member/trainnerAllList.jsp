@@ -23,6 +23,23 @@
 				</div>
 			</div>
 		</div>
+	<div>
+		<nav>
+			<ul>
+				<li><a href="orderByTrainnerUrRate.do">평점 높은 순</a></li>
+			</ul>
+			<form id = "serchForm" action="searchTrainnerName.do" method="post">
+			    <label>이름으로 검색</label>
+		   		<input type="text" id="name" name="name" required="required">
+		   		<button type="submit">검색</button>
+			</form>
+		</nav>
+	</div>
+	<div align="center">
+		<div>
+			<h1>전체 펫 훈련사 조회</h1>
+		</div>
+	</div>
 	</section>
 		<div>
 			<c:if test="${auth eq 'T'}">
