@@ -250,12 +250,15 @@ public class FrontController extends HttpServlet {
 				response.setContentType("text/html; charset=utf-8");
 				response.getWriter().append(viewPage.substring(5));
 				return; 
+			}else if(viewPage.endsWith(".jsp")){
+				viewPage = "/WEB-INF/views/" + viewPage;
+			} else {
+				viewPage += ".tiles";
+				
 			}
-			
-			viewPage += ".tiles";
-			
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 			dispatcher.forward(request, response);
+			
 		}else {
 			response.sendRedirect(viewPage); 
 		}

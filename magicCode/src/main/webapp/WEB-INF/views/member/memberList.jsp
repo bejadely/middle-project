@@ -23,15 +23,15 @@
 		<div><h1>회원목록</h1></div>
 
 		<div align="center">
-			<table border="1" >
-				<thead>
+			<table border="1" class="table">
+				<thead align="center" class="thead-dark"> 
 					<tr>
-						<th width="150">아이디</th>
-						<th width="150">닉네임</th>
-						<th width="150">이 름</th>
-						<th width="150">연락처</th>
-						<th width="200">주 소</th>
-						<th width="100">회원등급</th>
+						<th scope="col" width="150">아이디</th>
+						<th scope="col" width="150">닉네임</th>
+						<th scope="col" width="150">이 름</th>
+						<th scope="col" width="150">연락처</th>
+						<th scope="col" width="200">주 소</th>
+						<th scope="col" width="100">회원등급</th>
 					</tr>
 				</thead>
 				<tbody>

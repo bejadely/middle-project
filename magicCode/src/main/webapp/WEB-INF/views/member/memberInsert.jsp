@@ -1,121 +1,121 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<style type="text/css">
-
-#container {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 80vh;
-}
-
-.duplicate {
-  color: red;
-}
-
-<!-- 섹션 크기 -->
-	.bg-light{
-		height: 1053px;
-		padding-top:55px;
-		padding-bottom:75px;
-	}
-	.flex-fill.mx-xl-5.mb-2{
-		margin: 0 auto;
-		width : 700px;
-		padding-right: 7rem;
-		padding-left: 7rem;
-	}
-    <!-- 입력창 -->
-	.container.py-4{
-		margin: 0 auto;
-		width : 503px;
-	}
-    <!-- 가입하기 -->
-	.d-grid.gap-2{
-		padding-top: 30px;
-	}
-    
-    <!-- 생년월일 -->
-	.bir_yy,.bir_mm,.bir_dd{
-		width:160px;
-		display:table-cell;
-	}
-	.bir_mm+.bir_dd, .bir_yy+.bir_mm{
-		padding-left:10px;
-	}
-
-</style>
 <meta charset="UTF-8">
 <title>일반회원가입</title>
+<style>
+.duplicate {
+	color: red;
+}
+
+.bg-light {
+	height: 1200px;
+	padding-top: 55px;
+	padding-bottom: 75px;
+}
+
+.flex-fill.mx-xl-5.mb-2 {
+	margin: 0 auto;
+	width: 700px;
+	padding-right: 7rem;
+	padding-left: 7rem;
+}
+
+.container.py-4 {
+	margin: 0 auto;
+	width: 503px;
+}
+
+.d-grid.gap-2 {
+	padding-top: 30px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+</style>
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
-<section class="bg-light">
-	<div align="center"  id="container">
-	<div class="container py-4">
-		 <div class="row align-items-center justify-content-between">
-		 	<a class="navbar-brand h1 text-center" href="index.do">
-		 	 <span class="text-dark h4">With</span> <span class="text-primary h4">Puppy</span>  
-		 	</a>
-		 </div>
-	
+	<section class="bg-light">
+		<div class="container py-4">
+			<div class="row align-items-center justify-content-between" > 
+				<a class="navbar-brand h1 text-center" href="main.do" > <span 
+					class="text-dark h4">With</span> <span class="text-primary h4">Puppy</span>
+				</a>
+			</div>
 
-	
-		<!-- 선호 form은 request에다가 담아주는 역할-->  
-		<form id="frm" action="memberInsert.do" onsubmit="return formCheck()" method="post">
-			<div class="form-group">
-			
-				<label for="memberId" class="form-label mt-4">*아이디</label>
-				<input type="email" class="form-control" id="memberId" name="memberId" required="required">&nbsp;&nbsp;
-			</div>
-			
-			<div>
-				<br><label>*닉네임</label>
-				<input type="text" id="memberNick" name="memberNick" required="required">&nbsp;&nbsp;
-			</div>
-			
-			<div>	
-				<label class="form-label mt-4" for="memberId">*비밀번호</label>
-				<input type ="password" class="form-control is-valid" id="memberPw" name="memberPw" required="required"><br>
-			</div>
-			
-			<div class="form-group has-danger">	
-				<label class="form-label mt-4" for="passwordCheck">*비밀번호 확인</label>
-				<input type ="password" class="form-control is-invalid" id="passwordCheck" name="passwordCheck" required="required"><br>
-			</div>
-			
-			<div class="form-group">
-				<label for="memberName" class="form-label mt-4">*이름</label>
-				<input type ="text"  class="form-control" id="memberName" name="memberName" required="required" aria-describedby="emailHelp"><br>
-			</div>
-			
-			<div>
-				<label>*전화번호</label>
-				<input type = "tel" id="memberTel" name="memberTel" required="required"><br>
-			</div>
-			
-			<div>
-				<p>주소 입력란</p>
-				<input id="member_post"  type="text" placeholder="도로명주소" readonly onclick="findAddr()"><br>
-			  	<input id="member_addr" type="text" placeholder="메인주소" readonly><br>
-				<input id="member_detail_addr" type="text" placeholder="상세주소 입력란">
-			</div>
-						
-			<div class="d-grid gap-2">
-				<input type="hidden" id="memberAuth" name="memberAuth" value="N">
-				<input type="hidden" id="memberAddrInput" name="memberAddr" />
-				<button type="submit" class="btn btn-primary btn-lg">가입하기</button>
-			</div>
-	
-		</form>
-	</div>
-	</div>
-</section>
+			<!-- 선호 form은 request에다가 담아주는 역할-->
+			<form id="frm" action="memberInsert.do" onsubmit="return formCheck()"
+				method="post">
+				<div class="form-group">
 
-<script type="text/javascript">
+					<label for="memberId" class="form-label mt-4">*아이디</label> <input
+						type="email" class="form-control full-width" id="memberId" name="memberId"
+						required="required">
+				</div>
+
+				<div>
+					<label>*닉네임</label> <input type="text" id="memberNick"
+						name="memberNick" class="form-control full-width" required="required">
+				</div>
+
+				<div class="form-group has-success">
+					<label class="form-label mt-4" for="memberId">*비밀번호</label> <input
+						type="password" class="form-control is-valid full-width" id="memberPw"
+						name="memberPw" required="required">
+				</div>
+
+				<div class="form-group has-danger">
+					<label class="form-label mt-4" for="passwordCheck">*비밀번호 확인</label>
+					<input type="password" class="form-control is-invalid full-width"
+						id="passwordCheck" name="passwordCheck" required="required">
+				</div>
+
+				<div class="form-group">
+					<label for="memberName" class="form-label mt-4">*이름</label> <input
+						type="text" class="form-control full-width" id="memberName" name="memberName"
+						required="required" aria-describedby="emailHelp">
+				</div>
+
+				<div>
+					<label for="memberTel" class="form-label mt-4">*전화번호</label> <input type="tel" id="memberTel"
+						name="memberTel" class="form-control full-width" required="required">
+				</div>
+
+				<div>
+					<br><p>*주소 입력란</p>
+					<div class="form-group">
+					    <input id="member_post" type="text" placeholder="도로명주소" class="form-control" readonly
+							onclick="findAddr()">
+						<div class="row">
+							<div class="col-sm">
+								<input id="member_addr" type="text" placeholder="메인주소" class="form-control" readonly>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<input id="member_detail_addr" type="text" placeholder="상세주소 입력란" class="form-control">
+					</div>
+				</div>
+
+				<div class="d-grid gap-2" >
+					<input type="hidden" id="memberAuth" name="memberAuth" value="N">
+					<input type="hidden" id="memberAddrInput" name="memberAddr" />
+					<button type="submit" class="btn btn-primary btn-lg full-width" style="font-weight: bold;">가입하기</button>
+				</div>
+
+			</form>
+		</div>
+
+	</section>
+
+	<script type="text/javascript">
 
 	function formCheck(){
 		let frm = document.getElementById("frm");
@@ -187,7 +187,7 @@
 	   
 	
 </script>
-<script>
+	<script>
 function findAddr(){
 	new daum.Postcode({
         oncomplete: function(data) {
@@ -220,6 +220,7 @@ function findAddr(){
     }).open();
 }
 </script>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script
+		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>

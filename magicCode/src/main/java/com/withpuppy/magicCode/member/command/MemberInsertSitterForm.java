@@ -10,7 +10,7 @@ public class MemberInsertSitterForm implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		// 시터 회원가입 폼
-		return "member/memberInsertSitter";
+		return "member/memberInsertSitter.jsp";
 	}
 
 }
