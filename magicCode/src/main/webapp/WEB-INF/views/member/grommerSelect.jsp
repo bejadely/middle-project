@@ -39,7 +39,7 @@
     	</p><br>
     	<p>
       		<label>미용사 소개
-      		<input type="text" value="${grommer.srIntroduce }"></label>
+      		<span>${grommer.srIntroduce }</span></label>
     	</p><br>
     	<p>
       		<label>미용사 가격
@@ -47,7 +47,7 @@
     	</p><br>
 	</div>
 	<div align="center">
-		<button type="button" onclick="chois('${grommer.srId}','${grommer.srPrice}')">예약하기</button>&nbsp;&nbsp;
+		<button type="button" onclick="chois('${id}','${grommer.srId}','${grommer.srPrice}')">예약하기</button>&nbsp;&nbsp;
 		<button type="button" onclick="location.href='grommerAllList.do'">목록으로</button>
 	</div>
 	<div>
@@ -58,12 +58,17 @@
 	</div>
 </div>
 <script type="text/javascript">
-	function chois(id, price) {
-		let frm = document.getElementById("frm");
+function chois(session, id, price) {
+	let frm = document.getElementById("frm");
+	if(session == ""){
+		alert("로그인이 필요한 서비스입니다. \n로그인 후 이용해 주십시오.")
+		frm.action = "memberLoginForm.do"
+	} else{
 		frm.srId.value = id;
 		frm.srPrice.value = price;
-		frm.submit();
 	}
+		frm.submit();
+}
 </script>
 </body>
 </html>

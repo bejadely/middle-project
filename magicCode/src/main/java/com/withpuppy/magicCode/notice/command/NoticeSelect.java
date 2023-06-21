@@ -18,6 +18,11 @@ public class NoticeSelect implements Command {
 		
 		vo.setNoticeId(Integer.valueOf(request.getParameter("noticeId")));
 		vo = ns.noticeSelect(vo);
+		
+		// DB 에 <br>태그를 엔터로 치환
+		String brChange = vo.getNoticeSubject().replaceAll("\n", "<br>");
+		vo.setNoticeSubject(brChange);
+		
 		request.setAttribute("notice", vo);
 		
 		return "notice/noticeSelect";

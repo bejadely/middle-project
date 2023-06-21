@@ -27,8 +27,8 @@
                c.CERTIFICATION_NAME, 
                s.SR_INTRODUCE,
                s.SR_PRICE
-		FROM CERTIFICATION c JOIN SERVICE_REGIST s ON c.MEMBER_ID = s.SR_SERVER_ID
-                             JOIN MEMBER m ON s.SR_SERVER_NAME = m.MEMBER_NAME
+		FROM CERTIFICATION c RIGHT JOIN SERVICE_REGIST s ON c.MEMBER_ID = s.SR_SERVER_ID
+                             LEFT JOIN MEMBER m ON s.SR_SERVER_NAME = m.MEMBER_NAME
 		WHERE s.SR_ID = #{srId} AND s.SR_CATEGORY = 'S'
 	</select>
 
@@ -47,8 +47,8 @@
                c.CERTIFICATION_NAME, 
                s.SR_INTRODUCE,
                s.SR_PRICE
-		FROM CERTIFICATION c JOIN SERVICE_REGIST s ON c.MEMBER_ID = s.SR_SERVER_ID
-                             JOIN MEMBER m ON s.SR_SERVER_NAME = m.MEMBER_NAME
+		FROM CERTIFICATION c RIGHT JOIN SERVICE_REGIST s ON c.MEMBER_ID = s.SR_SERVER_ID
+                             LEFT JOIN MEMBER m ON s.SR_SERVER_NAME = m.MEMBER_NAME
 		WHERE s.SR_ID = #{srId} AND s.SR_CATEGORY = 'T'
 	</select>
 	
@@ -67,8 +67,8 @@
                c.CERTIFICATION_NAME, 
                s.SR_INTRODUCE,
                s.SR_PRICE
-		FROM CERTIFICATION c JOIN SERVICE_REGIST s ON c.MEMBER_ID = s.SR_SERVER_ID
-                             JOIN MEMBER m ON s.SR_SERVER_NAME = m.MEMBER_NAME
+		FROM CERTIFICATION c RIGHT JOIN SERVICE_REGIST s ON c.MEMBER_ID = s.SR_SERVER_ID
+                             LEFT JOIN MEMBER m ON s.SR_SERVER_NAME = m.MEMBER_NAME
 		WHERE s.SR_ID = #{srId} AND s.SR_CATEGORY = 'G'
 	</select>
 </mapper>

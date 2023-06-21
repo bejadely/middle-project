@@ -40,9 +40,6 @@
 				<!-- 자격증 정보 등록은 우선 미구현 -->
 				<label>훈련사 사진 첨부
 				<input type="file" id="mfile" name="mfile"></label>
-				<label>자격증 이름
-				<input type="text" id="certificationName" name="certificationName"></label>
-				<label>사진 첨부<input type="file" id="cfile" name="cfile"></label>
 			</div>
 			<div>
 				<input type="hidden" id="srServerId" name="srServerId" value="${id}">
@@ -51,7 +48,7 @@
 			<div>
 				<input type="submit" value = "등 록" >&nbsp;
 				<input type="reset" value = "취 소" >&nbsp;
-				<input type="button" onclick="location.href='#'" value="목록으로 이동">
+				<input type="button" onclick="location.href='trainnerAllList.do'" value="목록으로 이동">
 			</div>
 		</form>
 	</div>	
@@ -59,5 +56,22 @@
 <script type="text/javascript">
 	document.getElementById('srStartDate').value = new Date().toISOString().substring(0, 10);
 	document.getElementById('srStartDate').min = new Date().toISOString().substring(0, 10);
+	document.getElementById('srEndDate').value = new Date().toISOString().substring(0, 10);
+	document.getElementById('srEndDate').min = new Date().toISOString().substring(0, 10);
+	
+	function formCheck() {
+	    let startTime = document.getElementById('srStartTime').value;
+	    let endTime = document.getElementById('srEndTime').value;
+	    
+	    var startDate = new Date("2023-01-01 " + startTime);
+		var endDate = new Date("2023-01-01 " + endTime);
+	
+	    if (startDate.getTime() > endDate.getTime()) {
+	        alert("서비스 시작시간은 서비스 종료시간보다 크거나 같을 수 없습니다.\n다시 입력해 주십시오.");
+	        return false;
+	    } else {
+	        return true;
+	    }
+	}
 </script>
 </html>

@@ -16,8 +16,13 @@ public class GrommerSelect implements Command {
 		CmsuService cs = new CmsuServiceImpl();
 		CmsuVO vo = new CmsuVO();
 		vo.setSrId(Integer.valueOf(request.getParameter("srId")));
-		//System.out.println(request.getParameter("srId"));
 		vo = cs.grommerSelect(vo);
+		
+		// DB 에 <br>태그를 엔터로 치환
+		String brChange = vo.getSrIntroduce().replaceAll("\n", "<br>");
+		vo.setSrIntroduce(brChange);
+		
+		
 		request.setAttribute("grommer", vo);
 		return "member/grommerSelect";
 	}

@@ -34,7 +34,7 @@
 		   		<button type="submit" class="btn btn-success mr-1">검색</button>
 		   		<button type="button" class="btn btn-success mr-1" onclick="location.href='orderByGrommerUrRate.do'">평점 높은 순</button>
 				<c:if test="${auth eq 'G'}">
-					<button type="button" class="btn btn-success" onclick="location.href='groomingServiceRegistForm.do'">돌봄 서비스 등록</button>&nbsp;&nbsp;
+					<button type="button" class="btn btn-success" onclick="location.href='groomingServiceRegistForm.do'">미용 서비스 등록</button>&nbsp;&nbsp;
 				</c:if>
 			</form> 
 		</nav>

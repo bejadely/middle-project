@@ -23,28 +23,35 @@
 					<th width="200" align="center">요청 처리</th>
 				</tr>
 			</thead>
-			<tbody>
-				<c:forEach items="${list}" var="l">
-					<tr>
-						<td align="center">${l.memberId}</td>
-						<td align="center">${l.memberName}</td>
-						<td align="center"><img src="${l.certificaionPath}"></td>
-						<td align="center">
-						<c:if test="${l.memberAuth eq 'UT'}">
-							훈련사
-						</c:if>
-						<c:if test="${l.memberAuth eq 'UG'}">
-							미용사						
-						</c:if>
-						</td>
-						<td align="center">
-						<button type="button" id="approveButton" name="approveButton" onclick="approve('${l.memberId}', '${l.memberAuth}')">승인</button>
-						<button type="button" id="rejectButton" name="rejectButton" onclick="reject('${l.memberId}', '${l.memberAuth}')">반려</button>
-						</td>
-					</tr>
-				</c:forEach>
-			</tbody>
+			<c:if test="${not empty list}">
+				<tbody>
+					<c:forEach items="${list}" var="l">
+						<tr>
+							<td align="center">${l.memberId}</td>
+							<td align="center">${l.memberName}</td>
+							<td align="center"><img src="${l.certificaionPath}"></td>
+							<td align="center">
+							<c:if test="${l.memberAuth eq 'UT'}">
+								훈련사
+							</c:if>
+							<c:if test="${l.memberAuth eq 'UG'}">
+								미용사						
+							</c:if>
+							</td>
+							<td align="center">
+							<button type="button" id="approveButton" name="approveButton" onclick="approve('${l.memberId}', '${l.memberAuth}')">승인</button>
+							<button type="button" id="rejectButton" name="rejectButton" onclick="reject('${l.memberId}', '${l.memberAuth}')">반려</button>
+							</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</c:if>
 		</table>
+			<c:if test="${empty list}">
+				<div align="center">
+					<span>새로운 권한 승인 요청이 없습니다.</span>
+				</div>
+			</c:if>
 	</div><br>
 	<div>
 		<form id="form" method="post">
@@ -61,6 +68,7 @@
 		form.memberAuth.value = auth
 		form.action = "approveAuthRequest.do"
 		form.submit();
+		alert("권한 요청이 승인되었습니다.");
 	}
 	function reject(id, auth){
 		let form = document.getElementById("form")
@@ -68,6 +76,7 @@
 		form.memberAuth.value = auth
 		form.action = "rejectAuthRequest.do"
 		form.submit();
+		alert("권한 요청이 거절되었습니다.");
 	}
 </script>
 </html>
