@@ -11,10 +11,14 @@
 	<div>
 		<nav>
 			<ul>
-				<li><a href="#">평점 높은 순</a></li>
+				<li><a href="orderByGrommerUrRate.do">평점 높은 순</a></li>
 				<li><a href="#">리뷰 많은 순</a></li>
-				<li><a href="#">이름으로 검색</a></li>
 			</ul>
+			<form id = "serchForm" action="searchGrommerName.do" method="post">
+			    <label>이름으로 검색</label>
+		   		<input type="text" id="name" name="name">
+		   		<button type="submit">검색</button>
+			</form>
 		</nav>
 	</div>
 	<div align="center">

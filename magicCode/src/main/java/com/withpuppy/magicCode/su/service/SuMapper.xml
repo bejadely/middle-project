@@ -33,23 +33,154 @@
 	
 	<!--전체 시터 목록 조회 -->
 	<select id="sitterAllList" resultType="com.withpuppy.magicCode.su.service.SuVO">
-		SELECT *
-		FROM SERVICE_REGIST
-		WHERE SR_CATEGORY = 'S' 
+		<!-- SELECT *
+		FROM SERVICE_REGIST s JOIN USER_REGIST u ON s.SR_ID = U.SR_ID
+		WHERE SR_CATEGORY = 'T'  --> 
+		<!-- 아래의 방법으로 해버리면 새로 등록된 서비스 제공자는 평점이 존재하지 않아 목록에 뜨지 않는다. -->
+		SELECT s.SR_PICTURE_PATH, 
+			   s.SR_ID, 
+			   s.SR_TITLE, 
+			   s.SR_SERVER_NAME, 
+			   TRUNC(AVG(u.UR_RATE)) AS UR_RATE
+		FROM SERVICE_REGIST s JOIN USER_REGIST u ON s.SR_ID = u.SR_ID
+		WHERE SR_CATEGORY = 'S'
+        GROUP BY s.SR_ID, 
+                 s.SR_TITLE, 
+                 s.SR_SERVER_NAME, 
+                 s.SR_PICTURE_PATH
+	</select>
+	
+	<!--전체 시터 목록 조회(평점순) -->
+	<select id="orderBySitterUrRate" resultType="com.withpuppy.magicCode.su.service.SuVO">
+		SELECT s.SR_PICTURE_PATH, 
+			   s.SR_ID, 
+			   s.SR_TITLE, 
+			   s.SR_SERVER_NAME, 
+			   TRUNC(AVG(u.UR_RATE)) AS UR_RATE
+		FROM SERVICE_REGIST s JOIN USER_REGIST u ON s.SR_ID = u.SR_ID
+		WHERE SR_CATEGORY = 'S'
+        GROUP BY s.SR_ID, 
+                 s.SR_TITLE, 
+                 s.SR_SERVER_NAME, 
+                 s.SR_PICTURE_PATH
+        ORDER BY UR_RATE DESC
 	</select>
 	
 	<!--전체 훈련사 목록 조회 -->
 	<select id="trainnerAllList" resultType="com.withpuppy.magicCode.su.service.SuVO">
-		SELECT *
-		FROM SERVICE_REGIST
-		WHERE SR_CATEGORY = 'T' 
+		SELECT s.SR_PICTURE_PATH, 
+			   s.SR_ID, 
+			   s.SR_TITLE, 
+			   s.SR_SERVER_NAME, 
+			   TRUNC(AVG(u.UR_RATE)) AS UR_RATE
+		FROM SERVICE_REGIST s JOIN USER_REGIST u ON s.SR_ID = u.SR_ID
+		WHERE SR_CATEGORY = 'T'
+        GROUP BY s.SR_ID, 
+                 s.SR_TITLE, 
+                 s.SR_SERVER_NAME, 
+                 s.SR_PICTURE_PATH
+        ORDER BY UR_RATE DESC
+	</select>
+	
+	<!--전체 훈련사 목록 조회(평점순) -->
+	<select id="orderByTrainnerUrRate" resultType="com.withpuppy.magicCode.su.service.SuVO">
+		SELECT s.SR_PICTURE_PATH, 
+			   s.SR_ID, 
+			   s.SR_TITLE, 
+			   s.SR_SERVER_NAME, 
+			   TRUNC(AVG(u.UR_RATE)) AS UR_RATE
+		FROM SERVICE_REGIST s JOIN USER_REGIST u ON s.SR_ID = u.SR_ID
+		WHERE SR_CATEGORY = 'T'
+        GROUP BY s.SR_ID, 
+                 s.SR_TITLE, 
+                 s.SR_SERVER_NAME, 
+                 s.SR_PICTURE_PATH
+        ORDER BY UR_RATE DESC
 	</select>
 	
 	<!--전체 미용사 목록 조회 -->
 	<select id="grommerAllList" resultType="com.withpuppy.magicCode.su.service.SuVO">
-		SELECT *
-		FROM SERVICE_REGIST
-		WHERE SR_CATEGORY = 'G' 
+		SELECT s.SR_PICTURE_PATH, 
+			   s.SR_ID, 
+			   s.SR_TITLE, 
+			   s.SR_SERVER_NAME, 
+			   TRUNC(AVG(u.UR_RATE)) AS UR_RATE
+		FROM SERVICE_REGIST s JOIN USER_REGIST u ON s.SR_ID = u.SR_ID
+		WHERE SR_CATEGORY = 'G'
+        GROUP BY s.SR_ID, 
+                 s.SR_TITLE, 
+                 s.SR_SERVER_NAME, 
+                 s.SR_PICTURE_PATH
+	</select>
+	
+	<!--전체 미용사 목록 조회(평점순) -->
+	<select id="orderByGrommerUrRate" resultType="com.withpuppy.magicCode.su.service.SuVO">
+		SELECT s.SR_PICTURE_PATH, 
+			   s.SR_ID, 
+			   s.SR_TITLE, 
+			   s.SR_SERVER_NAME, 
+			   TRUNC(AVG(u.UR_RATE)) AS UR_RATE
+		FROM SERVICE_REGIST s JOIN USER_REGIST u ON s.SR_ID = u.SR_ID
+		WHERE SR_CATEGORY = 'G'
+        GROUP BY s.SR_ID, 
+                 s.SR_TITLE, 
+                 s.SR_SERVER_NAME, 
+                 s.SR_PICTURE_PATH
+        ORDER BY UR_RATE DESC
+	</select>
+	
+	<!-- 이름으로 시터 검색 -->
+	<select id="sitterSelectListByName" 
+	parameterType="com.withpuppy.magicCode.su.service.SuVO" 
+	resultType="com.withpuppy.magicCode.su.service.SuVO">
+		SELECT s.SR_PICTURE_PATH, 
+			   s.SR_ID, 
+			   s.SR_TITLE, 
+			   s.SR_SERVER_NAME, 
+			   TRUNC(AVG(u.UR_RATE)) AS UR_RATE
+		FROM SERVICE_REGIST s JOIN USER_REGIST u ON s.SR_ID = u.SR_ID 
+		WHERE SR_CATEGORY = 'S' AND SR_SERVER_NAME = #{srServerName}
+        GROUP BY s.SR_ID, 
+                 s.SR_TITLE, 
+                 s.SR_SERVER_NAME, 
+                 s.SR_PICTURE_PATH
+        ORDER BY SR_SERVER_NAME
+	</select>
+	
+	<!-- 이름으로 훈련사 검색 -->
+	<select id="trainnerSelectListByName" 
+	parameterType="com.withpuppy.magicCode.su.service.SuVO" 
+	resultType="com.withpuppy.magicCode.su.service.SuVO">
+		SELECT s.SR_PICTURE_PATH, 
+			   s.SR_ID, 
+			   s.SR_TITLE, 
+			   s.SR_SERVER_NAME, 
+			   TRUNC(AVG(u.UR_RATE)) AS UR_RATE
+		FROM SERVICE_REGIST s JOIN USER_REGIST u ON s.SR_ID = u.SR_ID 
+		WHERE SR_CATEGORY = 'T' AND SR_SERVER_NAME = #{srServerName}
+        GROUP BY s.SR_ID, 
+                 s.SR_TITLE, 
+                 s.SR_SERVER_NAME, 
+                 s.SR_PICTURE_PATH
+        ORDER BY SR_SERVER_NAME
+	</select>
+	
+	<!-- 이름으로 미용사 검색 -->
+	<select id="grommerSelectListByName" 
+	parameterType="com.withpuppy.magicCode.su.service.SuVO" 
+	resultType="com.withpuppy.magicCode.su.service.SuVO">
+		SELECT s.SR_PICTURE_PATH, 
+			   s.SR_ID, 
+			   s.SR_TITLE, 
+			   s.SR_SERVER_NAME, 
+			   TRUNC(AVG(u.UR_RATE)) AS UR_RATE
+		FROM SERVICE_REGIST s JOIN USER_REGIST u ON s.SR_ID = u.SR_ID 
+		WHERE SR_CATEGORY = 'G' AND SR_SERVER_NAME = #{srServerName}
+        GROUP BY s.SR_ID, 
+                 s.SR_TITLE, 
+                 s.SR_SERVER_NAME, 
+                 s.SR_PICTURE_PATH
+        ORDER BY SR_SERVER_NAME
 	</select>
 	
 </mapper>

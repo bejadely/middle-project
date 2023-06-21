@@ -35,20 +35,11 @@
 								style="background-image: url(images/말티즈.jpg);"></a>
 							<div class="text">
 								<h3 class="heading">
-									<a href="https://petnolza.com">반려견 생활 Tip</a>
+									<a href="https://petnolza.com/category/dog-information/">강아지 정보</a><br>
+									<a href="https://petnolza.com/category/dog-health/">강아지 건강</a><br>
+									<a href="https://petnolza.com/category/dog-food/">강아지 음식</a><br>
+									<a href="https://petnolza.com/category/dog-behavior/">강아지 행동</a><br>
 								</h3>
-								<div class="meta">
-									<div>
-										<a href="#"><span class="icon-calendar"></span> April 7,
-											2020</a>
-									</div>
-									<div>
-										<a href="#"><span class="icon-person"></span> Admin</a>
-									</div>
-									<div>
-										<a href="#"><span class="icon-chat"></span> 19</a>
-									</div>
-								</div>
 							</div>
 						</div>
 						<div class="block-21 mb-4 d-flex">
