@@ -78,7 +78,7 @@
               <div class="form-group">
                 <label class="col-md-3 control-label"></label>
                 <div class="col-md-8">
-                  <button type="button" class="btn btn-primary" onclick="chois(${sitter.srId},${sitter.srPrice})">예약하기</button>
+                  <button type="button" class="btn btn-primary" onclick="chois('${id}',${sitter.srId},${sitter.srPrice})">예약하기</button>
                   <span></span>
                   <button type="button" class="btn btn-default" onclick="location.href='sitterAllList.do'">목록으로</button>
                 </div>
@@ -96,11 +96,16 @@
     <hr>
  </div>
 <script type="text/javascript">
-	function chois(id, price) {
+	function chois(session, id, price) {
 		let frm = document.getElementById("frm");
-		frm.srId.value = id;
-		frm.srPrice.value = price;
-		frm.submit();
+		if(session == ""){
+			alert("로그인이 필요한 서비스입니다. \n로그인 후 이용해 주십시오.")
+			frm.action = "memberLoginForm.do"
+		} else{
+			frm.srId.value = id;
+			frm.srPrice.value = price;
+		}
+			frm.submit();
 	}
 </script>
 </body>

@@ -47,28 +47,26 @@ public class MemberInsertSitter implements Command {
 			vo.setMemberAddr(multi.getParameter("memberAddr"));
 			vo.setMemberAuth(multi.getParameter("memberAuth"));
 			
-			cVo.setCertificationName(multi.getParameter("certificationName"));
-			cVo.setMemberId(multi.getParameter("memberId"));
-			
-			if(cfile != null) {
-				cVo.setCertificationPath(cfile); // 경로 + 이미지명
-			}
-			
 			// SQL문 실행
 			n = ms.memberInsert(vo);
-			m = cs.certificationInsert(cVo);
+			
+			if(multi.getParameter("memberAuth").equals("UT") || multi.getParameter("memberAuth").equals("UG")) {
+				cVo.setCertificationName(multi.getParameter("certificationName"));
+				cVo.setMemberId(multi.getParameter("memberId"));
+				cVo.setCertificationPath(cfile); // 경로 + 이미지명
+				m = cs.certificationInsert(cVo);
+			}
+			
 			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		if(n != 0)
-			if(m != 0) {
-				request.setAttribute("message", "회원가입이 되셨습니다.");
-			}
-		else
+		if(n != 0) {
+			request.setAttribute("message", "회원가입이 되셨습니다.");
+		} else {
 			request.setAttribute("message", "회원가입에 실패했습니다.");
-		
+		}
 		return "member/memberMessage";
 	}
 

@@ -92,26 +92,24 @@
 					<p>주소 입력란</p>
 					<div class="form-group">
 						<input id="member_post" type="text" placeholder="도로명주소"
-							class="form-control" readonly onclick="findAddr()">
+							class="form-control" readonly onclick="findAddr()" required="required">
 						<div class="row">
 							<div class="col-sm">
 								<input id="member_addr" type="text" placeholder="메인주소"
-									class="form-control" readonly>
+									class="form-control" readonly required="required">
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<input id="member_detail_addr" type="text" placeholder="상세주소 입력란"
-							class="form-control">
+							class="form-control" required="required">
 					</div>
 				</div>
 				<div class="d-grid gap-2" align="center">
-					<input type="radio" id="sitter" name="memberAuth" value="S"
-						checked="checked"> <label for="sitter">시터</label> <input
-						type="radio" id="trainer" name="memberAuth" value="UT"> <label
-						for="trainer">훈련사</label> <input type="radio" id="groomer"
-						name="memberAuth" value="UG"> <label for="groomer">애견미용</label><br>
-					<!-- certificaion 삽입 구문 -->
+					<input type="radio" id="sitter" name="memberAuth" value="S" checked="checked" onclick="unCheckCerti()"> <label for="sitter">시터</label> 
+					<input type="radio" id="trainer" name="memberAuth" value="UT" onclick="checkCerti()"> <label for="trainer">훈련사</label> 
+					<input type="radio" id="groomer" name="memberAuth" value="UG" onclick="checkCerti()"> <label for="groomer">애견미용</label><br>
+					<!-- certification 삽입 구문 -->
 					<label>자격증 명<input type="text" id="certificationName"
 						name="certificationName"></label> <input type="file" id="cfile"
 						name="cfile"> <input type="hidden" id="memberAddrInput"
@@ -128,7 +126,17 @@
 
 
 <script type="text/javascript">
-
+	function checkCerti() {
+	  document.getElementById("certificationName").setAttribute('required', 'required');
+	  document.getElementById("cfile").setAttribute('required', 'required');
+	}
+	
+	function unCheckCerti() {
+	  let frm = document.getElementById("frm");
+	  frm.certificationName.removeAttribute('required');
+	  frm.cfile.removeAttribute('required');
+	}
+	
 	function formCheck() {
 		let frm = document.getElementById("frm");
 		if (frm.memberPw.value != frm.passwordCheck.value) {
