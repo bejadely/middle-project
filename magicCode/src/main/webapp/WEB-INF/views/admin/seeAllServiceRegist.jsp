@@ -36,19 +36,26 @@
 					<th width="120" align="center">삭제하기</th>
 				</tr>
 			</thead>
-			<tbody>
-				<c:forEach items="${serviceRegist}" var="s">
-					<tr>
-						<td align="center" id="srId">${s.srId}</td>
-						<td align="center">${s.srCategory}</td>
-						<td align="center">${s.srTitle}</td>
-						<td align="center">${s.srServerId}</td>
-						<td align="center">${s.srServerName}</td>
-						<td align="center"><button type="button" id="deleteButton" name="deleteButton" onclick="deleteService(${s.srId})">삭제하기</button></td>
-					</tr>
-				</c:forEach>
-			</tbody>
+			<c:if test="${not empty serviceRegist}">
+				<tbody>
+					<c:forEach items="${serviceRegist}" var="s">
+						<tr>
+							<td align="center" id="srId">${s.srId}</td>
+							<td align="center">${s.srCategory}</td>
+							<td align="center">${s.srTitle}</td>
+							<td align="center">${s.srServerId}</td>
+							<td align="center">${s.srServerName}</td>
+							<td align="center"><button type="button" id="deleteButton" name="deleteButton" onclick="deleteService(${s.srId})">삭제하기</button></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</c:if>
 		</table>
+		<c:if test="${empty serviceRegist}">
+			<div align="center">
+				<span>일치하는 검색 결과가 없습니다.</span>
+			</div>
+		</c:if>
 	</div><br>
 	<div>
 		<form id="deleteform" action="deleteServiceRegist.do" method="post">

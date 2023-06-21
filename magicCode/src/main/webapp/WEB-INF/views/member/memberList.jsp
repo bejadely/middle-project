@@ -34,23 +34,30 @@
 						<th scope="col" width="100">회원등급</th>
 					</tr>
 				</thead>
-				<tbody>
-					<c:forEach items="${members}" var="m">
-						<tr onmouseover='this.style.background="#d9d9d9";'
-    						onmouseleave='this.style.background="#FFFFFF";'
-    						onclick='memberIdChois("${m.memberId}")'
-						>
-							
-							<td align="center">${m.memberId}</td>
-							<td align="center">${m.memberNick}</td>
-							<td align="center">${m.memberName}</td>
-							<td align="center">${m.memberTel}</td>
-							<td align="center">${m.memberAddr}</td>
-							<td align="center">${m.memberAuth}</td>
-						</tr>
-					</c:forEach>
-				</tbody>
+				<c:if test="${not empty members}">
+					<tbody>
+						<c:forEach items="${members}" var="m">
+							<tr onmouseover='this.style.background="#d9d9d9";'
+	    						onmouseleave='this.style.background="#FFFFFF";'
+	    						onclick='memberIdChois("${m.memberId}")'
+							>
+								
+								<td align="center">${m.memberId}</td>
+								<td align="center">${m.memberNick}</td>
+								<td align="center">${m.memberName}</td>
+								<td align="center">${m.memberTel}</td>
+								<td align="center">${m.memberAddr}</td>
+								<td align="center">${m.memberAuth}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</c:if>
 			</table>
+				<c:if test="${empty members}">
+					<div align="center">
+						<span>일치하는 검색 결과가 없습니다.</span>
+					</div>
+				</c:if>
 		</div><br>
 		<div align="center">
 		<!-- 검색창(아이디로 조회 / 이름으로 조회) 구현 예정 -->
