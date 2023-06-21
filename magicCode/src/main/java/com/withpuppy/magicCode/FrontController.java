@@ -49,6 +49,8 @@ import com.withpuppy.magicCode.notice.command.NoticeEdit;
 import com.withpuppy.magicCode.notice.command.NoticeInsert;
 import com.withpuppy.magicCode.notice.command.NoticeInsertForm;
 import com.withpuppy.magicCode.notice.command.NoticeList;
+import com.withpuppy.magicCode.notice.command.NoticeListPage;
+import com.withpuppy.magicCode.notice.command.NoticeSearch;
 import com.withpuppy.magicCode.notice.command.NoticeSelect;
 import com.withpuppy.magicCode.notice.command.NoticeUpdate;
 import com.withpuppy.magicCode.psu.command.SitterReservation;
@@ -129,7 +131,6 @@ public class FrontController extends HttpServlet {
 		// 이선호
 		// 메인 페이지
 		map.put("/main.do", new MainCommand()); // 메인 페이지 호출
-		map.put("/main1.do", new MainOne());
 
 		map.put("/memberLogin.do", new MemberLogin()); // 로그인 처리
 		map.put("/memberLoginForm.do", new MemberLoginForm()); //로그인 폼 호출
@@ -150,7 +151,9 @@ public class FrontController extends HttpServlet {
 		
 		// 정현
 		map.put("/noticeList.do", new NoticeList());	//공지사항 목록리스트
+		map.put("/noticeListPage.do", new NoticeListPage());	//공지사항 페이징
 		map.put("/noticeSelect.do", new NoticeSelect()); // 공지사항 상세 보기
+		map.put("/noticeSearch.do", new NoticeSearch());	//공지사항 검색
 		map.put("/noticeEdit.do", new NoticeEdit());	//공지사항 수정하기
 		map.put("/noticeUpdate.do", new NoticeUpdate()); //공지사항 DB 수정 수행
 		map.put("/noticeDelete.do", new NoticeDelete());	//공지사항 삭제

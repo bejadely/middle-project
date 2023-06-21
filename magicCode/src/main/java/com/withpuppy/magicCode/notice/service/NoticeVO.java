@@ -13,6 +13,8 @@ public class NoticeVO {
 	String noticeSubject;
 	String noticeWriter;
 	String noticeTime;
+	int first;
+	int last;
 	
 	public int getNoticeId() {
 		return noticeId;

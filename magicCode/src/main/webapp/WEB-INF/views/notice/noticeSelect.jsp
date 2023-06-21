@@ -7,11 +7,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style>
+#noSel{
+	width:900px;
+	margin:0 50px;
+}
+</style>
 <body>
 	<div align="center">
 		<h1>공지사항 상세보기</h1>
 		<div>
-			<table border="1">
+			<table border="1" id="noSel" class="table">
 				<tr>
 					<th>공지번호</th>
 					<td>${notice.noticeId}</td>
@@ -33,10 +39,10 @@
 			<div>
 				<!-- c:if문에서 로그인할때 세션에 가져올 id값으로 비교해야함 -->
 				<c:if test="${auth eq 'A'}">
-					<button type="button" onclick="callFunction('E')">수정</button>&nbsp;
-					<button type="button" onclick="callFunction('D')">삭제</button>
+					<button type="button" class="btn btn-success" onclick="callFunction('E')">수정</button>&nbsp;
+					<button type="button" class="btn btn-success" onclick="callFunction('D')">삭제</button>
 				</c:if>
-				<button type="button" onclick="location.href='noticeList.do'">목록으로</button>
+				<button type="button" class="btn btn-success" onclick="location.href='noticeList.do'">목록으로</button>
 			</div>
 		</div>
 	</div>
