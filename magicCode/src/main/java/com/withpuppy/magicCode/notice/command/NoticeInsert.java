@@ -20,7 +20,7 @@ public class NoticeInsert implements Command {
 		NoticeService ns = new NoticeServiceImpl();
 		NoticeVO vo = new NoticeVO();
 		
-		vo.setNoticeWriter(request.getParameter("noticeWriter"));
+		vo.setNoticeWriter("admin");
 		vo.setNoticeTitle(request.getParameter("noticeTitle"));
 		vo.setNoticeSubject(request.getParameter("noticeSubject"));
 		

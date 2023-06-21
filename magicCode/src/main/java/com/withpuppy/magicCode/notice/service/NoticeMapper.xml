@@ -9,8 +9,34 @@
 	</select>
 	<select id="noticeSelect"
 		resultType="com.withpuppy.magicCode.notice.service.NoticeVO">
-		SELECT * FROM NOTICE
+		SELECT notice_id, notice_title, notice_subject, notice_writer, TO_CHAR(notice_time, 'YYYY/MM/DD') as "NOTICE_TIME" FROM NOTICE
 		WHERE notice_id = #{noticeId}
+	</select>
+	<select id="noticeSearchTitle" parameterType="com.withpuppy.magicCode.notice.service.NoticeVO"
+		resultType="com.withpuppy.magicCode.notice.service.NoticeVO">
+		SELECT notice_id, notice_title, notice_subject, notice_writer, TO_CHAR(notice_time, 'YYYY/MM/DD') as "NOTICE_TIME" FROM NOTICE
+		WHERE notice_title LIKE '%'||#{noticeTitle}||'%'
+		ORDER BY notice_id desc
+	</select>
+	<select id="noticeSearchTime" parameterType="com.withpuppy.magicCode.notice.service.NoticeVO"
+		resultType="com.withpuppy.magicCode.notice.service.NoticeVO">
+		SELECT notice_id, notice_title, notice_subject, notice_writer, TO_CHAR(notice_time, 'YYYY/MM/DD') as "NOTICE_TIME" FROM NOTICE
+		WHERE notice_time = #{noticeTime}
+		ORDER BY notice_id desc
+	</select>
+	<select id="noticeListPage" 
+		resultType="com.withpuppy.magicCode.notice.service.NoticeVO">
+
+		SELECT * FROM(
+					SELECT rownum  rn,a.* FROM(
+								            SELECT notice_id, notice_title, notice_subject, notice_writer, TO_CHAR(notice_time, 'YYYY/MM/DD') as "NOTICE_TIME" FROM notice
+								            order by notice_id desc
+	 										)a
+	 				)WHERE rn BETWEEN #{first} and #{last}
+	</select>
+	<select id="listPage" resultType="int">
+		SELECT COUNT(*)
+		FROM notice
 	</select>
 	<insert id="noticeInsert" parameterType="com.withpuppy.magicCode.notice.service.NoticeVO">
 		<selectKey keyProperty="noticeId" resultType="int" order="BEFORE">

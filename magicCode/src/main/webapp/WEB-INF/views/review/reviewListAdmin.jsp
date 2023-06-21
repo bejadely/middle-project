@@ -10,14 +10,10 @@
 <body>
 	<div align="center">
 		<h1><a href="reviewListAdmin.do">리뷰 전체 목록</a></h1>
-		<table border="1">
-	        <thead>
-	            <tr>
-	                <th colspan="3" align="center"></th>
-	            </tr>
-	        </thead>
+        <c:forEach items="${reviews }" var="r">
+		<table border="1" class="table">
+	 
 	        <tbody>
-	        <c:forEach items="${reviews }" var="r">
 	            <tr align="center">
 	                <td width="250px">사용자 닉네임 : ${r.memberNick }</td>
 	                <c:if test="${r.srCategory eq 'S' }">
@@ -44,9 +40,9 @@
 	            		<a onclick="urMemberIdChoice1(${r.urId })"><input type="button" value="리뷰수정"></a>
 	            	</td>
 	            </tr>
-	        </c:forEach>
 	        </tbody>
 	    </table>
+        </c:forEach>
 	</div>
 	<div align="center">
 		<form method="post" name="search" action="reviewSearch.do">

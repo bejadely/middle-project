@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div align="center">
+<div align="center" class="container" style="margin-top: 50px">
 		<form id="frm" action="noticeUpdate.do" method="post">
 			<h1>게시글 수정</h1>
 			<div>
