@@ -12,7 +12,7 @@
 		<h2>돌봄 서비스 예약하기</h2>
 	</div>
 	<div>
-		<form id = "frm" action="sittingServiceRegist.do" method = "post">
+		<form id = "frm" action="sittingServiceRegist.do" onsubmit="return formCheck()" method = "post">
 			<div>
 				<h4>펫 정보 입력</h4>
 				<label>강아지 이름<input type = "text" id="petName" name="petName" required="required"></label><br>
@@ -57,8 +57,20 @@
 <script type="text/javascript">
 	document.getElementById('urDate').value = new Date().toISOString().substring(0, 10);
 	document.getElementById('urDate').min = new Date().toISOString().substring(0, 10);
-	function notice(){
-		alert('결제가 정상적으로 완료되었습니다');
+	function formCheck() {
+	    let startTime = document.getElementById('urStartTime').value;
+	    let endTime = document.getElementById('urEndTime').value;
+	    
+	    var startDate = new Date("2023-01-01 " + startTime);
+		var endDate = new Date("2023-01-01 " + endTime);
+
+	    if (startDate.getTime() > endDate.getTime()) {
+	        alert("서비스 시작시간은 서비스 종료시간보다 크거나 같을 수 없습니다.\n다시 입력해 주십시오.");
+	        return false;
+	    } else {
+	    	alert('예약이 정상적으로 완료되었습니다');
+	        return true;
+	    }
 	}
 </script>
 </html>
