@@ -9,11 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div align="center">
+	<div align="center" class="container" style="margin-top: 50px">
 		<form id="frm" method="post">
 			<h1>게시글 등록</h1>
 			<div>
-				<table border="1">
+				<table border="1" class="table">
 					<tr>
 						<th width="100" align="center">작성자</th>
 						<!-- 로그인커맨드에서 가져올 변수 지정해서 수정해줘야함 -->
@@ -37,8 +37,8 @@
 				</table>
 				<br>
 				<div>
-					<button type="submit" onclick="callFunction('A')">등록</button>&nbsp;
-					<button type="button" onclick="callFunction('C')">취소</button>&nbsp;
+					<button type="submit" class="btn btn-success" onclick="callFunction('A')">등록</button>&nbsp;
+					<button type="button" class="btn btn-success" onclick="callFunction('C')">취소</button>&nbsp;
 				</div>
 				<div>
 					<input type="hidden" id="noticeId" name="noticeId" value="${notice.noticeId}">
@@ -54,7 +54,7 @@
 		if (str == 'A'){
 			frm.action = "noticeInsert.do";
 		} else{
-			frm.action = "noticeList.do";
+			frm.action = "noticeListPage.do";
 		}
 		frm.submit();
 	}

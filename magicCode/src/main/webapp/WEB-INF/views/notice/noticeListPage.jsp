@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@
 
 <body>
 <section class="notice">
-  <div class="page-title" style="margin-top: 50px">
+  <div class="page-title">
         <div align="center">
             <h2><a href="noticeList.do">공지사항 목록</a></h2>
         </div>
@@ -72,19 +72,28 @@
 		</form>
 	</div>
 	<!-- 페이징 -->
-	<div class="col text-center">
-	    <div class="block-27">
-	      <ul>
-	        <li><a href="#">&lt;</a></li>
-	        <li class="active"><span>1</span></li>
-	        <li><a href="#">2</a></li>
-	        <li><a href="#">3</a></li>
-	        <li><a href="#">4</a></li>
-	        <li><a href="#">5</a></li>
-	        <li><a href="#">&gt;</a></li>
-	      </ul>
-	    </div>
-	  </div>
+	<div class="pagination">
+		<div class="col text-center">
+		    <div class="block-27">
+				<ul>
+				<c:if test="${paging.startPage>1}">
+					<li><a href="javascript:goPage(${paging.startPage-1})">이전</a>
+				</c:if>
+				<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="i">
+					<c:if test="${i != paging.page}">
+						<li><a href="javascript:goPage(${i})">${i}</a>
+					</c:if>
+					<c:if test="${i == paging.page}">
+						<li class="active"><span>${i}</span>
+					</c:if>
+				</c:forEach>
+				<c:if test="${paging.endPage<paging.totalPageCount}">
+					<li><a href="javascript:goPage(${paging.endPage+1})">다음</a>
+				</c:if>
+				</ul>
+			</div>
+		</div>
+	</div>
 </section>
 </body>
 <script type="text/javascript">
@@ -92,6 +101,10 @@
 		let frm = document.getElementById("frm");
 		frm.noticeId.value = id;
 		frm.submit();
+	}
+	function goPage(p){
+		location.href='noticeListPage.do?page='+p;
+		
 	}
 </script>
 </html>

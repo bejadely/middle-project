@@ -43,5 +43,25 @@ public class NoticeServiceImpl implements NoticeService {
 		// TODO Auto-generated method stub
 		return map.noticeDelete(vo);
 	}
+	
+	@Override
+	public List<NoticeVO> noticeSearchTitle(NoticeVO vo){
+		return map.noticeSearchTitle(vo);
+	}
+	
+	@Override
+	public List<NoticeVO> noticeSearchTime(NoticeVO vo){
+		return map.noticeSearchTime(vo);
+	}
+	
+	@Override
+	public List<NoticeVO> noticeListPage(NoticeVO vo){
+		return map.noticeListPage(vo);
+	}
+	
+	@Override
+	public int listPage() {
+		return map.listPage();
+	}
 
 }
