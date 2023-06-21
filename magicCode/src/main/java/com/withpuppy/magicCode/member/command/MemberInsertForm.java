@@ -10,7 +10,7 @@ public class MemberInsertForm implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		//회원가입 폼을 보여줌
-		return "member/memberInsert";
+		return "member/memberInsert.jsp";
 	}
 
 }

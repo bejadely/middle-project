@@ -8,13 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- 	<aside style="border-right: 1px solid gray">
-		<a href="memberList.do">회원정보 리스트</a><br>
-		<a href=".do">게시글조회</a><br>
-		<a href=".do">리뷰전체조회</a><br>
-		<a href=".do">회원신청현황</a><br>
-	</aside>
-	 -->
+
 	<div align="center">
 	<div><h2>회원정보 수정/삭제</h2></div>
 	<div>
