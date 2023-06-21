@@ -61,6 +61,7 @@
 		form.memberAuth.value = auth
 		form.action = "approveAuthRequest.do"
 		form.submit();
+		alert("권한 요청이 승인되었습니다.");
 	}
 	function reject(id, auth){
 		let form = document.getElementById("form")
@@ -68,6 +69,7 @@
 		form.memberAuth.value = auth
 		form.action = "rejectAuthRequest.do"
 		form.submit();
+		alert("권한 요청이 거절되었습니다.");
 	}
 </script>
 </html>
