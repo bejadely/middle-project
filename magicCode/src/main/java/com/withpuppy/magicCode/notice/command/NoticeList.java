@@ -21,11 +21,6 @@ public class NoticeList implements Command {
 		NoticeService ns = new NoticeServiceImpl();
 		List<NoticeVO> notices = new ArrayList<>();
 		notices = ns.noticeSelectList();
-		//멤버 아이디를 admin으로 임의지정
-		MemberVO vo = new MemberVO();
-		vo.setMemberId("admin");
-		HttpSession session = request.getSession();
-		session.setAttribute("name", vo.getMemberId());
 		request.setAttribute("notices", notices);
 		return "notice/noticeList";
 	}

@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div align="center">
@@ -22,7 +21,7 @@
 	        	<ul class="navbar-nav ml-auto">
 	        	<li class="nav-item"><a href="main.do" class="nav-link">Home</a></li>
 	        	<!-- 임시버튼(있으면 삭제헤주세요) -->
-	        	<li class="nav-item"><a href="serviceRegistForm.do" class="nav-link">임시1</a></li>
+	        	<li class="nav-item"><a href="main1.do" class="nav-link">메인1</a></li>
 	        	<li class="nav-item"><a href="seeAllServiceRegist.do" class="nav-link">임시2</a></li>
 	        	<li class="nav-item"><a href="sitterAllList.do" class="nav-link">돌봄 서비스</a></li>
 	        	<li class="nav-item"><a href="trainnerAllList.do" class="nav-link">훈련 서비스</a></li>
@@ -34,7 +33,7 @@
 				<c:if test="${not empty id }">
 					<li class="nav-item"><a href="memberLogout.do" class="nav-link">${name} 님 / 로그아웃</a></li>
 				</c:if>
-	        	<li class="nav-item"><a href="noticeMenu.do" class="nav-link">공지사항</a></li>
+	        	<li class="nav-item"><a href="noticeList.do" class="nav-link">공지사항</a></li>
 	        	</ul>
 	        </c:if>
 	        <!-- 관리자 로그인 네비 화면 -->
@@ -45,8 +44,8 @@
 	        	<li class="nav-item"><a href="serviceRegistForm.do" class="nav-link">임시1</a></li>
 	        	<li class="nav-item"><a href="memberList.do" class="nav-link">관리페이지</a></li>
 	        	<li class="nav-item"><a href="sitterAllList.do" class="nav-link">돌봄 서비스</a></li>
-	        	<li class="nav-item"><a href="#" class="nav-link">훈련 서비스</a></li>
-	        	<li class="nav-item"><a href="#" class="nav-link">미용 서비스</a></li>
+	        	<li class="nav-item"><a href="trainnerAllList.do" class="nav-link">훈련 서비스</a></li>
+	        	<li class="nav-item"><a href="grommerAllList.do" class="nav-link">미용 서비스</a></li>
 	        	<li class="nav-item"><a href="seeMyInfo.do" class="nav-link">마이페이지</a></li>
 	        	<c:if test="${empty id }">
 		        	<li class="nav-item"><a href="memberLoginForm.do" class="nav-link">로그인</a></li>
@@ -54,7 +53,7 @@
 				<c:if test="${not empty id }">
 					<li class="nav-item"><a href="memberLogout.do" class="nav-link">${name} 님 / 로그아웃</a></li>
 				</c:if>
-	        	<li class="nav-item"><a href="noticeMenu.do" class="nav-link">공지사항</a></li>
+	        	<li class="nav-item"><a href="noticeList.do" class="nav-link">공지사항</a></li>
 	        	</ul>
 	        </c:if>
 		</div>

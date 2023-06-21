@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
+	<div align="center">
 		<form id="frm" action="reviewUpdate.do" method="post">
 			<table>
 				<tr>

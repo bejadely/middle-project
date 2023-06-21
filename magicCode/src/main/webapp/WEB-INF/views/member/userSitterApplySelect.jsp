@@ -53,11 +53,27 @@
     	</p><br>
 	</div>
 	<div align="center">
-		<c:if test="${userRegist.urCheck eq 'E'}">
-			<button type="button" onclick="location.href=''">리뷰 작성</button>&nbsp;&nbsp;
+		<c:if test="${userRegist.urCheck eq 'E' and userRegist.urReview eq ''}">
+			<form id="frm" action="reviewInsertForm.do" method="post">
+				<input type="hidden" id="urId" name="urId" value="${userRegist.urId}">
+				<button type="submit">리뷰 작성</button>&nbsp;&nbsp;
+			</form>
+		</c:if> 
+		<c:if test="${userRegist.urCheck eq 'E' and userRegist.urReview ne ''}">
+			<form id="frm" action="reviewUpdateForm.do" method="post">
+				<input type="hidden" id="urId" name="urId" value="${userRegist.urId}">
+				<button type="submit">리뷰 수정</button>&nbsp;&nbsp;
+			</form>
 		</c:if> 
 		<button type="button" onclick="location.href='userSitterApplyAllList.do'">나가기</button>
 	</div>
 </div>
 </body>
+<script type="text/javascript">
+	function urMemberIdChoice(id) {
+		let frm = document.getElementById("frm");
+		frm.urId.value = id;
+		frm.submit();
+	}
+</script>
 </html>

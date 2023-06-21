@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
+	<div align="center">
 		<form action="reviewInsert.do" method="post" id="reviewInsert">
 			<table>
 				<tr>
@@ -17,12 +17,11 @@
 					<td><input type="text" id="urReview" name="urReview"></td>
 				</tr>
 			</table>
+			<!-- hidden 변수 생성 -->
+			<input type="hidden" id="urId" name="urId" value="${userRegist.urId}">
 		</form>
-	</div>
-	<div>
 		<button type="submit" form="reviewInsert">입력</button>
 		<button type="reset">취소</button>
 	</div>
-	<div></div>
 </body>
 </html>

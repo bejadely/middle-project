@@ -21,9 +21,9 @@ public class ReviewDelete implements Command {
 		
 		int n = rs.reviewDelete(vo);
 		if(n != 0) {
-			request.setAttribute("message", "게시글이 정상적으로 삭제되었습니다.");
+			request.setAttribute("message", "리뷰내용이 정상적으로 삭제되었습니다.");
 		}else {
-			request.setAttribute("message", "게시글 삭제에 실패하였습니다. 다시 시도해주십시오.");
+			request.setAttribute("message", "리뷰내용삭제에 실패하였습니다. 다시 시도해주십시오.");
 		}
 		return "review/Message";
 	}

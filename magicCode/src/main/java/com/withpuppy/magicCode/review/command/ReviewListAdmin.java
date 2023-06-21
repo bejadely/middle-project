@@ -10,23 +10,18 @@ import com.withpuppy.magicCode.common.Command;
 import com.withpuppy.magicCode.review.service.ReviewService;
 import com.withpuppy.magicCode.review.service.ReviewVO;
 import com.withpuppy.magicCode.review.serviceImpl.ReviewServiceImpl;
-import com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO;
 
-public class ReviewSelectList implements Command {
+public class ReviewListAdmin implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		//해당 srId에 적용되는 리뷰리스트
+		//전체리뷰조회 관리자
 		ReviewService rs = new ReviewServiceImpl();
-		ServiceRegistVO vo = new ServiceRegistVO();
-		int srId = vo.getSrId();
-		List<ReviewVO> reviewSelects = new ArrayList<>();
-		Double reviewRateAvg = null;
+		List<ReviewVO> reviews = new ArrayList<>();
+		reviews = rs.reviewSelectList();
 		
-		reviewSelects = rs.reviewSelectSrId(vo);
-		reviewRateAvg = rs.reviewRateAvg(srId);
-
-		return "review/sitterSelect";
+		request.setAttribute("reviews", reviews);
+		return "review/reviewListAdmin";
 	}
 
 }

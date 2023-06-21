@@ -20,7 +20,15 @@
 	        <c:forEach items="${reviews }" var="r">
 	            <tr>
 	                <td>사용자 닉네임 : ${r.memberNick }</td>
-	                <td>이용 서비스 : ${r.srTitle }(분류:${r.srCategory })</td>
+	                <c:if test="${r.srCategory eq 'S' }">
+	                <td>이용 서비스(시터) : ${r.srTitle }</td>
+	                </c:if>
+	                <c:if test="${r.srCategory eq 'T' }">
+	                <td>이용 서비스(훈련) : ${r.srTitle }</td>
+	                </c:if>
+	                <c:if test="${r.srCategory eq 'G' }">
+	                <td>이용 서비스(미용) : ${r.srTitle }</td>
+	                </c:if>
 	                <td>이용자 평점 : ${r.urRate }</td>
 	            </tr>
 	            <tr>

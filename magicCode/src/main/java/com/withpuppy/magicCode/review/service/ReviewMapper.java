@@ -13,4 +13,7 @@ public interface ReviewMapper {
 	int reviewUpdate(UserRegistVO vo);
 	int reviewDelete(UserRegistVO vo);
 	Double reviewRateAvg(int srId);
+
+	List<ReviewVO> reviewUrReviewSearch(ReviewVO vo);
+	List<ReviewVO> reviewMemberNickSearch(ReviewVO vo);
 }

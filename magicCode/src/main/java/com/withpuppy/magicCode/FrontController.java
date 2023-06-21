@@ -20,7 +20,6 @@ import com.withpuppy.magicCode.cmsu.command.SitterSelect;
 import com.withpuppy.magicCode.cmsu.command.TrainnerSelect;
 import com.withpuppy.magicCode.common.Command;
 import com.withpuppy.magicCode.main.MainCommand;
-
 import com.withpuppy.magicCode.member.command.AjaxCheckId;
 import com.withpuppy.magicCode.member.command.AjaxCheckNick;
 import com.withpuppy.magicCode.member.command.MemberInsert;
@@ -50,25 +49,33 @@ import com.withpuppy.magicCode.notice.command.NoticeEdit;
 import com.withpuppy.magicCode.notice.command.NoticeInsert;
 import com.withpuppy.magicCode.notice.command.NoticeInsertForm;
 import com.withpuppy.magicCode.notice.command.NoticeList;
-import com.withpuppy.magicCode.notice.command.NoticeMenu;
 import com.withpuppy.magicCode.notice.command.NoticeSelect;
 import com.withpuppy.magicCode.notice.command.NoticeUpdate;
-import com.withpuppy.magicCode.review.command.ReviewList;
-import com.withpuppy.magicCode.review.command.ReviewSelectList;
 import com.withpuppy.magicCode.psu.command.SitterReservation;
 import com.withpuppy.magicCode.psu.command.UserGrommingApplySelect;
 import com.withpuppy.magicCode.psu.command.UserSitterApplySelect;
 import com.withpuppy.magicCode.psu.command.UserTrainningApplySelect;
-import com.withpuppy.magicCode.su.command.GrommerAllList;
 import com.withpuppy.magicCode.review.command.ReviewDelete;
 import com.withpuppy.magicCode.review.command.ReviewInsert;
 import com.withpuppy.magicCode.review.command.ReviewInsertForm;
 import com.withpuppy.magicCode.review.command.ReviewList;
-import com.withpuppy.magicCode.review.command.ReviewSelectList;
+import com.withpuppy.magicCode.review.command.ReviewListAdmin;
+import com.withpuppy.magicCode.review.command.ReviewListSrId;
+import com.withpuppy.magicCode.review.command.ReviewListUrId;
+import com.withpuppy.magicCode.review.command.ReviewSearch;
 import com.withpuppy.magicCode.review.command.ReviewUpdate;
 import com.withpuppy.magicCode.review.command.ReviewUpdateForm;
+import com.withpuppy.magicCode.serviceRegist.command.DeleteServiceRegist;
+import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegist;
+import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegistForm;
+import com.withpuppy.magicCode.serviceRegist.command.SearchAllServiceRegistBykey;
+import com.withpuppy.magicCode.serviceRegist.command.SeeAllServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
 import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
+import com.withpuppy.magicCode.serviceRegist.command.TraningServiceRegist;
+import com.withpuppy.magicCode.serviceRegist.command.TraningServiceRegistForm;
+import com.withpuppy.magicCode.serviceRegist.command.imgTest;
+import com.withpuppy.magicCode.su.command.GrommerAllList;
 import com.withpuppy.magicCode.su.command.SitterAllList;
 import com.withpuppy.magicCode.su.command.TrainnerAllList;
 //import com.withpuppy.magicCode.su.command.SitterSelect;
@@ -82,16 +89,6 @@ import com.withpuppy.magicCode.userRegist.command.TrainnerReservation;
 import com.withpuppy.magicCode.userRegist.command.TrainnerServiceRegist;
 import com.withpuppy.magicCode.userRegist.command.UrCheckCUpdate;
 import com.withpuppy.magicCode.userRegist.command.UrCheckEUpdate;
-import com.withpuppy.magicCode.serviceRegist.command.DeleteServiceRegist;
-import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegist;
-import com.withpuppy.magicCode.serviceRegist.command.GroomingServiceRegistForm;
-import com.withpuppy.magicCode.serviceRegist.command.SearchAllServiceRegistBykey;
-import com.withpuppy.magicCode.serviceRegist.command.SeeAllServiceRegist;
-import com.withpuppy.magicCode.serviceRegist.command.ServiceRegist;
-import com.withpuppy.magicCode.serviceRegist.command.ServiceRegistForm;
-import com.withpuppy.magicCode.serviceRegist.command.imgTest;
-import com.withpuppy.magicCode.serviceRegist.command.TraningServiceRegist;
-import com.withpuppy.magicCode.serviceRegist.command.TraningServiceRegistForm;
 
 /**
  * Servlet implementation class FrontController
@@ -115,6 +112,7 @@ public class FrontController extends HttpServlet {
 		// 이선호
 		// 메인 페이지
 		map.put("/main.do", new MainCommand()); // 메인 페이지 호출
+		map.put("/main1.do", new MainOne());
 
 		map.put("/memberLogin.do", new MemberLogin()); // 로그인 처리
 		map.put("/memberLoginForm.do", new MemberLoginForm()); //로그인 폼 호출
@@ -134,7 +132,6 @@ public class FrontController extends HttpServlet {
 		
 		
 		// 정현
-		map.put("/noticeMenu.do", new NoticeMenu());	//공지사항 메뉴리스트
 		map.put("/noticeList.do", new NoticeList());	//공지사항 목록리스트
 		map.put("/noticeSelect.do", new NoticeSelect()); // 공지사항 상세 보기
 		map.put("/noticeEdit.do", new NoticeEdit());	//공지사항 수정하기
@@ -143,12 +140,16 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeInsertForm.do", new NoticeInsertForm());	//공지사항 입력폼
 		map.put("/noticeInsert.do", new NoticeInsert());	//공지사항 입력
 		map.put("/reviewList.do", new ReviewList());		//전체리뷰조회
-		map.put("/reviewSelectList.do", new ReviewSelectList());	//해당 srId를 가진 게시물의 평균평점/리뷰리스트확인
 		map.put("/reviewInsertForm.do", new ReviewInsertForm());	//ㄹ리뷰입력폼
 		map.put("/reviewInsert.do", new ReviewInsert());	//리뷰입력
 		map.put("/reviewDelete.do", new ReviewDelete());	//리뷰삭제
 		map.put("/reviewUpdateForm.do", new ReviewUpdateForm());	//리뷰수정폼
 		map.put("/reviewUpdate.do", new ReviewUpdate());	//리뷰수정
+		map.put("/reviewListAdmin.do", new ReviewListAdmin());	//전체리뷰조회 관리자
+		map.put("/reviewListUrId.do", new ReviewListUrId());	//UrId에 해당하는 리뷰 조회
+		map.put("/reviewListSrId.do", new ReviewListSrId());	//SrId에 해당하는 전체리뷰 조회
+		map.put("/reviewSearch.do", new ReviewSearch());	//리뷰 검색(관리자용)
+		
 		
 		// 창민
 		// 마이페이지

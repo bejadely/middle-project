@@ -52,8 +52,18 @@ public class ReviewServiceImpl implements ReviewService {
 		return map.reviewDelete(vo);
 	}
 	
+	@Override
 	public Double reviewRateAvg(int srId) {
 		return map.reviewRateAvg(srId);
 	}
-
+	
+	@Override
+	public List<ReviewVO> reviewUrReviewSearch(ReviewVO vo){
+		return map.reviewUrReviewSearch(vo);
+	}
+	
+	@Override
+	public List<ReviewVO> reviewMemberNickSearch(ReviewVO vo){
+		return map.reviewMemberNickSearch(vo);
+	}
 }

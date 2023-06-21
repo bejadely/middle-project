@@ -54,7 +54,7 @@
 	</div>
 	<div align="center">
 		<c:if test="${userRegist.urCheck eq 'E'}">
-			<button type="button" onclick="location.href='reviewInsertForm.do'">리뷰 1작성</button>&nbsp;&nbsp;
+			<button type="button" onclick="location.href='reviewInsertForm.do'">리뷰 작성</button>&nbsp;&nbsp;
 		</c:if> 
 		<button type="button" onclick="location.href='userTrainningApplyAllList.do'">나가기</button>
 	</div>

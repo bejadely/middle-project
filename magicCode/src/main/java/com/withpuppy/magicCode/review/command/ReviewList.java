@@ -18,7 +18,7 @@ public class ReviewList implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
+		// 전체리뷰조회
 		
 		ReviewService rs = new ReviewServiceImpl();
 		List<ReviewVO> reviews = new ArrayList<>();

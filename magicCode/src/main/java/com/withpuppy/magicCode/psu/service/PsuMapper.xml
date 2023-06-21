@@ -5,7 +5,8 @@
 	<select id="userSitterApplySelect" 
 	parameterType="com.withpuppy.magicCode.psu.service.PsuVO"
 	resultType="com.withpuppy.magicCode.psu.service.PsuVO">
-		SELECT U.UR_DATE, 
+		SELECT U.UR_ID,
+			   U.UR_DATE, 
 			   U.UR_START_TIME, 
 			   U.UR_END_TIME, 
 			   S.SR_SERVER_NAME,

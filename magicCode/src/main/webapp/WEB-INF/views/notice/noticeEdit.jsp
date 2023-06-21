@@ -17,7 +17,7 @@
 					<tr>
 						<th width="100" align="center">작성자</th>
 						<!-- 관리자가 로그인했을때 담아올 변수를 선택(id or name)-->
-						<td width="150" align="center">${id}</td>
+						<td width="150" align="center">${name}</td>
 						<th width="150" align="center">작성일자->수정일자</th>
 						<c:set var="today" value="<%=new java.util.Date()%>" />
 						<!-- 현재날짜 -->
