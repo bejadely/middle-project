@@ -11,11 +11,11 @@ import com.withpuppy.magicCode.userRegist.service.UserRegistService;
 import com.withpuppy.magicCode.userRegist.service.UserRegistVO;
 import com.withpuppy.magicCode.userRegist.serviceImpl.UserRegistServiceImpl;
 
-public class SittingServiceRegist implements Command {
+public class GroomerServiceRegist implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// 돌봄 서비스 예약 기능 수행
+		// 미용 예약 기능 수행
 		
 		// PetInsert(우선수행)
 		PetVO pvo = new PetVO();

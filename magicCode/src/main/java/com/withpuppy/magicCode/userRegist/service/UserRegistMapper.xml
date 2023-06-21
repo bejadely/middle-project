@@ -9,8 +9,8 @@
 		WHERE ur_id=#{urId}
 	</select>
 	<insert id="userRegistInsert">
-		<selectKey keyProperty="urId,urPetId" resultType="com.withpuppy.magicCode.userRegist.service.UserRegistVO" order="BEFORE">
-				SELECT Max(ur_id) + 1 AS ur_id, Max(ur_pet_id) AS ur_pet_id
+		<selectKey keyProperty="urId" resultType="int" order="BEFORE">
+				SELECT Max(ur_id) + 1 AS urId
 				FROM user_regist
 		</selectKey>
 		INSERT INTO user_regist
@@ -23,7 +23,7 @@
 		    #{urDate},
 		    #{urStartTime},
 		    #{urEndTime},
-		    null,
+		    0,
 		    null,
 		    #{srId},
 		    'N')
