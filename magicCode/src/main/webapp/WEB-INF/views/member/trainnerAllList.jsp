@@ -16,7 +16,7 @@
 			</ul>
 			<form id = "serchForm" action="searchTrainnerName.do" method="post">
 			    <label>이름으로 검색</label>
-		   		<input type="text" id="name" name="name">
+		   		<input type="text" id="name" name="name" required="required">
 		   		<button type="submit">검색</button>
 			</form>
 		</nav>

@@ -74,9 +74,9 @@
 							<li><a href="sitterAllList.do" class="py-2 d-block">Pet
 									Sitting</a></li>
 							<li><a href="trainnerAllList.do" class="py-2 d-block">Pet
-									Trainning</a></li>
+									Training</a></li>
 							<li><a href="grommerAllList.do" class="py-2 d-block">Pet
-									Gromming</a></li>
+									Grooming</a></li>
 							<li><a href="noticeList.do" class="py-2 d-block">Notice</a></li>
 						</ul>
 					</div>
