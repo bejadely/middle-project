@@ -13,6 +13,8 @@
   	<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp"/>
   </definition>
   
+  <definition name="myapp.specialPage" template="/WEB-INF/views/member/memberInsertForm.jsp">
+    
+  </definition>
  
-  
 </tiles-definitions>

@@ -54,7 +54,7 @@ body{
 #login-form > input[type="submit"] {
     color: #fff;
     font-size: 16px;
-    background-color: #00C13F;  /* 네이버 초록색 */
+    background-color: #00C13F;  /*초록색 */
     margin-top: 5px;
 }
 #login-form > input[type="checkbox"] {
@@ -89,7 +89,8 @@ body{
   display: flex;
   flex-direction: column; /* 세로로 버튼을 배열하도록 변경 */
   align-items: stretch; /* 버튼이 컨테이너 전체 너비를 채우도록 변경 */
-   justify-content: space-between;  
+  justify-content: space-between;    
+  
 }
 
 .button-wrapper button {
@@ -103,14 +104,17 @@ body{
   transition: background-color 0.3s ease; /* hover 시 애니메이션 효과 */
   width: 100%;
   margin-bottom: 16px; /* 버튼 간 간격을 추가 */
+  
 }
 
 .button-wrapper button:hover {
   background-color: #018429; /*버튼에 hover 효과 */
+   
 }
 
 .button-wrapper button:last-child {
   margin-bottom: 0; /* 마지막 버튼은 하단 여백이 없도록 합니다. */
+  
 }
 
 </style>
@@ -127,10 +131,10 @@ body{
 			<input type="email" id="memberId" name="memberId" placeholder="이메일" required="required">
 			<input type="password" id="memberPw" name="memberPw" placeholder="비밀번호" required="required">
 			<label for="remember-check">
-                <input type="checkbox" id="remember-check">아이디 저장하기
+                <input type="checkbox" id="remember-check">아이디 기억하기
 			</label>
 			<div class="button-wrapper">
-				<button type="submit" >로 그 인</button>
+				<button type="submit">로 그 인</button>
 				<button type="button" onclick="location.href='memberInsertForm.do'">일반 회원가입</button>
 				<button type="button" onclick="location.href='memberInsertSitterForm.do'">시터 회원가입</button>
 			</div>
