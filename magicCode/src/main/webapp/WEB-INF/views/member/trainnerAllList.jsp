@@ -5,6 +5,14 @@
 <html>
 <head>
 <title>Pet Sitting - Free Bootstrap 4 Template by Colorlib</title>
+
+<style>
+#trainerList{
+	height: 50px;
+	margin: 20px;
+	margin-bottom: 20px;
+}
+</style>
 </head>
 <body>
 	<section class="hero-wrap hero-wrap-2"
@@ -14,38 +22,23 @@
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-end">
 				<div class="col-md-9 ftco-animate pb-5">
-					<p class="breadcrumbs mb-2">
-						<span class="mr-2"><a href="main.do">Home <i
-								class="ion-ios-arrow-forward"></i></a></span> <span>훈련사 조회 <i
-							class="ion-ios-arrow-forward"></i></span>
-					</p>
 					<h1 class="mb-0 bread">전체 훈련사 조회</h1>
 				</div>
 			</div>
 		</div>
-	<div>
+	</section>
+	<div id="trainerList" align="right">
 		<nav>
-			<ul>
-				<li><a href="orderByTrainnerUrRate.do">평점 높은 순</a></li>
-			</ul>
 			<form id = "serchForm" action="searchTrainnerName.do" method="post">
-			    <label>이름으로 검색</label>
-		   		<input type="text" id="name" name="name" required="required">
-		   		<button type="submit">검색</button>
-			</form>
+		   		<input type="text" id="name" name="name" placeholder="이름으로 검색" required="required">
+		   		<button type="submit" class="btn btn-success mr-1">검색</button>
+		   		<button type="button" class="btn btn-success mr-1" onclick="location.href='orderByTrainnerUrRate.do'">평점 높은 순</button>
+				<c:if test="${auth eq 'T'}">
+					<button type="button" class="btn btn-success" onclick="location.href='traningServiceRegistForm.do'">훈련 서비스 등록</button>&nbsp;&nbsp;
+				</c:if>
+			</form> 
 		</nav>
 	</div>
-	<div align="center">
-		<div>
-			<h1>전체 펫 훈련사 조회</h1>
-		</div>
-	</div>
-	</section>
-		<div>
-			<c:if test="${auth eq 'T'}">
-				<button type="button" onclick="location.href=''">훈련 서비스 등록</button>&nbsp;&nbsp;
-			</c:if> 
-		</div>
 	<section class="ftco-section bg-light">
 		<div class="container">
 			<div class="row">
