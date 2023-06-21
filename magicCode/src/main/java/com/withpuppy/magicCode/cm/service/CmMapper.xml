@@ -4,7 +4,7 @@
 	<select id="cmSelectList"
 	resultType="com.withpuppy.magicCode.cm.service.CmVO">
 		SELECT m.member_id as "member_id", m.member_name as "member_name", c.certification_path as "certificaion_path", m.member_auth as "member_auth"
-		FROM  member m JOIN certification c
+		FROM  member m LEFT JOIN certification c
 		ON m.member_id = c.member_id
 		WHERE m.member_auth = 'UT' or m.member_auth = 'UG'
 	</select>
