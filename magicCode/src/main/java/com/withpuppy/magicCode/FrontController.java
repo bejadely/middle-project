@@ -49,7 +49,6 @@ import com.withpuppy.magicCode.notice.command.NoticeEdit;
 import com.withpuppy.magicCode.notice.command.NoticeInsert;
 import com.withpuppy.magicCode.notice.command.NoticeInsertForm;
 import com.withpuppy.magicCode.notice.command.NoticeList;
-import com.withpuppy.magicCode.notice.command.NoticeMenu;
 import com.withpuppy.magicCode.notice.command.NoticeSelect;
 import com.withpuppy.magicCode.notice.command.NoticeUpdate;
 import com.withpuppy.magicCode.psu.command.SitterReservation;
@@ -128,7 +127,6 @@ public class FrontController extends HttpServlet {
 		
 		
 		// 정현
-		map.put("/noticeMenu.do", new NoticeMenu());	//공지사항 메뉴리스트
 		map.put("/noticeList.do", new NoticeList());	//공지사항 목록리스트
 		map.put("/noticeSelect.do", new NoticeSelect()); // 공지사항 상세 보기
 		map.put("/noticeEdit.do", new NoticeEdit());	//공지사항 수정하기
