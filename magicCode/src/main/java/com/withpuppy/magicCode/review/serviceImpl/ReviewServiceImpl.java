@@ -23,7 +23,7 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 
 	@Override
-	public List<ReviewVO> reviewSelectSrId(ServiceRegistVO vo) {
+	public List<ReviewVO> reviewSelectSrId(ReviewVO vo) {
 		// TODO Auto-generated method stub
 		return map.reviewSelectSrId(vo);
 	}

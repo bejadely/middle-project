@@ -10,9 +10,10 @@
 </head>
 
 <body>
-<section class="notice">
-  <div class="page-title">
+<section>
+  <div class="page-title" >
         <div align="center">
+        	<span style="heigt:50px; color: white;">1</span>
             <h2><a href="noticeList.do">공지사항 목록</a></h2>
         </div>
     </div>

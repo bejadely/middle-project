@@ -17,6 +17,9 @@ public class ReviewVO {
 	String petKind;
 	int urRate;
 	String urReview;
+	int first;
+	int last;
+	
 	
 	public String getMemberId() {
 		return memberId;
