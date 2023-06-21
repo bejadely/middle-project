@@ -39,7 +39,7 @@
     	</p><br>
     	<p>
       		<label>미용사 소개
-      		<input type="text" value="${grommer.srIntroduce }"></label>
+      		<span>${grommer.srIntroduce }</span></label>
     	</p><br>
     	<p>
       		<label>미용사 가격

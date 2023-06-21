@@ -20,7 +20,6 @@ public class SitterSelect implements Command {
 		
 		// DB 에 <br>태그를 엔터로 치환
 		String brChange = vo.getSrIntroduce().replaceAll("\n", "<br>");
-		System.out.println(brChange);
 		vo.setSrIntroduce(brChange);
 		
 		request.setAttribute("sitter", vo);
