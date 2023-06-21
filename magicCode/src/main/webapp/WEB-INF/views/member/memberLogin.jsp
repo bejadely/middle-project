@@ -130,9 +130,9 @@ body{
 		<form class="form" id="login-form" action="memberLogin.do" method="post">
 			<input type="email" id="memberId" name="memberId" placeholder="이메일" required="required">
 			<input type="password" id="memberPw" name="memberPw" placeholder="비밀번호" required="required">
-			<label for="remember-check">
+			<!-- <label for="remember-check">
                 <input type="checkbox" id="remember-check">아이디 기억하기
-			</label>
+			</label>  -->
 			<div class="button-wrapper">
 				<button type="submit">로 그 인</button>
 				<button type="button" onclick="location.href='memberInsertForm.do'">일반 회원가입</button>
@@ -141,7 +141,11 @@ body{
 		</form>
 	</div>
 </div>
+
+
 </body>
+
+
 
 
 </html>

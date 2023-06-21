@@ -17,7 +17,7 @@
 }
 
 .bg-light {
-	height: 1200px;
+	height: 1500px;
 	padding-top: 55px;
 	padding-bottom: 75px;
 }
@@ -41,6 +41,24 @@
 .full-width {
 	width: 100%;
 }
+
+.h1.text-center {
+    font-size: 2rem; 
+}
+.text-dark.h4, .text-primary.h4 {
+    font-size: 2rem;
+}
+
+.row.align-items-center {
+    justify-content: center; /* WithPuppy  중앙 정렬 */
+}
+
+.credential-row {
+    display: flex;
+    align-items: center;
+}
+
+
 </style>
 <link rel="stylesheet" href="css/style.css">
 
@@ -49,7 +67,7 @@
 <body>
 	<section class="bg-light">
 		<div class="container py-4">
-			<div class="row align-items-center justify-content-between">
+			<div class="row align-items-center">
 				<a class="navbar-brand h1 text-center" href="main.do"> <span
 					class="text-dark h4">With</span> <span class="text-primary h4">Puppy</span>
 				</a>
@@ -58,14 +76,14 @@
 				onsubmit="return formCheck()" enctype="multipart/form-data"
 				method="post">
 				<div class="form-group">
-					<label for="memberId" class="form-label mt-4">*아이디</label> <input
-						type="email" class="form-control full-width" id="memberId"
-						name="memberId" required="required">
+					<label for="memberId" class="form-label mt-4">*아이디</label> 
+					<input	type="email" class="form-control full-width" id="memberId"
+						name="memberId"  placeholder="E-mail" required="required">
 				</div>
 
 				<div class="form-group has-success">
-					<label class="form-label mt-4" for="memberId">*비밀번호</label> <input
-						type="password" class="form-control is-valid full-width"
+					<label class="form-label mt-4" for="memberId">*비밀번호</label> 
+					<input	type="password" class="form-control is-valid full-width"
 						id="memberPw" name="memberPw" required="required">
 				</div>
 
@@ -76,14 +94,14 @@
 				</div>
 
 				<div class="form-group">
-					<label for="memberName" class="form-label mt-4">*이름</label> <input
-						type="text" class="form-control full-width" id="memberName"
+					<label for="memberName" class="form-label mt-4">*이름</label> 
+					<input	type="text" class="form-control full-width" id="memberName"
 						name="memberName" required="required">
 				</div>
 
 				<div>
-					<label for="memberTel" class="form-label mt-4">*전화번호</label> <input
-						type="tel" class="form-control full-width" id="memberTel"
+					<label for="memberTel" class="form-label mt-4">*전화번호</label> 
+					<input	type="tel" class="form-control full-width" id="memberTel"
 						name="memberTel" required="required">
 				</div>
 
@@ -106,19 +124,26 @@
 					</div>
 				</div>
 				<div class="d-grid gap-2" align="center">
-					<input type="radio" id="sitter" name="memberAuth" value="S"
-						checked="checked"> <label for="sitter">시터</label> <input
-						type="radio" id="trainer" name="memberAuth" value="UT"> <label
-						for="trainer">훈련사</label> <input type="radio" id="groomer"
-						name="memberAuth" value="UG"> <label for="groomer">애견미용</label><br>
+					<input type="radio" id="sitter" name="memberAuth" value="S" checked="checked"> 
+						<label for="sitter">시터</label>
+						<input type="radio" id="trainer" name="memberAuth" value="UT"> 
+						<label	for="trainer">훈련사</label> 
+						<input type="radio" id="groomer"	name="memberAuth" value="UG"> 
+						<label for="groomer">애견미용</label><br>
+						
 					<!-- certificaion 삽입 구문 -->
-					<label>자격증 명<input type="text" id="certificationName"
-						name="certificationName"></label> <input type="file" id="cfile"
-						name="cfile"> <input type="hidden" id="memberAddrInput"
-						name="memberAddr" />
-
+					<div class="form-group row">
+				    <div class="col-7">
+				        <label for="certificationName" class="form-label mt-4">*자격증 명</label>
+				        <input type="text" id="certificationName" name="certificationName" class="form-control full-width">
+				    </div>
+				    <div class="col-5">
+				        <label for="cfile" class="form-label mt-4">*이미지 업로드</label>
+				        <input type="file" id="cfile" name="cfile" class="form-control full-width">
+				    </div>
+					</div>
 					<button type="submit" class="btn btn-primary btn-lg full-width"
-						style="font-weight: bold;">가입하기</button>
+						style="font-weight: bold ; font-size: 1.3rem;">가입하기</button>
 				</div>
 
 			</form>
