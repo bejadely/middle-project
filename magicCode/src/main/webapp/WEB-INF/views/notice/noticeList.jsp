@@ -26,7 +26,9 @@ section.notice {
   font-weight: 400;
   text-align: center;
 }
-
+#search{
+	!important
+}
 #board-search .search-window {
   padding: 15px 0;
   background-color: #f9f7f9;
@@ -112,10 +114,8 @@ section.notice {
 
 .btn {
   display: inline-block;
-  padding: 0 30px;
   font-size: 15px;
   font-weight: 400;
-  background: transparent;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -128,9 +128,6 @@ section.notice {
   user-select: none;
   border: 1px solid transparent;
   text-transform: uppercase;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -165,7 +162,6 @@ section.notice {
 * {
   list-style: none;
   text-decoration: none;
-  padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
@@ -227,6 +223,41 @@ section.notice {
 			</form>
         </div>
     </div>
+	<div align="center">
+		<form method="post" name="search" action="reviewSearch.do">
+			<table>
+				<tr>
+					<td>
+						<select class="form-control" name="searchField" ID="searchField">
+							<option value="0">선택</option>
+							<option value="urReview">리뷰 내용</option>
+							<option value="memberNick">작성자 닉네임</option>
+						</select>
+					</td>
+					<td>
+						<input type="text" class="form-control"
+						placeholder="검색어 입력" id="searchText" name="searchText" maxlength="100">
+					</td>
+					<td>
+						<button type="submit" id="search" name="search" class="btn btn-success">검색</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div class="col text-center">
+	    <div class="block-27">
+	      <ul>
+	        <li><a href="#">&lt;</a></li>
+	        <li class="active"><span>1</span></li>
+	        <li><a href="#">2</a></li>
+	        <li><a href="#">3</a></li>
+	        <li><a href="#">4</a></li>
+	        <li><a href="#">5</a></li>
+	        <li><a href="#">&gt;</a></li>
+	      </ul>
+	    </div>
+	  </div>
 </section>
 </body>
 <script type="text/javascript">
