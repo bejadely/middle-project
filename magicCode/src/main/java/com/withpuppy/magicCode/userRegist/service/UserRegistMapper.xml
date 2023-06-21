@@ -9,6 +9,24 @@
 		WHERE ur_id=#{urId}
 	</select>
 	<insert id="userRegistInsert">
+		<selectKey keyProperty="urId" resultType="int" order="BEFORE">
+				SELECT Max(ur_id) + 1 AS urId
+				FROM user_regist
+		</selectKey>
+		INSERT INTO user_regist
+		VALUES(
+			#{urId},
+		    #{urMemberId},
+		    #{urPetId},
+		    #{urRequire},
+		    #{urPayment},
+		    #{urDate},
+		    #{urStartTime},
+		    #{urEndTime},
+		    0,
+		    null,
+		    #{srId},
+		    'N')
 	</insert>
 	<update id="userRegistUpdate">
 	</update>

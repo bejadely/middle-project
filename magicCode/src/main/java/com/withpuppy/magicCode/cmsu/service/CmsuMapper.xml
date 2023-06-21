@@ -16,7 +16,8 @@
 		FROM CERTIFICATION c JOIN MEMBER m ON c.MEMBER_ID = m.MEMBER_ID 
 		     JOIN SERVICE_REGIST s ON m.MEMBER_auth = s.SR_category 
 		WHERE s.SR_ID = #{srId}  -->
-		SELECT s.SR_PICTURE_PATH, 
+		SELECT s.SR_ID,
+		       s.SR_PICTURE_PATH, 
 			   s.SR_SERVER_NAME, 
 			   m.MEMBER_TEL, 
 			   s.SR_START_DATE, 
@@ -35,7 +36,8 @@
 	<select id="trainnerSelect"
 	parameterType="com.withpuppy.magicCode.cmsu.service.CmsuVO"
 	resultType="com.withpuppy.magicCode.cmsu.service.CmsuVO">
-		SELECT s.SR_PICTURE_PATH, 
+		SELECT s.SR_ID,
+			   s.SR_PICTURE_PATH, 
 			   s.SR_SERVER_NAME, 
 			   m.MEMBER_TEL, 
 			   s.SR_START_DATE, 
@@ -54,7 +56,8 @@
 	<select id="grommerSelect"
 	parameterType="com.withpuppy.magicCode.cmsu.service.CmsuVO"
 	resultType="com.withpuppy.magicCode.cmsu.service.CmsuVO">
-		SELECT s.SR_PICTURE_PATH, 
+		SELECT s.SR_ID,
+		       s.SR_PICTURE_PATH, 
 			   s.SR_SERVER_NAME, 
 			   m.MEMBER_TEL, 
 			   s.SR_START_DATE, 

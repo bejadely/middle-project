@@ -75,6 +75,11 @@ import com.withpuppy.magicCode.su.command.TrainnerAllList;
 import com.withpuppy.magicCode.su.command.UserGrommingApplyAllList;
 import com.withpuppy.magicCode.su.command.UserSitterApplyAllList;
 import com.withpuppy.magicCode.su.command.UserTrainningApplyAllList;
+import com.withpuppy.magicCode.userRegist.command.GrommerReservation;
+import com.withpuppy.magicCode.userRegist.command.GroomerServiceRegist;
+import com.withpuppy.magicCode.userRegist.command.SittingServiceRegist;
+import com.withpuppy.magicCode.userRegist.command.TrainnerReservation;
+import com.withpuppy.magicCode.userRegist.command.TrainnerServiceRegist;
 import com.withpuppy.magicCode.userRegist.command.UrCheckCUpdate;
 import com.withpuppy.magicCode.userRegist.command.UrCheckEUpdate;
 import com.withpuppy.magicCode.serviceRegist.command.DeleteServiceRegist;
@@ -165,7 +170,7 @@ public class FrontController extends HttpServlet {
 	    map.put("/trainnerSelect.do", new TrainnerSelect()); //훈련사 단건 조회
 	    map.put("/grommerAllList.do", new GrommerAllList()); //전체 미용사 목록 조회
 	    map.put("/grommerSelect.do", new GrommerSelect()); //미용사 단건 조회
-	    map.put("/sitterReservation.do", new SitterReservation()); //돌봄 서비스 예약
+	    
 	    //(서비스 제공자)
 	    map.put("/sitterRequestHistory.do", new SitterRequestHistory()); //돌봄 서비스 요청 내역 조회(전체)
 	    map.put("/sitterRequestSelect.do", new SitterRequestSelect()); //돌봄 서비스 요청 단건 조회
@@ -193,6 +198,14 @@ public class FrontController extends HttpServlet {
 		map.put("/authRequestList.do", new AuthRequestList()); // 권한승인신청 전체조회 페이지 호출 및 신청현황 불러오기 기능
 		map.put("/approveAuthRequest.do", new ApproveAuthRequest()); // 권한승인 신청 승인 
 		map.put("/rejectAuthRequest.do", new RejectAuthRequest()); // 권한승인 신청 거절
+		
+		// 유저 입장(예약)
+		map.put("/sitterReservation.do", new SitterReservation()); //돌봄 서비스 예약 페이지로 이동
+		map.put("/sittingServiceRegist.do", new SittingServiceRegist()); // 돌봄 서비스 예약 기능 수행
+		map.put("/trainnerReservation.do", new TrainnerReservation()); // 훈련 서비스 예약 페이지로 이동
+		map.put("/trainnerServiceRegist.do", new TrainnerServiceRegist()); // 훈련 서비스 예약 기능 수행
+		map.put("/grommerReservation.do", new GrommerReservation()); // 미용 서비스 예약 페이지로 이동
+		map.put("/groomerServiceRegist.do", new GroomerServiceRegist()); // 미용 서비스 예약 기능 수행
 	}
 
 	/**
