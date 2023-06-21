@@ -23,6 +23,8 @@
 							<th width="150">훈련사 명</th>
 							<th width="150">장소</th>
 							<th width="150">결제 금액</th>
+							<th width="150">결제 방식</th>
+							<th width="150">진행 여부</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -36,6 +38,21 @@
 							<td width="150">${u.srServerName }</td>
 							<td width="150">${u.srLocation }</td>
 							<td width="150">${u.srPrice }</td>
+							<c:if test="${u.urPayment eq 'C'}">
+								<td width="150">카드 결제</td>
+							</c:if>
+							<c:if test="${u.urPayment eq 'N'}">
+								<td width="150">네이버 페이 결제</td>
+							</c:if>  
+							<c:if test="${u.urCheck eq 'E'}">
+								<td width="150">서비스 완료</td>
+							</c:if>
+							<c:if test="${u.urCheck eq 'C'}">
+								<td width="150">서비스 취소</td>
+							</c:if>
+							<c:if test="${u.urCheck eq 'N'}">
+								<td width="150">서비스 전</td>
+							</c:if>
 							<td> <!-- 서비스 완료가 되었는지 확인하는 부분 -->
 							<c:if test="${u.urCheck eq 'E'}">
 								<button type="button" onclick="location.href=''">리뷰 작성</button>&nbsp;&nbsp;

@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="hero-wrap js-fullheight" style="background-image: url('images/mainImage.PNG');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap js-fullheight" style="background-image: url('images/main0621.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">

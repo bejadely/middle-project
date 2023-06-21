@@ -5,20 +5,12 @@
 <html>
 <head>
 <title>Pet Sitting - Free Bootstrap 4 Template by Colorlib</title>
+
 <style>
 #sitterList{
-	height: 40px;
-}
-#sitterList ul{
-
-	list-style: none;
-	margin-left: 30px;
-}
-#sitterList ul li{
-	margin:0 auto;
-	width : 130px;
-	text-align:center;
-	float:left;
+	height: 50px;
+	margin: 20px;
+	margin-bottom: 20px;
 }
 </style>
 </head>
@@ -31,28 +23,21 @@
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-end">
 				<div class="col-md-9 ftco-animate pb-5">
-					<p class="breadcrumbs mb-2">
-						<span class="mr-2"><a href="main.do">Home <i
-								class="ion-ios-arrow-forward"></i></a></span> <span>시터조회 <i
-							class="ion-ios-arrow-forward"></i></span>
-					</p>
 					<h1 class="mb-0 bread">전체 펫 돌보미 조회</h1>
 				</div>
 			</div>
 		</div>
 	</section>
-	<div id="sitterList">
-		<div align="center">
-			<ul>
-				<li><a href="orderBySitterUrRate.do">평점 높은 순</a></li>
-			</ul>
-		</div>
+	<div id="sitterList" align="right">
 		<nav>
 			<form id = "serchForm" action="searchSitterName.do" method="post">
-			    <label>이름으로 검색</label>
-		   		<input type="text" id="name" name="name" required="required">
-		   		<button type="submit">검색</button>
-			</form>
+		   		<input type="text" id="name" name="name" placeholder="이름으로 검색" required="required">
+		   		<button type="submit" class="btn btn-success mr-1">검색</button>
+		   		<button type="button" class="btn btn-success mr-1" onclick="location.href='orderBySitterUrRate.do'">평점 높은 순</button>
+				<c:if test="${auth eq 'S'}">
+					<button type="button" class="btn btn-success" onclick="location.href='serviceRegistForm.do'">돌봄 서비스 등록</button>&nbsp;&nbsp;
+				</c:if>
+			</form> 
 		</nav>
 	</div>
 	<section class="ftco-section bg-light">

@@ -11,7 +11,7 @@
 	<div align="center">
 		<h1>공지사항 상세보기</h1>
 		<div>
-			<table border="1">
+			<table border="1" class="table">
 				<tr>
 					<th>공지번호</th>
 					<td>${notice.noticeId}</td>
