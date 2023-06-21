@@ -47,7 +47,7 @@
     	</p><br>
 	</div>
 	<div align="center">
-		<button type="button" onclick="chois('${sitter.srId}','${sitter.srPrice}')">예약하기</button>&nbsp;&nbsp;
+		<button type="button" onclick="chois(${sitter.srId},${sitter.srPrice})">예약하기</button>&nbsp;&nbsp;
 		<button type="button" onclick="location.href='sitterAllList.do'">목록으로</button>
 	</div>
 	<div>

@@ -7,6 +7,20 @@
 	<select id="petSelect" resultType="com.withpuppy.magicCode.pet.service.PetVO">
 	</select>
 	<insert id="petInsert">
+	<selectKey keyProperty="petId" resultType="int" order="BEFORE">
+			SELECT Max(pet_id) + 1 AS petId FROM pet
+	</selectKey>
+	INSERT INTO pet 
+	VALUES(
+		#{petId},
+	    #{ownerId},
+	    #{petName},
+	    #{petKind},
+	    #{petAge},
+	    #{petGender},
+	    #{petWeight},
+	    #{petSign}
+	    )
 	</insert>
 	<update id="petUpdate">
 	</update>

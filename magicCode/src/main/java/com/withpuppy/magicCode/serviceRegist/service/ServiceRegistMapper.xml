@@ -10,7 +10,7 @@
 	<select id="serviceRegistSelect" resultType="com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO">
 	</select>
 	<insert id="serviceRegistInsert">
-	<selectKey keyProperty="urId" resultType="int" order="BEFORE">
+	<selectKey keyProperty="srId" resultType="int" order="BEFORE">
 			SELECT Max(sr_id) + 1 AS srId FROM service_regist
 	</selectKey>
 	INSERT INTO service_regist VALUES(#{srId}, #{srPicturePath}, #{srTitle}, #{srServerId}, 
