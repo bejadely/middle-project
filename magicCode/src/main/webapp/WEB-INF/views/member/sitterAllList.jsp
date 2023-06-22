@@ -40,11 +40,6 @@
 		</nav>
 	</div>
 	<section class="ftco-section bg-light">
-		<div>
-			<c:if test="${auth eq 'S'}">
-				<button type="button" onclick="location.href='serviceRegistForm.do'">돌봄 서비스 등록</button>&nbsp;&nbsp;
-			</c:if> 
-		</div>
 		<div class="container">
 			<div class="row">
 				<c:forEach items="${services }" var="s">

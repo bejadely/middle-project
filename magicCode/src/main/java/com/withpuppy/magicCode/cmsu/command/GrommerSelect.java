@@ -22,6 +22,9 @@ public class GrommerSelect implements Command {
 		String brChange = vo.getSrIntroduce().replaceAll("\n", "<br>");
 		vo.setSrIntroduce(brChange);
 		
+		// 날짜 문자열 자르기
+		vo.setSrStartDate(vo.getSrStartDate().substring(0,10));
+		vo.setSrEndDate(vo.getSrEndDate().substring(0,10));
 		
 		request.setAttribute("grommer", vo);
 		return "member/grommerSelect";

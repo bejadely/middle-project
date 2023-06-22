@@ -195,5 +195,9 @@
 		location.href='sitterSelect.do?srId=${sitter.srId}&page='+p;
 		
 	}
+	let forRead = document.getElementsByTagName("input");
+	for (let i = 0; i < forRead.length; i++) {
+	  forRead[i].readOnly = true;
+	}
 </script>
 </html>
