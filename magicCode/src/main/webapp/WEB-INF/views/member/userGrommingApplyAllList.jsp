@@ -61,7 +61,7 @@ tbody>tr>td:first-child:before {
 							</c:if>
 							<td> <!-- 서비스 완료가 되었는지 확인하는 부분 -->
 							<c:if test="${u.urCheck eq 'E'}">
-								<button type="button" onclick="location.href=''">리뷰 작성</button>&nbsp;&nbsp;
+								<button type="button" class="btn btn-primary" onclick="location.href=''">리뷰 작성</button>&nbsp;&nbsp;
 							</c:if> 
 							</td>
 						</tr>
