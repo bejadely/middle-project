@@ -26,7 +26,6 @@
 	</select>
 	<select id="noticeListPage" 
 		resultType="com.withpuppy.magicCode.notice.service.NoticeVO">
-
 		SELECT * FROM(
 					SELECT rownum  rn,a.* FROM(
 								            SELECT notice_id, notice_title, notice_subject, notice_writer, TO_CHAR(notice_time, 'YYYY/MM/DD') as "NOTICE_TIME" FROM notice

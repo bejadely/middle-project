@@ -8,7 +8,6 @@ import com.withpuppy.magicCode.common.DataSource;
 import com.withpuppy.magicCode.review.service.ReviewMapper;
 import com.withpuppy.magicCode.review.service.ReviewService;
 import com.withpuppy.magicCode.review.service.ReviewVO;
-import com.withpuppy.magicCode.serviceRegist.service.ServiceRegistVO;
 import com.withpuppy.magicCode.userRegist.service.UserRegistVO;
 
 public class ReviewServiceImpl implements ReviewService {
@@ -23,7 +22,7 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 
 	@Override
-	public List<ReviewVO> reviewSelectSrId(ServiceRegistVO vo) {
+	public List<ReviewVO> reviewSelectSrId(ReviewVO vo) {
 		// TODO Auto-generated method stub
 		return map.reviewSelectSrId(vo);
 	}
@@ -65,5 +64,10 @@ public class ReviewServiceImpl implements ReviewService {
 	@Override
 	public List<ReviewVO> reviewMemberNickSearch(ReviewVO vo){
 		return map.reviewMemberNickSearch(vo);
+	}
+
+	@Override
+	public int listPage() {
+		return map.listPage();
 	}
 }
