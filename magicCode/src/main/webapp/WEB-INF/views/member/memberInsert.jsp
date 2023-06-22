@@ -36,6 +36,17 @@
     width: 100%;
 }
 
+.h1.text-center {
+    font-size: 2rem; 
+}
+.text-dark.h4, .text-primary.h4 {
+    font-size: 2rem;
+}
+
+.row.align-items-center {
+    justify-content: center; /* WithPuppy  중앙 정렬 */
+}
+
 </style>
 <link rel="stylesheet" href="css/style.css">
 
@@ -44,8 +55,8 @@
 <body>
 	<section class="bg-light">
 		<div class="container py-4">
-			<div class="row align-items-center justify-content-between" > 
-				<a class="navbar-brand h1 text-center" href="main.do" > <span 
+			<div class="row align-items-center">
+				<a class="navbar-brand h1 text-center" href="main.do"> <span
 					class="text-dark h4">With</span> <span class="text-primary h4">Puppy</span>
 				</a>
 			</div>
@@ -56,19 +67,20 @@
 				<div class="form-group">
 
 					<label for="memberId" class="form-label mt-4">*아이디</label> <input
-						type="email" class="form-control full-width" id="memberId" name="memberId"
-						required="required">
+						type="email" class="form-control full-width" id="memberId"
+						name="memberId" required="required">
 				</div>
 
 				<div>
 					<label>*닉네임</label> <input type="text" id="memberNick"
-						name="memberNick" class="form-control full-width" required="required">
+						name="memberNick" class="form-control full-width"
+						required="required">
 				</div>
 
 				<div class="form-group has-success">
 					<label class="form-label mt-4" for="memberId">*비밀번호</label> <input
-						type="password" class="form-control is-valid full-width" id="memberPw"
-						name="memberPw" required="required">
+						type="password" class="form-control is-valid full-width"
+						id="memberPw" name="memberPw" required="required">
 				</div>
 
 				<div class="form-group has-danger">
@@ -79,35 +91,40 @@
 
 				<div class="form-group">
 					<label for="memberName" class="form-label mt-4">*이름</label> <input
-						type="text" class="form-control full-width" id="memberName" name="memberName"
-						required="required" aria-describedby="emailHelp">
+						type="text" class="form-control full-width" id="memberName"
+						name="memberName" required="required" aria-describedby="emailHelp">
 				</div>
 
 				<div>
-					<label for="memberTel" class="form-label mt-4">*전화번호</label> <input type="tel" id="memberTel"
-						name="memberTel" class="form-control full-width" required="required">
+					<label for="memberTel" class="form-label mt-4">*전화번호</label> <input
+						type="tel" id="memberTel" name="memberTel"
+						class="form-control full-width" required="required">
 				</div>
 
 				<div>
-					<br><p>*주소 입력란</p>
+					<br>
+					<p>*주소 입력란</p>
 					<div class="form-group">
-					    <input id="member_post" type="text" placeholder="도로명주소" class="form-control" readonly
-							onclick="findAddr()">
+						<input id="member_post" type="text" placeholder="도로명주소"
+							class="form-control" readonly onclick="findAddr()">
 						<div class="row">
 							<div class="col-sm">
-								<input id="member_addr" type="text" placeholder="메인주소" class="form-control" readonly>
+								<input id="member_addr" type="text" placeholder="메인주소"
+									class="form-control" readonly>
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
-						<input id="member_detail_addr" type="text" placeholder="상세주소 입력란" class="form-control">
+						<input id="member_detail_addr" type="text" placeholder="상세주소 입력란"
+							class="form-control">
 					</div>
 				</div>
 
-				<div class="d-grid gap-2" >
+				<div class="d-grid gap-2">
 					<input type="hidden" id="memberAuth" name="memberAuth" value="N">
 					<input type="hidden" id="memberAddrInput" name="memberAddr" />
-					<button type="submit" class="btn btn-primary btn-lg full-width" style="font-weight: bold;">가입하기</button>
+					<button type="submit" class="btn btn-primary btn-lg full-width"
+						style="font-weight: bold; font-size: 1.3rem;">가입하기</button>
 				</div>
 
 			</form>

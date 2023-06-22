@@ -6,21 +6,40 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<style type="text/css">
+.select-button {
+  width: 7%;
+  height: 48px;
+  background-color: #00C13F;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.select-button:hover {
+  background-color: #018429;
+}
+
+</style>
 </head>
 <body>
 
-	<div align="center">
+	<div align="center" class="container" style="max-width: 70%">
 	<div><h2>회원정보 수정/삭제</h2></div>
-	<div>
-		<table border="1" >
-			<thead>
+	<div class="table-responsive" >
+		<table border="1"  class="table"  >
+			<thead class="thead-dark" align="center">
 					<tr>
-						<th width="150">아이디</th>
-						<th width="150">닉네임</th>
-						<th width="150">이 름</th>
-						<th width="150">연락처</th>
-						<th width="200">주 소</th>
-						<th width="100">회원등급</th>
+						<th width="150" scope="col">아이디</th>
+						<th width="150" scope="col">닉네임</th>
+						<th width="150" scope="col">이 름</th>
+						<th width="150" scope="col">연락처</th>
+						<th width="200" scope="col">주 소</th>
+						<th width="100" scope="col">회원등급</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -38,9 +57,9 @@
 	</div>
 	<div align="center">
 
-		<button type="button" onclick="callFunction('E')">수정</button>
+		<button type="button" class="select-button" onclick="callFunction('E')">수정</button>
 		&nbsp;&nbsp;
-		<button type="button" onclick="callFunction('D')">삭제</button>
+		<button type="button" class="select-button" onclick="callFunction('D')">삭제</button>
 		&nbsp;&nbsp;
 
 	</div>
