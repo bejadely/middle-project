@@ -6,17 +6,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+tbody>tr {
+  counter-increment: aaa;
+}
+tbody>tr>td:first-child:before {
+  content: counter(aaa) " ";
+}
+</style>
 </head>
 <body>
-	<div align="center">
+	<div align="center" style="margin-top: 50px">
 		<div>
 			<h1>나의 펫 미용 신청 전체 조회</h1>
 		</div>
 		<div>
 			<div>
-				<table border="1">
-					<thead>
-						<tr>
+				<table class="table">
+					<thead class="thead-dark"> 
+						<tr align="center">
+						    <th width="150">#</th>
 							<th width="150">예약한 날짜</th>
 							<th width="150">미용사 명</th>
 							<th width="150">장소</th>
@@ -30,6 +39,7 @@
 						<tr onmouseover='this.style.background="#263343";' 
 							onmouseleave='this.style.background="#FFFFFF";' 
 							onclick="urMemberIdChois(${u.urId })">
+							<td width="150"></td>
 							<td width="150">${u.urDate }</td>
 							<td width="150">${u.srServerName }</td>
 							<td width="150">${u.srLocation }</td>
@@ -61,7 +71,7 @@
 			</div><br>
 		</div>
 		<div>
-			<button type="button" onclick="location.href='seeMyInfo.do'">뒤로가기</button>&nbsp;&nbsp;
+			<button type="button" class="btn btn-success" onclick="location.href='seeMyInfo.do'">뒤로가기</button>&nbsp;&nbsp;
 		</div>
 		<div>
 			<form id="frm" action="userGrommingApplySelect.do" method="post">
