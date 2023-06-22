@@ -29,7 +29,8 @@
                s.SR_PRICE
 		FROM CERTIFICATION c JOIN SERVICE_REGIST s ON c.MEMBER_ID = s.SR_SERVER_ID
                              JOIN MEMBER m ON s.SR_SERVER_NAME = m.MEMBER_NAME
-		WHERE s.SR_ID = #{srId} AND s.SR_CATEGORY = 'S'
+		WHERE s.SR_ID = #{srId} 
+		  AND s.SR_CATEGORY = 'S'
 	</select>
 
 	<!-- 훈련사 단건 조회  -->

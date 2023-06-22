@@ -14,12 +14,16 @@
 	<select id="reviewSelectSrId"
 		parameterType="com.withpuppy.magicCode.review.service.ReviewVO"
 		resultType="com.withpuppy.magicCode.review.service.ReviewVO">
-		SELECT ur.ur_id, ur.ur_member_id, m.member_nick, sr.sr_id, sr.sr_title, sr.sr_server_id,sr.sr_server_name,sr.sr_category, p.pet_name, p.pet_kind, ur.ur_rate, ur.ur_review
-		FROM user_regist ur, member m, pet p, service_regist sr 
-		WHERE ur.ur_member_id = m.member_id 
-		    AND ur.ur_pet_id = p.pet_id 
-		    AND ur.sr_id = sr.sr_id
-		    AND ur.sr_id = #{srId}
+		SELECT * FROM(
+			SELECT rownum  rn,a.* FROM(
+							SELECT ur.ur_id, ur.ur_member_id, m.member_nick, sr.sr_id, sr.sr_title, sr.sr_server_id,sr.sr_server_name,sr.sr_category, p.pet_name, p.pet_kind, ur.ur_rate, ur.ur_review
+							FROM user_regist ur, member m, pet p, service_regist sr 
+							WHERE ur.ur_member_id = m.member_id 
+							    AND ur.ur_pet_id = p.pet_id 
+							    AND ur.sr_id = sr.sr_id
+							    AND ur.sr_id = #{srId}
+										)a
+				)WHERE rn BETWEEN #{first} and #{last}
 	</select>
 	<!-- 마이 페이지에서 선택했을때 서비스 상세정보 밑에 띄울 리뷰 리스트 -->
 	<select id="reviewSelectUrId"
