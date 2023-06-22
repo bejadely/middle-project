@@ -6,17 +6,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+tbody>tr {
+  counter-increment: aaa;
+}
+tbody>tr>td:first-child:before {
+  content: counter(aaa) " ";
+}
+</style>
 </head>
 <body>
-	<div align="center">
+	<div align="center" style="margin-top: 50px">
 		<div>
 			<h1>나의 펫 돌보미 신청 전체 조회</h1>
 		</div>
 		<div>
 			<div>
-				<table border="1">
-					<thead>
-						<tr>
+				<table class="table">
+					<thead class="thead-dark">
+						<tr align="center">
+							<th width="150">#</th>
 							<th width="150">예약한 날짜</th>
 							<th width="150">예약 시작 시간</th>
 							<th width="150">예약 끝 시간</th>
@@ -25,13 +34,15 @@
 							<th width="150">결제 금액</th>
 							<th width="150">결제 방식</th>
 							<th width="150">진행 여부</th>
+							<th width="150">리뷰 작성</th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach items="${userRegists }" var="u">
 						<tr onmouseover='this.style.background="#263343";' 
 							onmouseleave='this.style.background="#FFFFFF";' 
-							onclick="urMemberIdChois(${u.urId })">
+							onclick="urMemberIdChois(${u.urId })" align="center">
+							<td width="150"></td>
 							<td width="150">${u.urDate }</td>
 							<td width="150">${u.urStartTime }</td>
 							<td width="150">${u.urEndTime }</td>
@@ -55,7 +66,7 @@
 							</c:if>
 							<td> <!-- 서비스 완료가 되었는지 확인하는 부분 -->
 							<c:if test="${u.urCheck eq 'E'}">
-								<button type="button" onclick="location.href='reviewInsertForm.do'">리뷰 작성</button>&nbsp;&nbsp;
+								<button type="button" class="btn btn-primary" onclick="location.href='reviewInsertForm.do'">리뷰 작성</button>&nbsp;&nbsp;
 							</c:if> 
 							</td>
 						</tr>
@@ -65,7 +76,7 @@
 			</div><br>
 		</div>
 		<div>
-			<button type="button" onclick="location.href='seeMyInfo.do'">뒤로가기</button>&nbsp;&nbsp;
+			<button type="button" class="btn btn-success" onclick="location.href='seeMyInfo.do'">뒤로가기</button>&nbsp;&nbsp;
 		</div>
 		<div>
 			<form id="frm" action="userSitterApplySelect.do" method="post">

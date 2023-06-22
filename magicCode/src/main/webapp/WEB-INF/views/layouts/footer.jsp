@@ -35,10 +35,10 @@
 								style="background-image: url(images/말티즈.jpg);"></a>
 							<div class="text">
 								<h3 class="heading">
-									<a href="https://petnolza.com/category/dog-information/">강아지 정보</a><br>
-									<a href="https://petnolza.com/category/dog-health/">강아지 건강</a><br>
-									<a href="https://petnolza.com/category/dog-food/">강아지 음식</a><br>
-									<a href="https://petnolza.com/category/dog-behavior/">강아지 행동</a><br>
+									<a href="https://petnolza.com/category/dog-information/" onclick="window.open(this.href, '_blank'); return false;">강아지 정보</a><br>
+									<a href="https://petnolza.com/category/dog-health/" onclick="window.open(this.href, '_blank'); return false;">강아지 건강</a><br>
+									<a href="https://petnolza.com/category/dog-food/" onclick="window.open(this.href, '_blank'); return false;">강아지 음식</a><br>
+									<a href="https://petnolza.com/category/dog-behavior/" onclick="window.open(this.href, '_blank'); return false;">강아지 행동</a><br>
 								</h3>
 							</div>
 						</div>
