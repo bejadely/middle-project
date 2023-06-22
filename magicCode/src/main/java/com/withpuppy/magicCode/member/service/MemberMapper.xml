@@ -80,12 +80,21 @@
 	
 	<!-- 전체회원 조회시 사용 -->
 	<select id="memberSelectList"
+	parameterType="com.withpuppy.magicCode.member.service.MemberVO"
 	 resultType="com.withpuppy.magicCode.member.service.MemberVO">
-		SELECT * 
-		FROM MEMBER
-		ORDER BY MEMBER_NAME
-	</select>
+		SELECT * FROM(
+			SELECT rownum  rn,a.* FROM(
+			           			SELECT * 
+								FROM MEMBER
+								ORDER BY MEMBER_NAME
+										)a
+				)WHERE rn BETWEEN #{first} and #{last}
 	
+	</select>
+	<select id="listPage" resultType="int">
+		SELECT COUNT(*)
+		FROM notice
+	</select>
 	<!-- 회원상세 조회시 사용 -->
 	<select id="memberSelect"
 	 resultType="com.withpuppy.magicCode.member.service.MemberVO">

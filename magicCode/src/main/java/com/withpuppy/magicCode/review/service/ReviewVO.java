@@ -17,6 +17,7 @@ public class ReviewVO {
 	String petKind;
 	int urRate;
 	String urReview;
+	Double urRateAvg;
 	int first;
 	int last;
 	
