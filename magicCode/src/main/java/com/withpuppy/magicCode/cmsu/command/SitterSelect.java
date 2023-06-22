@@ -29,6 +29,10 @@ public class SitterSelect implements Command {
 		String brChange = vo.getSrIntroduce().replaceAll("\n", "<br>");
 		vo.setSrIntroduce(brChange);
 		
+		// 날짜 문자열 자르기
+		vo.setSrStartDate(vo.getSrStartDate().substring(0,10));
+		vo.setSrEndDate(vo.getSrEndDate().substring(0,10));
+		
 		request.setAttribute("sitter", vo);
 		
 		//해당srId에 쓴 리뷰글 페이징

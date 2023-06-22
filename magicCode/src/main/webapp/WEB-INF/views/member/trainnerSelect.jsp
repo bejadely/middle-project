@@ -137,17 +137,21 @@
 	</div>
 </div>
 <script type="text/javascript">
-function chois(session, id, price) {
-	let frm = document.getElementById("frm");
-	if(session == ""){
-		alert("로그인이 필요한 서비스입니다. \n로그인 후 이용해 주십시오.")
-		frm.action = "memberLoginForm.do"
-	} else{
-		frm.srId.value = id;
-		frm.srPrice.value = price;
+	function chois(session, id, price) {
+		let frm = document.getElementById("frm");
+		if(session == ""){
+			alert("로그인이 필요한 서비스입니다. \n로그인 후 이용해 주십시오.")
+			frm.action = "memberLoginForm.do"
+		} else{
+			frm.srId.value = id;
+			frm.srPrice.value = price;
+		}
+			frm.submit();
 	}
-		frm.submit();
-}
+	let forRead = document.getElementsByTagName("input");
+	for (let i = 0; i < forRead.length; i++) {
+	  forRead[i].readOnly = true;
+	}
 </script>
 </body>
 </html>
