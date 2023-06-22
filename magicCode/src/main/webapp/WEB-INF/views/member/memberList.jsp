@@ -74,7 +74,7 @@
 						<li class="list-group-item">
 						<a href="reviewListAdmin.do">리뷰 보기</a></li>
 						<li class="list-group-item">
-						<a href="noticeList.do">공지사항	보기</a></li>
+						<a href="noticeList.do">공지사항 보기</a></li>
 						<li class="list-group-item">
 						<a href="authRequestList.do">인증요청 보기</a></li>
 					</ul>

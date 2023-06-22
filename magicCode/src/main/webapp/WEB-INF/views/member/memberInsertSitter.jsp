@@ -16,18 +16,16 @@
 	color: red;
 }
 
+input[type="file"] {
+    height: 38px; 
+}
+
 .bg-light {
-	height: 1200px;
+	height: 1500px;
 	padding-top: 55px;
 	padding-bottom: 75px;
 }
 
-.flex-fill.mx-xl-5.mb-2 {
-	margin: 0 auto;
-	width: 700px;
-	padding-right: 7rem;
-	padding-left: 7rem;
-}
 
 .container.py-4 {
 	margin: 0 auto;
@@ -35,12 +33,46 @@
 }
 
 .d-grid.gap-2 {
-	padding-top: 30px;
+	padding-top: 20px;
 }
 
 .full-width {
 	width: 100%;
+
 }
+
+.h1.text-center {
+    font-size: 2rem; 
+}
+.text-dark.h4, .text-primary.h4 {
+    font-size: 2rem;
+}
+
+.row.align-items-center {
+    justify-content: center; /* WithPuppy  중앙 정렬 */
+    
+}
+
+.credential-row {
+    display: flex;
+    align-items: center;
+   
+}
+
+#hidden_file {
+    display: none;
+}
+
+file-upload-wrapper {
+    display: grid;
+}
+
+.file-upload-wrapper button {
+    margin-top: 10px;
+    height: 38px; 
+    width: 100%;
+}
+
 </style>
 <link rel="stylesheet" href="css/style.css">
 
@@ -49,7 +81,7 @@
 <body>
 	<section class="bg-light">
 		<div class="container py-4">
-			<div class="row align-items-center justify-content-between">
+			<div class="row align-items-center">
 				<a class="navbar-brand h1 text-center" href="main.do"> <span
 					class="text-dark h4">With</span> <span class="text-primary h4">Puppy</span>
 				</a>
@@ -60,7 +92,7 @@
 				<div class="form-group">
 					<label for="memberId" class="form-label mt-4">*아이디</label> <input
 						type="email" class="form-control full-width" id="memberId"
-						name="memberId" required="required">
+						name="memberId" placeholder="E-mail" required="required">
 				</div>
 
 				<div class="form-group has-success">
@@ -109,14 +141,27 @@
 					<input type="radio" id="sitter" name="memberAuth" value="S" checked="checked" onclick="unCheckCerti()"> <label for="sitter">시터</label> 
 					<input type="radio" id="trainer" name="memberAuth" value="UT" onclick="checkCerti()"> <label for="trainer">훈련사</label> 
 					<input type="radio" id="groomer" name="memberAuth" value="UG" onclick="checkCerti()"> <label for="groomer">애견미용</label><br>
+					
 					<!-- certification 삽입 구문 -->
-					<label>자격증 명<input type="text" id="certificationName"
-						name="certificationName"></label> <input type="file" id="cfile"
-						name="cfile"> <input type="hidden" id="memberAddrInput"
-						name="memberAddr" />
-
+					<div class="row" style="justify-content: center;">
+						<div class="form-group col-7">
+							<label for="certificationName" class="form-label mt-4">자격증 명</label>
+							<input type="text" id="certificationName"
+								name="certificationName" class="form-control full-width">
+						<div class="form-group col-7">
+					    <label for="cfile" class="form-label mt-4">이미지 업로드</label>
+						    <div class="file-upload-wrapper">
+						        <input type="file" id="cfile" name="cfile" style="display:none;" onchange="document.getElementById('file-upload-filename').value = this.value;">
+						        <input type="text" id="file-upload-filename" class="form-control full-width" placeholder="선택된 파일이없습니다" readonly>
+						        <button type="button" class="btn btn-default full-width" onclick="document.getElementById('cfile').click();">업로드</button>
+						    </div>
+						    <input type="hidden" id="memberAddrInput" name="memberAddr" />
+						</div>
+						</div>				
+						
+					</div>
 					<button type="submit" class="btn btn-primary btn-lg full-width"
-						style="font-weight: bold;">가입하기</button>
+						style="font-weight: bold; font-size: 1.3rem;">가입하기</button>
 				</div>
 
 			</form>
