@@ -20,40 +20,39 @@
 }
 
 .list-group-item {
-	color: black; 
+	color: black;
 }
 
 .list-group-item:hover {
-	background-color: black; 
-	color: white; 
+	background-color: black;
+	color: white;
 }
 
-.container{
+.container {
 	max-width: 100%;
 	margin-right: -10px;
 	padding: none;
 }
 
-.col-8{
-	padding: none;
-}
-.col-4{
+.col-8 {
 	padding: none;
 }
 
-.seachbtn{
-	width: 70px; 
-    height: 35px; 
-    background-color: #00C13F;
-    color: white;
-    
+.col-4 {
+	padding: none;
+}
+
+.seachbtn {
+	width: 70px;
+	height: 35px;
+	background-color: #00C13F;
+	color: white;
 }
 
 .searchForm {
-  padding-top: 20px; 
-  padding-bottom: 20px; 
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
-
 </style>
 
 </head>
@@ -62,21 +61,21 @@
 		<div class="row">
 			<aside class="col-4" style="max-width: 20%">
 				<br>
-				<div class="panel panel-info"  style="max-width: 250px" >
+				<div class="panel panel-info" style="max-width: 250px">
 					<div class="panel-heading">
-						<h3 class="panel-title">&nbsp;Kategorie</h3>
+						<h3 class="panel-title">&nbsp;Category</h3>
 					</div>
 					<ul class="list-group">
-						<li class="list-group-item">
-						<a href="memberList.do">회원목록 보기</a></li>
-						<li class="list-group-item">
-						<a href="seeAllServiceRegist.do">모든게시물 보기</a></li>
-						<li class="list-group-item">
-						<a href="reviewListAdmin.do">리뷰 보기</a></li>
-						<li class="list-group-item">
-						<a href="noticeList.do">공지사항	보기</a></li>
-						<li class="list-group-item">
-						<a href="authRequestList.do">인증요청 보기</a></li>
+						<li class="list-group-item"><a href="memberList.do">회원목록
+								보기</a></li>
+						<li class="list-group-item"><a href="seeAllServiceRegist.do">모든게시물
+								보기</a></li>
+						<li class="list-group-item"><a href="reviewListAdmin.do">리뷰
+								보기</a></li>
+						<li class="list-group-item"><a href="noticeListPage.do">공지사항
+								보기</a></li>
+						<li class="list-group-item"><a href="authRequestList.do">인증요청
+								보기</a></li>
 					</ul>
 				</div>
 			</aside>
@@ -86,7 +85,7 @@
 						<h1>회원 목록</h1>
 					</div>
 					<div class="table-responsive">
-						<table border="1" class="table" >
+						<table border="1" class="table" style="width: 950px">
 							<thead align="center" class="thead-dark">
 								<tr>
 									<th scope="col" width="150">아이디</th>
@@ -132,6 +131,30 @@
 							</select> <input type="text" id="val" name="val">
 							<button type="submit" class="seachbtn">검색</button>
 						</form>
+						<!-- 페이징 -->
+						<div class="pagination">
+							<div class="col text-center">
+								<div class="block-27">
+									<ul>
+										<c:if test="${paging.startPage>1}">
+											<li><a href="javascript:goPage(${paging.startPage-1})">이전</a>
+										</c:if>
+										<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
+											var="i">
+											<c:if test="${i != paging.page}">
+												<li><a href="javascript:goPage(${i})">${i}</a>
+											</c:if>
+											<c:if test="${i == paging.page}">
+												<li class="active"><span>${i}</span>
+											</c:if>
+										</c:forEach>
+										<c:if test="${paging.endPage<paging.totalPageCount}">
+											<li><a href="javascript:goPage(${paging.endPage+1})">다음</a>
+										</c:if>
+									</ul>
+								</div>
+							</div>
+						</div>
 						<hr>
 					</div>
 					<div>
@@ -145,11 +168,14 @@
 	</div>
 </body>
 <script type="text/javascript">
-function memberIdChois(id) {
-let frm = document.getElementById("frm");
-frm.memberId.value = id;
-frm.submit();
-}
-
+	function memberIdChois(id) {
+		let frm = document.getElementById("frm");
+		frm.memberId.value = id;
+		frm.submit();
+	}
+	function goPage(p){
+		location.href='memberList.do?page='+p;
+		
+	}
 </script>
 </html>

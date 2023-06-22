@@ -54,6 +54,7 @@ public class SitterSelect implements Command {
 		rvo.setSrId(Integer.valueOf(request.getParameter("srId")));
 		reviews = rs.reviewSelectSrId(rvo);
 		Double reviewRateAvg = rs.reviewRateAvg(rvo.getSrId());
+		System.out.println(reviewRateAvg);
 		
 		//리뷰 평균값
 		request.setAttribute("reviewRateAvg", reviewRateAvg);

@@ -16,9 +16,9 @@ public class MemberServiceImpl implements MemberService {
 	private MemberMapper map = sqlSession.getMapper(MemberMapper.class);
 	
 	@Override
-	public List<MemberVO> memberSelectList() {
+	public List<MemberVO> memberSelectList(MemberVO vo) {
 		// TODO Auto-generated method stub
-		return map.memberSelectList();
+		return map.memberSelectList(vo);
 	}
 	
 	@Override
@@ -79,6 +79,12 @@ public class MemberServiceImpl implements MemberService {
 	public List<MemberVO> memberSelectListById(MemberVO vo) {
 		// TODO Auto-generated method stub
 		return map.memberSelectListById(vo);
+	}
+
+	@Override
+	public int listPage() {
+		// TODO Auto-generated method stub
+		return map.listPage();
 	}
 
 

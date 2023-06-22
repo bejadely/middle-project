@@ -16,9 +16,9 @@ public class ReviewServiceImpl implements ReviewService {
 	private ReviewMapper map = sqlSession.getMapper(ReviewMapper.class);
 	
 	@Override
-	public List<ReviewVO> reviewSelectList() {
+	public List<ReviewVO> reviewSelectList(ReviewVO vo) {
 		// TODO Auto-generated method stub
-		return map.reviewSelectList();
+		return map.reviewSelectList(vo);
 	}
 
 	@Override

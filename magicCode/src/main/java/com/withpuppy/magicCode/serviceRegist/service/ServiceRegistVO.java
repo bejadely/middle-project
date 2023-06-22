@@ -33,6 +33,8 @@ public class ServiceRegistVO {
 	private String srCategory;
 	private int srPrice;
 	private String srLocation;
+	int first;
+	int last;
 	
 	public int getSrId() {
 		return srId;

@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface MemberMapper {
 	//선호
-	List<MemberVO> memberSelectList();
+	List<MemberVO> memberSelectList(MemberVO vo);
 	MemberVO memberSelect(MemberVO vo);
 	MemberVO memberLogin(MemberVO vo);
 	MemberVO memberSelectByNick(MemberVO vo);
@@ -15,6 +15,7 @@ public interface MemberMapper {
 	int memberUpdate(MemberVO vo);
 	int memberUpdateByAdmin(MemberVO vo);
 	int memberDelete(MemberVO vo);
+	int listPage();
 	
 	// 이름으로 회원 검색
 	List<MemberVO> memberSelectListByName(MemberVO vo);
