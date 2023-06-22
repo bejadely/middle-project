@@ -22,7 +22,8 @@ public class ReviewList implements Command {
 		
 		ReviewService rs = new ReviewServiceImpl();
 		List<ReviewVO> reviews = new ArrayList<>();
-		reviews = rs.reviewSelectList();
+		ReviewVO vo = new ReviewVO();
+		reviews = rs.reviewSelectList(vo);
 		
 		request.setAttribute("reviews", reviews);
 		return "review/reviewList";

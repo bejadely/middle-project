@@ -21,9 +21,23 @@ public class MemberVO {
 	private int memberCertificationId; // int 값 자격증 id
 	private String memberCertificationName; //자격증 이름외래키
 	private String memberCertificationPath; //자격증 경로외래키
+	int first;
+	int last;
 	
 	public String getMemberId() {
 		return memberId;
+	}
+	public int getFirst() {
+		return first;
+	}
+	public void setFirst(int first) {
+		this.first = first;
+	}
+	public int getLast() {
+		return last;
+	}
+	public void setLast(int last) {
+		this.last = last;
 	}
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;

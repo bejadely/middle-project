@@ -56,4 +56,10 @@ public class ServiceRegistServiceImpl implements ServiceRegistService {
 		return map.selectListByName(vo);
 	}
 
+	@Override
+	public int listPage() {
+		// TODO Auto-generated method stub
+		return map.listPage();
+	}
+
 }

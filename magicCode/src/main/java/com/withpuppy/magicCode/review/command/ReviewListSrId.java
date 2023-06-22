@@ -47,6 +47,7 @@ public class ReviewListSrId implements Command {
 		
 		//리뷰 평균값
 		request.setAttribute("reviewRateAvg", reviewRateAvg);
+		System.out.println(reviewRateAvg);
 		//srId에 해당하는 리뷰리스트들
 		request.setAttribute("reviewsSrId", reviews);
 		request.setAttribute("paging", paging);

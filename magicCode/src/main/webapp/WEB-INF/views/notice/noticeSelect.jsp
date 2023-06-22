@@ -42,7 +42,7 @@
 					<button type="button" class="btn btn-success" onclick="callFunction('E')">수정</button>&nbsp;
 					<button type="button" class="btn btn-success" onclick="callFunction('D')">삭제</button>
 				</c:if>
-				<button type="button" class="btn btn-success" onclick="location.href='noticeList.do'">목록으로</button>
+				<button type="button" class="btn btn-success" onclick="location.href='noticeListPage.do'">목록으로</button>
 			</div>
 		</div>
 	</div>

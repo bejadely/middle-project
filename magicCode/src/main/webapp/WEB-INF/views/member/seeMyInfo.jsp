@@ -132,7 +132,6 @@ body {
 			<aside class="col-4" style="max-width: 20%">
 				<br>
 				<div class="panel panel-info" style="max-width: 250px">
-
 					<div class="panel-heading">
 						<h3 class="panel-title">&nbsp;Kategorie</h3>
 					</div>
@@ -162,7 +161,6 @@ body {
 					</ul>
 				</div>
 			</aside>
-
 			<div align="center" class="col-8"
 				style="display: flex; flex-direction: column; align-items: center; width: 100%;">
 				<h2>내 정보 조회</h2>
