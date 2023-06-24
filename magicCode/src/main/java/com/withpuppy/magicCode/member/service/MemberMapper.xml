@@ -47,13 +47,17 @@
 		UPDATE MEMBER
 		<set>
 			<if test="memberPw != null">
-			MEMBER_PW = #{memberPw},</if>
+				MEMBER_PW = #{memberPw},
+			</if>
 			<if test="memberTel != null">
-			MEMBER_TEL = #{memberTel},</if>
+				MEMBER_TEL = #{memberTel},
+			</if>
 			<if test="memberAddr != null">
-			MEMBER_ADDR = #{memberAddr}</if>
+				MEMBER_ADDR = #{memberAddr},
+			</if>
 			<if test="memberAuth != null">
-			MEMBER_AUTH = #{memberAuth}</if>
+				MEMBER_AUTH = #{memberAuth}
+			</if>
 		</set>
 		WHERE member_id = #{memberId} 
 	</update>
