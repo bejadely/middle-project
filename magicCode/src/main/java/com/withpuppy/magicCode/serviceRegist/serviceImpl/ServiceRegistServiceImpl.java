@@ -44,4 +44,22 @@ public class ServiceRegistServiceImpl implements ServiceRegistService {
 		return map.serviceRegistDelete(vo);
 	}
 
+	@Override
+	public List<ServiceRegistVO> selectListById(ServiceRegistVO vo) {
+		// TODO Auto-generated method stub
+		return map.selectListById(vo);
+	}
+
+	@Override
+	public List<ServiceRegistVO> selectListByName(ServiceRegistVO vo) {
+		// TODO Auto-generated method stub
+		return map.selectListByName(vo);
+	}
+
+	@Override
+	public int listPage() {
+		// TODO Auto-generated method stub
+		return map.listPage();
+	}
+
 }

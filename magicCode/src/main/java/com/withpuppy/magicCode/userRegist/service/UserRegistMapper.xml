@@ -5,11 +5,44 @@
 	resultType="com.withpuppy.magicCode.userRegist.service.UserRegistVO">
 	</select>
 	<select id="userRegistSelect" resultType="com.withpuppy.magicCode.userRegist.service.UserRegistVO">
+		SELECT * FROM user_regist
+		WHERE ur_id=#{urId}
 	</select>
 	<insert id="userRegistInsert">
+		<selectKey keyProperty="urId" resultType="int" order="BEFORE">
+				SELECT Max(ur_id) + 1 AS urId
+				FROM user_regist
+		</selectKey>
+		INSERT INTO user_regist
+		VALUES(
+			#{urId},
+		    #{urMemberId},
+		    #{urPetId},
+		    #{urRequire},
+		    #{urPayment},
+		    #{urDate},
+		    #{urStartTime},
+		    #{urEndTime},
+		    0,
+		    null,
+		    #{srId},
+		    'N')
 	</insert>
 	<update id="userRegistUpdate">
 	</update>
 	<delete id="userRegistDelete">
 	</delete>
+	<!-- 서비스 요청 취소 -->
+	<update id="urCheckCUpdate" parameterType="com.withpuppy.magicCode.userRegist.service.UserRegistVO">
+		UPDATE USER_REGIST 
+		SET UR_CHECK = 'C'
+		WHERE UR_ID = #{urId}
+	</update>
+	
+	<!-- 서비스 완료 -->
+	<update id="urCheckEUpdate">
+		UPDATE USER_REGIST 
+		SET UR_CHECK = 'E'
+		WHERE UR_ID = #{urId}
+	</update>
 </mapper>

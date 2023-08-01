@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.withpuppy.magicCode.common.DataSource;
+import com.withpuppy.magicCode.member.service.MemberVO;
 import com.withpuppy.magicCode.userRegist.service.UserRegistMapper;
 import com.withpuppy.magicCode.userRegist.service.UserRegistService;
 import com.withpuppy.magicCode.userRegist.service.UserRegistVO;
@@ -43,5 +44,19 @@ public class UserRegistServiceImpl implements UserRegistService {
 		// TODO Auto-generated method stub
 		return map.userRegistDelete(vo);
 	}
+
+	@Override
+	public int urCheckCUpdate(UserRegistVO vo) {
+		//서비스 요청 취소
+		return map.urCheckCUpdate(vo);
+	}
+
+	@Override
+	public int urCheckEUpdate(UserRegistVO vo) {
+		//서비스 완료
+		return map.urCheckEUpdate(vo);
+	}
+
+	
 
 }
