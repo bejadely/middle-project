@@ -8,8 +8,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-	<div>
+<body style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+	<div style="margin-top: 40px;">
 		<h1>서비스 등록</h1>
 	</div>
 	<div>
@@ -45,7 +45,7 @@
 				<input type="hidden" id="srServerId" name="srServerId" value="${id}">
 				<input type="hidden" id="srCategory" name="srCategory" value="G">
 			</div>
-			<div>
+			<div style="margin-bottom: 40px;">
 				<input type="submit" value = "등 록" >&nbsp;
 				<input type="reset" value = "취 소" >&nbsp;
 				<input type="button" onclick="location.href='grommerAllList.do'" value="목록으로 이동">

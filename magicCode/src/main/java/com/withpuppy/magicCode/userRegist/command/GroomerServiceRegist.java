@@ -17,7 +17,7 @@ public class GroomerServiceRegist implements Command {
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		// 미용 예약 기능 수행
 		
-		// PetInsert(우선수행)
+		// PetInsert 수행을 위한 구문
 		PetVO pvo = new PetVO();
 		PetService ps = new PetServiceImpl();
 		
@@ -29,10 +29,10 @@ public class GroomerServiceRegist implements Command {
 		pvo.setPetWeight(Double.valueOf(request.getParameter("petWeight")));
 		pvo.setPetSign(request.getParameter("petSign"));
 		
+		// PetInsert 우선 수행
 		ps.petInsert(pvo);
 		
-		// UserRegistInsert(petInsert 완료 후 그 결과값을 받아와야함)
-		
+		// UserRegistInsert(PetInsert 완료 후 PET 테이블에 새로 생성된 pet_id를 활용)
 		UserRegistVO uvo = new UserRegistVO();
 		UserRegistService urs = new UserRegistServiceImpl();
 		uvo.setUrPetId(pvo.getPetId());

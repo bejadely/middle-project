@@ -4,10 +4,13 @@
 	<select id="userRegistSelectList"
 	resultType="com.withpuppy.magicCode.userRegist.service.UserRegistVO">
 	</select>
+	
 	<select id="userRegistSelect" resultType="com.withpuppy.magicCode.userRegist.service.UserRegistVO">
 		SELECT * FROM user_regist
 		WHERE ur_id=#{urId}
 	</select>
+	
+	<!-- 서비스 이용 신청 -->
 	<insert id="userRegistInsert">
 		<selectKey keyProperty="urId" resultType="int" order="BEFORE">
 				SELECT Max(ur_id) + 1 AS urId
@@ -28,6 +31,7 @@
 		    #{srId},
 		    'N')
 	</insert>
+	
 	<update id="userRegistUpdate">
 	</update>
 	<delete id="userRegistDelete">

@@ -20,17 +20,18 @@ public class GroomingServiceRegist implements Command {
 		ServiceRegistService srs = new ServiceRegistServiceImpl();
 		ServiceRegistVO vo = new ServiceRegistVO();
 		
+		// 이미지 저장경로 & 이미지 최대 크기 설정
 		String saveDir = request.getServletContext().getRealPath("/upload"); 
 		int maxSize = 100 * 1024 * 1024; 
 		int n = 0;
 		
-		//cos
+		// 
 		try {
 			MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, "utf-8", new DefaultFileRenamePolicy());
 			
-			// 훈련사 사진 업로드용
+			// 미용사 사진 업로드 경로 정보 DB에 저장하기 위한 처리
 			String mfile = multi.getFilesystemName("mfile");
-			mfile = "upload/" + mfile; // 물리적인 저장위치를 앞에 붙여줌
+			mfile = "upload/" + mfile; 
 			
 			vo.setSrPicturePath(mfile);
 			vo.setSrTitle(multi.getParameter("srTitle"));

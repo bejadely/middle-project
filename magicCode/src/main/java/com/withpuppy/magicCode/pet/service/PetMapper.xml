@@ -6,6 +6,7 @@
 	</select>
 	<select id="petSelect" resultType="com.withpuppy.magicCode.pet.service.PetVO">
 	</select>
+	
 	<insert id="petInsert">
 	<selectKey keyProperty="petId" resultType="int" order="BEFORE">
 			SELECT Max(pet_id) + 1 AS petId FROM pet
@@ -22,6 +23,7 @@
 	    #{petSign}
 	    )
 	</insert>
+	
 	<update id="petUpdate">
 	</update>
 	<delete id="petDelete">
